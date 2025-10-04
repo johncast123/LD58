@@ -5,10 +5,11 @@ extends Node2D
 @export var min_angle_deg: float = -160.0       # up-left limit (global degrees)
 @export var max_angle_deg: float = -20.0        # up-right limit (global degrees)
 @export var hook_scene: PackedScene
-@export var fire_cooldown: float = 0.25
+@export var max_hook_count: int = 1
 @export var use_smooth_mouse_aim: bool = true   # set false to snap-aim
 
 var can_fire := true
+var current_hook_count: int = 0
 
 @onready var muzzle: Node2D = $Muzzle
 @onready var line_2d = $Line2D
@@ -17,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	_aim_with_mouse(delta)
 
 	# Fire with Space or Left Click
-	if can_fire and (Input.is_action_just_pressed("fire") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
+	if _if_can_fire() and (Input.is_action_just_pressed("fire") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 		_fire_hook()
 
 func _aim_with_mouse(delta: float) -> void:
@@ -40,21 +41,24 @@ func _aim_with_mouse(delta: float) -> void:
 		rotation_degrees = desired_deg
 
 func _fire_hook() -> void:
+	if !_if_can_fire():
+		return
 	if not hook_scene:
 		push_error("hook_scene not assigned on Cannon")
 		return
-	can_fire = false
+	current_hook_count += 1
 	var hook = hook_scene.instantiate()
 	get_tree().current_scene.add_child(hook)
 	hook.connect("update_line_points", update_line_points)
 	hook.connect("hook_queue_freed", _on_hook_queue_freed)
 	var dir = Vector2.RIGHT.rotated(global_rotation)  # +X is forward
 	hook.begin(muzzle.global_position, dir)
-	_start_cooldown()
 
-func _start_cooldown() -> void:
-	var t := get_tree().create_timer(fire_cooldown)
-	t.timeout.connect(func(): can_fire = true)
+func _if_can_fire() -> bool:
+	if current_hook_count >= max_hook_count:
+		return false
+	else:
+		return true
 
 # Helper: like lerp_angle but with a max step (deg)
 func move_toward_angle(from: float, to: float, delta_step: float) -> float:
@@ -69,3 +73,4 @@ func update_line_points(global_point_array: PackedVector2Array):
 
 func _on_hook_queue_freed():
 	line_2d.clear_points()
+	current_hook_count -= 1
