@@ -50,28 +50,24 @@ func _on_Hook_area_entered(area: Area2D) -> void:
 		carried_gem.monitoring = false
 
 func _check_wall_bounce() -> void:
-	# Reflect off the visible viewport edges
-	var sz: Vector2 = get_viewport().get_visible_rect().size
 	var bounced := false
 	
 	var position_snapshot := global_position
-	
-	if global_position.x <= 0.0:
-		global_position.x = 0.0
-		dir = dir.bounce(Vector2.RIGHT)   # normal pointing right
-		bounced = true
-	elif global_position.x >= sz.x:
-		global_position.x = sz.x
-		dir = dir.bounce(Vector2.LEFT)    # normal pointing left
-		bounced = true
+	# Move a bit in the direction and check collision
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(global_position, global_position + dir.normalized() * 25)
+	#query.collide_with_areas = true
+	query.collide_with_bodies = true
 
-	if global_position.y <= 0.0:
-		global_position.y = 0.0
-		dir = dir.bounce(Vector2.DOWN)    # normal pointing down
-		bounced = true
-	elif global_position.y >= sz.y:
-		global_position.y = sz.y
-		dir = dir.bounce(Vector2.UP)      # normal pointing up
+	var result = space_state.intersect_ray(query)
+
+	if result:
+		# Get collision point + normal
+		global_position = result.position
+		var normal: Vector2 = result.normal
+
+		# Reflect direction across the wall normal
+		dir = dir.bounce(normal).normalized()
 		bounced = true
 
 	if bounced:
