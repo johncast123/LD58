@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Blitzcrank Hook Game Prototype"
+config/name="Mutiny!"
 run/main_scene="uid://dslo264mpyvmn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
