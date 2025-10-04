@@ -58,7 +58,7 @@ func _check_wall_bounce() -> void:
 	var position_snapshot := global_position
 	# Move a bit in the direction and check collision
 	var space_state = get_world_2d().direct_space_state
-	var query = PhysicsRayQueryParameters2D.create(global_position, global_position + dir.normalized() * 25)
+	var query = PhysicsRayQueryParameters2D.create(global_position, global_position + dir.normalized() * 15)
 	#query.collide_with_areas = true
 	query.collide_with_bodies = true
 
