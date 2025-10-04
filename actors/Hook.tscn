@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqgketbcml54p"]
+
+[ext_resource type="Script" uid="uid://dy0p6kdxeuukl" path="res://actors/Hook.gd" id="1_xe85h"]
+[ext_resource type="Texture2D" uid="uid://dnm2nltxbp62p" path="res://icon.svg" id="2_dt5l3"]
+[ext_resource type="Script" uid="uid://k6smtif2wsi3" path="res://actors/states/state_machine.gd" id="3_dt5l3"]
+[ext_resource type="Script" uid="uid://bl82wllcn6gr1" path="res://actors/states/extending.gd" id="4_kma30"]
+[ext_resource type="Script" uid="uid://cdhbu3q0axa1g" path="res://actors/states/retracting.gd" id="5_lpax8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u788y"]
+radius = 6.0
+
+[node name="Hook" type="Area2D"]
+script = ExtResource("1_xe85h")
+extend_speed = 1500.0
+retract_speed = 1500.0
+max_length = 1000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_u788y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.115625, 0.115625)
+texture = ExtResource("2_dt5l3")
+
+[node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("states")]
+script = ExtResource("3_dt5l3")
+starting_state_name = "extending"
+states = {
+"extending": NodePath("Extending"),
+"retracting": NodePath("Retracting")
+}
+
+[node name="Extending" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("state_owner")]
+script = ExtResource("4_kma30")
+state_owner = NodePath("../..")
+state_name = "extending"
+
+[node name="Retracting" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("state_owner")]
+script = ExtResource("5_lpax8")
+state_owner = NodePath("../..")
+state_name = "retracting"

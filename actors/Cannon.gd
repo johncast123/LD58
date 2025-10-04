@@ -11,12 +11,13 @@ extends Node2D
 var can_fire := true
 
 @onready var muzzle: Node2D = $Muzzle
+@onready var line_2d = $Line2D
 
 func _physics_process(delta: float) -> void:
 	_aim_with_mouse(delta)
 
 	# Fire with Space or Left Click
-	if can_fire and (Input.is_action_just_pressed("fire") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and Input.is_action_just_pressed("ui_left_click_guard") == false):
+	if can_fire and (Input.is_action_just_pressed("fire") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 		_fire_hook()
 
 func _aim_with_mouse(delta: float) -> void:
@@ -44,7 +45,9 @@ func _fire_hook() -> void:
 		return
 	can_fire = false
 	var hook = hook_scene.instantiate()
-	get_tree().current_scene.add_child(hook)
+	add_child(hook)
+	hook.connect("update_line_points", update_line_points)
+	hook.connect("hook_queue_freed", _on_hook_queue_freed)
 	var dir = Vector2.RIGHT.rotated(global_rotation)  # +X is forward
 	hook.begin(muzzle.global_position, dir)
 	_start_cooldown()
@@ -58,3 +61,11 @@ func move_toward_angle(from: float, to: float, delta_step: float) -> float:
 	var diff = wrapf(to - from, -PI, PI)
 	var step = clamp(diff, -delta_step, delta_step)
 	return from + step
+
+func update_line_points(global_point_array: PackedVector2Array):
+	line_2d.clear_points()
+	for point in global_point_array:
+		line_2d.add_point(to_local(point))
+
+func _on_hook_queue_freed():
+	line_2d.clear_points()

@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://dslo264mpyvmn"]
+
+[ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_hh730"]
+[ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="2_rqm65"]
+[ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="3_cojv5"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_hh730")
+
+[node name="Cannon" parent="." instance=ExtResource("2_rqm65")]
+position = Vector2(586, 549)
+rotation = -1.5708
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score: 0 ←/→ to aim, Space to fire"
+
+[node name="Gem" parent="." instance=ExtResource("3_cojv5")]
+position = Vector2(324, 289)
+
+[node name="Gem2" parent="." instance=ExtResource("3_cojv5")]
+position = Vector2(782, 170)
+
+[node name="Gem3" parent="." instance=ExtResource("3_cojv5")]
+position = Vector2(727, 373)
+
+[node name="Gem4" parent="." instance=ExtResource("3_cojv5")]
+position = Vector2(419, 44)
+
+[node name="Gem5" parent="." instance=ExtResource("3_cojv5")]
+position = Vector2(840, 507)
+
+[node name="Gem6" parent="." instance=ExtResource("3_cojv5")]
+position = Vector2(533, 195)
+
+[node name="Gem7" parent="." instance=ExtResource("3_cojv5")]
+position = Vector2(229, 463)
+
+[node name="Gem8" parent="." instance=ExtResource("3_cojv5")]
+position = Vector2(493, 385)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 319)
