@@ -36,8 +36,9 @@ func _physics_process(delta: float) -> void:
 	state_machine.update_physics_frame(delta)
 
 func _update_line() -> void:
-	fixed_points.append(global_position)
-	update_line_points.emit(fixed_points)
+	var total_points = fixed_points.duplicate()
+	total_points.append(global_position)
+	update_line_points.emit(total_points)
 
 func _add_fixed_point(new_global_point: Vector2):
 	fixed_points.append(new_global_point)

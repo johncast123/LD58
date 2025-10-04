@@ -45,7 +45,7 @@ func _fire_hook() -> void:
 		return
 	can_fire = false
 	var hook = hook_scene.instantiate()
-	add_child(hook)
+	get_tree().current_scene.add_child(hook)
 	hook.connect("update_line_points", update_line_points)
 	hook.connect("hook_queue_freed", _on_hook_queue_freed)
 	var dir = Vector2.RIGHT.rotated(global_rotation)  # +X is forward

@@ -31,16 +31,16 @@ position = Vector2(727, 373)
 position = Vector2(419, 44)
 
 [node name="Gem5" parent="." instance=ExtResource("3_cojv5")]
-position = Vector2(840, 507)
+position = Vector2(976, 213)
 
 [node name="Gem6" parent="." instance=ExtResource("3_cojv5")]
-position = Vector2(533, 195)
+position = Vector2(575, 188)
 
 [node name="Gem7" parent="." instance=ExtResource("3_cojv5")]
-position = Vector2(229, 463)
+position = Vector2(190, 203)
 
 [node name="Gem8" parent="." instance=ExtResource("3_cojv5")]
-position = Vector2(493, 385)
+position = Vector2(467, 279)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(579, 319)

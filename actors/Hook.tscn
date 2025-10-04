@@ -19,7 +19,7 @@ max_length = 1000.0
 shape = SubResource("CircleShape2D_u788y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.115625, 0.115625)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_dt5l3")
 
 [node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("states")]
