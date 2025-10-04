@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GemInfo" load_steps=3 format=3 uid="uid://lolpuixwjb8u"]
+
+[ext_resource type="Script" uid="uid://b7kem3jx1r5na" path="res://gems/gem_info/gem_info.gd" id="1_jorn1"]
+[ext_resource type="SpriteFrames" uid="uid://cif057q2yongt" path="res://gems/gold_coin.tres" id="2_4cu61"]
+
+[resource]
+script = ExtResource("1_jorn1")
+gem_name = "Gold Coin"
+sprite_frame = ExtResource("2_4cu61")
+point = 20

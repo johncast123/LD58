@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GemInfo" load_steps=3 format=3 uid="uid://385t84y78av3"]
+
+[ext_resource type="Script" uid="uid://b7kem3jx1r5na" path="res://gems/gem_info/gem_info.gd" id="1_em1fm"]
+[ext_resource type="SpriteFrames" uid="uid://bqgcmwkg80wt2" path="res://gems/silver_coin.tres" id="2_7dhah"]
+
+[resource]
+script = ExtResource("1_em1fm")
+gem_name = "Silver Coin"
+sprite_frame = ExtResource("2_7dhah")
+point = 10

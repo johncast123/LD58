@@ -51,6 +51,7 @@ func _on_Hook_area_entered(area: Area2D) -> void:
 		carried_gem = area
 		state_machine.change_state("retracting")
 		carried_gem.monitoring = false
+		carried_gem.set_snatched()
 
 func _check_wall_bounce() -> void:
 	var bounced := false
