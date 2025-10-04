@@ -1,14 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://dslo264mpyvmn"]
+[gd_scene load_steps=6 format=3 uid="uid://dslo264mpyvmn"]
 
 [ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_hh730"]
 [ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="2_rqm65"]
 [ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="3_cojv5"]
+[ext_resource type="Script" uid="uid://1sttqo44gd1x" path="res://gems/gem_manager.gd" id="3_rqm65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hh730"]
 size = Vector2(61, 145)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_hh730")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score: 0 ←/→ to aim, Space to fire"
+
+[node name="CurrentMultiplier" type="Label" parent="CanvasLayer"]
+offset_left = 884.0
+offset_right = 1145.0
+offset_bottom = 23.0
+text = "Current Multiplier: X1"
 
 [node name="Cannon" parent="." instance=ExtResource("2_rqm65")]
 position = Vector2(586, 561)
@@ -45,38 +59,37 @@ position = Vector2(986, 419)
 rotation = 1.57079
 shape = SubResource("RectangleShape2D_hh730")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="GemManager" type="Node2D" parent="."]
+position = Vector2(0, -7)
+script = ExtResource("3_rqm65")
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Score: 0 ←/→ to aim, Space to fire"
-
-[node name="Gem" parent="." instance=ExtResource("3_cojv5")]
+[node name="Gem" parent="GemManager" instance=ExtResource("3_cojv5")]
 position = Vector2(324, 289)
 
-[node name="Gem2" parent="." instance=ExtResource("3_cojv5")]
+[node name="Gem2" parent="GemManager" instance=ExtResource("3_cojv5")]
 position = Vector2(782, 170)
 
-[node name="Gem3" parent="." instance=ExtResource("3_cojv5")]
+[node name="Gem3" parent="GemManager" instance=ExtResource("3_cojv5")]
 position = Vector2(727, 373)
 bounces_before_enabled = 1
 
-[node name="Gem4" parent="." instance=ExtResource("3_cojv5")]
+[node name="Gem4" parent="GemManager" instance=ExtResource("3_cojv5")]
 position = Vector2(419, 44)
 
-[node name="Gem5" parent="." instance=ExtResource("3_cojv5")]
+[node name="Gem5" parent="GemManager" instance=ExtResource("3_cojv5")]
 position = Vector2(976, 213)
 
-[node name="Gem6" parent="." instance=ExtResource("3_cojv5")]
+[node name="Gem6" parent="GemManager" instance=ExtResource("3_cojv5")]
 position = Vector2(575, 188)
 
-[node name="Gem7" parent="." instance=ExtResource("3_cojv5")]
+[node name="Gem7" parent="GemManager" instance=ExtResource("3_cojv5")]
 position = Vector2(190, 203)
 bounces_before_enabled = 2
 
-[node name="Gem8" parent="." instance=ExtResource("3_cojv5")]
+[node name="Gem8" parent="GemManager" instance=ExtResource("3_cojv5")]
 position = Vector2(467, 279)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(579, 319)
+
+[connection signal="score_calculated" from="GemManager" to="." method="_on_gem_manager_score_calculated"]

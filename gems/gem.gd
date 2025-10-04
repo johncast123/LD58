@@ -2,12 +2,15 @@ extends Area2D
 
 class_name Gem
 
+signal collected(gem: Gem)
+
 @export var bounces_before_enabled: int = 0
+@export var point: int = 10
 @onready var label = $Label
 
 func _ready():
-	_on_bounce_count_update(0)
-	EventBus.connect("update_bounce_count", _on_bounce_count_update)
+	#_on_bounce_count_update(0)
+	#EventBus.connect("update_bounce_count", _on_bounce_count_update)
 	label.text = str(bounces_before_enabled)
 
 func _on_bounce_count_update(_new_count: int):
@@ -21,3 +24,7 @@ func _disable_self():
 
 func _enable_self():
 	monitorable = true
+
+func set_collected():
+	collected.emit(self)
+	#queue_free()

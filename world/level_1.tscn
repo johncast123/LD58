@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=4 uid="uid://da2coqoappdoh"]
+[gd_scene load_steps=4 format=4 uid="uid://11bjgedkl7b1"]
 
 [ext_resource type="Texture2D" uid="uid://b508jx3dpytx8" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="1_lis17"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6f1wx"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lis17"]
 texture = ExtResource("1_lis17")
 texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
@@ -102,7 +102,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_go4ko"]
 tile_size = Vector2i(32, 32)
-sources/24 = SubResource("TileSetAtlasSource_6f1wx")
+sources/24 = SubResource("TileSetAtlasSource_lis17")
 
 [node name="Node2D" type="Node2D"]
 

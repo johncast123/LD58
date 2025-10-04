@@ -77,3 +77,6 @@ func update_line_points(global_point_array: PackedVector2Array):
 func _on_hook_queue_freed():
 	line_2d.clear_points()
 	current_hook_count -= 1
+	# only reset multiplayer if all current hook count == 0
+	if current_hook_count <= 0:
+		Global.reset_bounce_count()

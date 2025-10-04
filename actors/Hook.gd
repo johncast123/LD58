@@ -17,7 +17,7 @@ enum State { IDLE, EXTENDING, RETRACTING }
 
 var start_global: Vector2
 var dir: Vector2
-var carried_gem: Node = null
+var carried_gem: Gem = null
 var bounces: int = 0:
 	set(value):
 		bounces = value
@@ -47,7 +47,7 @@ func _add_fixed_point(new_global_point: Vector2):
 	fixed_points.append(new_global_point)
 
 func _on_Hook_area_entered(area: Area2D) -> void:
-	if state_machine.current_state is ExtendingState and carried_gem == null and area.is_in_group("gem"):
+	if state_machine.current_state is ExtendingState and carried_gem == null and area is Gem:
 		carried_gem = area
 		state_machine.change_state("retracting")
 		carried_gem.monitoring = false
@@ -81,9 +81,7 @@ func _check_wall_bounce() -> void:
 
 func _deliver_and_die() -> void:
 	if carried_gem:
-		var main := get_tree().get_first_node_in_group("main_root")
-		if main:
-			main.call_deferred("on_gem_collected", carried_gem)
+		carried_gem.set_collected()
 	hook_queue_freed.emit()
 	queue_free()
 
