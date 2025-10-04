@@ -10,7 +10,7 @@ script = ExtResource("1_dgm0w")
 hook_scene = ExtResource("2_cvoka")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.120209, 0.120209)
 texture = ExtResource("2_3pe62")
 
 [node name="Muzzle" type="Marker2D" parent="."]

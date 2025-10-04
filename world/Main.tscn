@@ -11,8 +11,7 @@ size = Vector2(61, 145)
 script = ExtResource("1_hh730")
 
 [node name="Cannon" parent="." instance=ExtResource("2_rqm65")]
-position = Vector2(586, 549)
-rotation = -1.5708
+position = Vector2(586, 561)
 
 [node name="Walls" type="Node2D" parent="."]
 

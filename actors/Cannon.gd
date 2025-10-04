@@ -26,9 +26,12 @@ func _aim_with_mouse(delta: float) -> void:
 	var desired_rad = (mouse_pos - global_position).angle()
 	var desired_deg = rad_to_deg(desired_rad)
 
+	# force 180° down into -180°
+	if desired_deg > 90.0:
+		desired_deg -= 360.0
 	# clamp to your allowed aiming window
 	desired_deg = clamp(desired_deg, min_angle_deg, max_angle_deg)
-
+	
 	if use_smooth_mouse_aim:
 		# smooth rotate toward desired angle (shortest path)
 		var current = deg_to_rad(rotation_degrees)
