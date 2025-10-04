@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cslwc2q54tbx6"]
+
+[ext_resource type="SpriteFrames" uid="uid://bqgcmwkg80wt2" path="res://gems/silver_coin.tres" id="1_j2j0h"]
+[ext_resource type="Script" uid="uid://c4nonbkhvdmmt" path="res://gems/placeholder_gem.gd" id="1_vtp4q"]
+
+[node name="PlaceholderGem" type="Node2D"]
+script = ExtResource("1_vtp4q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_j2j0h")
+animation = &"collected"
