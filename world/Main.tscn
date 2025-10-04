@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_hh730"]
 [ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="2_rqm65"]
 [ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="3_cojv5"]
-[ext_resource type="Script" uid="uid://1sttqo44gd1x" path="res://gems/gem_manager.gd" id="3_rqm65"]
+[ext_resource type="Script" path="res://gems/gem_manager.gd" id="3_rqm65"]
 [ext_resource type="Texture2D" uid="uid://b508jx3dpytx8" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="5_cojv5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l4nkr"]
