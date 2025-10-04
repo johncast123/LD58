@@ -18,7 +18,10 @@ enum State { IDLE, EXTENDING, RETRACTING }
 var start_global: Vector2
 var dir: Vector2
 var carried_gem: Node = null
-var bounces: int = 0
+var bounces: int = 0:
+	set(value):
+		bounces = value
+		EventBus.update_bounce_count.emit(value)
 var traveled: float = 0.0  # total distance traveled while extending
 
 var fixed_points: PackedVector2Array # points where Line2D should always pass through

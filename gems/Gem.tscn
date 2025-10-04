@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvroqysgpvf6u"]
+[gd_scene load_steps=3 format=3 uid="uid://cvroqysgpvf6u"]
+
+[ext_resource type="Script" uid="uid://7j8bbhuyx8sw" path="res://gems/gem.gd" id="1_hnrki"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_26ra8"]
 radius = 20.025
 
 [node name="Gem" type="Area2D" groups=["gem"]]
+script = ExtResource("1_hnrki")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_26ra8")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "X"

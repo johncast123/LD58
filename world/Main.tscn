@@ -61,6 +61,7 @@ position = Vector2(782, 170)
 
 [node name="Gem3" parent="." instance=ExtResource("3_cojv5")]
 position = Vector2(727, 373)
+bounces_before_enabled = 1
 
 [node name="Gem4" parent="." instance=ExtResource("3_cojv5")]
 position = Vector2(419, 44)
@@ -73,6 +74,7 @@ position = Vector2(575, 188)
 
 [node name="Gem7" parent="." instance=ExtResource("3_cojv5")]
 position = Vector2(190, 203)
+bounces_before_enabled = 2
 
 [node name="Gem8" parent="." instance=ExtResource("3_cojv5")]
 position = Vector2(467, 279)
