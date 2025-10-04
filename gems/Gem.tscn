@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cvroqysgpvf6u"]
 
 [ext_resource type="Script" uid="uid://7j8bbhuyx8sw" path="res://gems/gem.gd" id="1_hnrki"]
-[ext_resource type="SpriteFrames" uid="uid://e3pw0fwf4rpm" path="res://gems/regular_diamond.tres" id="2_pyn50"]
+[ext_resource type="SpriteFrames" uid="uid://cif057q2yongt" path="res://gems/gold_coin.tres" id="2_pyn50"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_26ra8"]
 radius = 7.28011
@@ -16,7 +16,7 @@ shape = SubResource("CircleShape2D_26ra8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_pyn50")
 animation = &"idle"
-frame_progress = 0.176711
+frame_progress = 0.722903
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 

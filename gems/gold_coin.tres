@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://cif057q2yongt"]
+
+[ext_resource type="Texture2D" uid="uid://c6mpj56mu8any" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Coin Effect/01.png" id="1_m8dtd"]
+[ext_resource type="Texture2D" uid="uid://kojceh6731ug" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Coin Effect/02.png" id="2_iro5y"]
+[ext_resource type="Texture2D" uid="uid://chia8c2306lvs" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Coin Effect/03.png" id="3_47hst"]
+[ext_resource type="Texture2D" uid="uid://cuu6ifhytitmw" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="4_m8dtd"]
+[ext_resource type="Texture2D" uid="uid://cwwnhopmm4f6t" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/02.png" id="5_iro5y"]
+[ext_resource type="Texture2D" uid="uid://bikvgp3pojqdm" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/03.png" id="6_47hst"]
+[ext_resource type="Texture2D" uid="uid://2pqbsiknokuq" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/04.png" id="7_d2ur7"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_m8dtd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iro5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_47hst")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"collected",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_m8dtd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_iro5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_47hst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d2ur7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]

@@ -1,0 +1,50 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://our22bseuk21"]
+
+[ext_resource type="Texture2D" uid="uid://1mmjewl0xhqr" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Diamond Effect/01.png" id="1_5cyk4"]
+[ext_resource type="Texture2D" uid="uid://bydxp1roxm3em" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Diamond Effect/02.png" id="2_uejya"]
+[ext_resource type="Texture2D" uid="uid://blbd2yghal570" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Diamond Effect/03.png" id="3_gd06f"]
+[ext_resource type="Texture2D" uid="uid://c8rrutxu6lo5j" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Diamond Effect/04.png" id="4_skx4n"]
+[ext_resource type="Texture2D" uid="uid://ba4toss6exusi" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Green Diamond/01.png" id="5_5cyk4"]
+[ext_resource type="Texture2D" uid="uid://xy1ncf1bdrft" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Green Diamond/02.png" id="6_uejya"]
+[ext_resource type="Texture2D" uid="uid://b42gd06mtb3tm" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Green Diamond/03.png" id="7_gd06f"]
+[ext_resource type="Texture2D" uid="uid://d3hfgpvbigdld" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Green Diamond/04.png" id="8_skx4n"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5cyk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_uejya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gd06f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_skx4n")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"collected",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_5cyk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uejya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gd06f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_skx4n")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
