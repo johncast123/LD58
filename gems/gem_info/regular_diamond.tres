@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GemInfo" load_steps=3 format=3 uid="uid://tdn31p45ulk7"]
+
+[ext_resource type="Script" uid="uid://b7kem3jx1r5na" path="res://gems/gem_info/gem_info.gd" id="1_76vtb"]
+[ext_resource type="SpriteFrames" uid="uid://e3pw0fwf4rpm" path="res://gems/regular_diamond.tres" id="2_76vtb"]
+
+[resource]
+script = ExtResource("1_76vtb")
+gem_name = "Diamond"
+sprite_frame = ExtResource("2_76vtb")
+point = 50

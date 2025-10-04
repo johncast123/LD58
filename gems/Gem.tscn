@@ -19,11 +19,3 @@ animation = &"idle"
 frame_progress = 0.722903
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[node name="Label" type="Label" parent="."]
-offset_left = -20.0
-offset_top = -3.0
-offset_right = 20.0
-offset_bottom = 20.0
-text = "X"
-horizontal_alignment = 1

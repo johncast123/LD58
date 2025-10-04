@@ -4,20 +4,17 @@ class_name Gem
 
 signal collected(gem: Gem)
 
-@export var bounces_before_enabled: int = 0
-@export var point: int = 10
-@onready var label = $Label
+enum GEM_TYPE{SILVER_COIN, GOLD_COIN, RUBY, EMERALD, DIAMOND}
+
+@export var gem_info: GemInfo = preload("res://gems/gem_info/silver_coin.tres")
+@onready var animated_sprite_2d = $AnimatedSprite2D
+
+var point: int = 0
 
 func _ready():
-	#_on_bounce_count_update(0)
-	#EventBus.connect("update_bounce_count", _on_bounce_count_update)
-	label.text = str(bounces_before_enabled)
-
-func _on_bounce_count_update(_new_count: int):
-	if Global.bounce_count >= bounces_before_enabled:
-		_enable_self()
-	else:
-		_disable_self()
+	point = gem_info.point
+	animated_sprite_2d.sprite_frames = gem_info.sprite_frame
+	animated_sprite_2d.play("idle")
 
 func _disable_self():
 	monitorable = false
@@ -27,4 +24,4 @@ func _enable_self():
 
 func set_collected():
 	collected.emit(self)
-	#queue_free()
+	animated_sprite_2d.play("collected")
