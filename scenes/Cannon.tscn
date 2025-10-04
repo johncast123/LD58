@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5avxrb5wnqor"]
+
+[ext_resource type="Script" uid="uid://ou42wonxwca6" path="res://scripts/Cannon.gd" id="1_dgm0w"]
+[ext_resource type="Texture2D" uid="uid://dnm2nltxbp62p" path="res://icon.svg" id="2_3pe62"]
+[ext_resource type="PackedScene" uid="uid://dqgketbcml54p" path="res://scenes/Hook.tscn" id="2_cvoka"]
+
+[node name="Cannon" type="Node2D"]
+scale = Vector2(4.72034, 2.90986)
+script = ExtResource("1_dgm0w")
+hook_scene = ExtResource("2_cvoka")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_3pe62")
+
+[node name="Muzzle" type="Marker2D" parent="."]
