@@ -154,13 +154,8 @@ move_range_px = 100
 direction = Vector2(0, -1)
 
 [node name="Skull2" parent="GemManager" instance=ExtResource("26_4i5mt")]
-position = Vector2(328, 48)
+position = Vector2(400, 56)
 gem_info = ExtResource("6_bkns3")
-is_moving = true
-
-[node name="MoveManager" parent="GemManager/Skull2" index="3"]
-move_range_px = 150
-move_speed = 100.0
 
 [node name="Scope1" parent="GemManager" instance=ExtResource("26_4i5mt")]
 position = Vector2(304, 80)
@@ -194,13 +189,29 @@ gem_info = ExtResource("7_q2tud")
 position = Vector2(464, 216)
 gem_info = ExtResource("7_q2tud")
 
+[node name="Gold5" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(368, 216)
+gem_info = ExtResource("7_q2tud")
+
 [node name="Emerald1" parent="GemManager" instance=ExtResource("26_4i5mt")]
 position = Vector2(392, 248)
+gem_info = ExtResource("8_bkns3")
+
+[node name="Emerald4" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(136, 200)
 gem_info = ExtResource("8_bkns3")
 
 [node name="Emerald2" parent="GemManager" instance=ExtResource("26_4i5mt")]
 position = Vector2(440, 248)
 gem_info = ExtResource("8_bkns3")
+
+[node name="Emerald3" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(128, 80)
+gem_info = ExtResource("8_bkns3")
+is_moving = true
+
+[node name="MoveManager" parent="GemManager/Emerald3" index="3"]
+move_range_px = 80
 
 [node name="Ruby1" parent="GemManager" instance=ExtResource("26_4i5mt")]
 position = Vector2(104, 200)
@@ -216,7 +227,7 @@ gem_info = ExtResource("28_c23s7")
 is_moving = true
 
 [node name="Diamond3" parent="GemManager" instance=ExtResource("26_4i5mt")]
-position = Vector2(384, 48)
+position = Vector2(368, 56)
 gem_info = ExtResource("28_c23s7")
 
 [node name="Foreground" type="TileMapLayer" parent="."]
@@ -277,4 +288,4 @@ tile_set = ExtResource("1_td8px")
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]
 
 [editable path="GemManager/Skull1"]
-[editable path="GemManager/Skull2"]
+[editable path="GemManager/Emerald3"]
