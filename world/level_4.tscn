@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://b5bhj2u10pqsv"]
+[gd_scene load_steps=42 format=4 uid="uid://b5bhj2u10pqsv"]
 
 [ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/level_HUD.tscn" id="1_8wntc"]
 [ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_owy45"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bhx53r62le711" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="2_0q0gw"]
 [ext_resource type="PackedScene" uid="uid://bmt2cbsa2a46" path="res://world/level_5.tscn" id="2_i5dfj"]
 [ext_resource type="Texture2D" uid="uid://bxs4n0ti2w01g" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Spikes/Spikes.png" id="3_cl1rl"]
+[ext_resource type="Resource" uid="uid://btpkvxn517y71" path="res://gems/gem_info/skull.tres" id="6_bkns3"]
 [ext_resource type="Resource" uid="uid://lolpuixwjb8u" path="res://gems/gem_info/gold_coin.tres" id="7_q2tud"]
 [ext_resource type="Resource" uid="uid://dvawghkvy4xuh" path="res://gems/gem_info/regular_emerald.tres" id="8_bkns3"]
 [ext_resource type="PackedScene" uid="uid://cxd8utj06nd2h" path="res://world/gem_manager.tscn" id="8_owy45"]
@@ -143,6 +144,24 @@ visible = false
 
 [node name="GemManager" parent="." instance=ExtResource("8_owy45")]
 
+[node name="Skull1" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(208, 160)
+gem_info = ExtResource("6_bkns3")
+is_moving = true
+
+[node name="MoveManager" parent="GemManager/Skull1" index="3"]
+move_range_px = 100
+direction = Vector2(0, -1)
+
+[node name="Skull2" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(328, 48)
+gem_info = ExtResource("6_bkns3")
+is_moving = true
+
+[node name="MoveManager" parent="GemManager/Skull2" index="3"]
+move_range_px = 150
+move_speed = 100.0
+
 [node name="Scope1" parent="GemManager" instance=ExtResource("26_4i5mt")]
 position = Vector2(304, 80)
 gem_info = ExtResource("27_r85x8")
@@ -157,6 +176,12 @@ position = Vector2(392, 184)
 [node name="Silver2" parent="GemManager" instance=ExtResource("26_4i5mt")]
 position = Vector2(440, 184)
 
+[node name="Silver3" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(336, 112)
+
+[node name="Silver4" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(336, 136)
+
 [node name="Gold1" parent="GemManager" instance=ExtResource("26_4i5mt")]
 position = Vector2(80, 200)
 gem_info = ExtResource("7_q2tud")
@@ -165,8 +190,16 @@ gem_info = ExtResource("7_q2tud")
 position = Vector2(104, 176)
 gem_info = ExtResource("7_q2tud")
 
+[node name="Gold4" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(464, 216)
+gem_info = ExtResource("7_q2tud")
+
 [node name="Emerald1" parent="GemManager" instance=ExtResource("26_4i5mt")]
 position = Vector2(392, 248)
+gem_info = ExtResource("8_bkns3")
+
+[node name="Emerald2" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(440, 248)
 gem_info = ExtResource("8_bkns3")
 
 [node name="Ruby1" parent="GemManager" instance=ExtResource("26_4i5mt")]
@@ -181,6 +214,10 @@ gem_info = ExtResource("28_c23s7")
 position = Vector2(256, 264)
 gem_info = ExtResource("28_c23s7")
 is_moving = true
+
+[node name="Diamond3" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(384, 48)
+gem_info = ExtResource("28_c23s7")
 
 [node name="Foreground" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_8jmv6")
@@ -238,3 +275,6 @@ tile_set = ExtResource("1_td8px")
 [connection signal="score_calculated" from="GemManager" to="." method="_on_gem_manager_score_calculated"]
 [connection signal="score_calculated" from="GemManager" to="LevelHUD" method="_on_gem_manager_score_calculated"]
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]
+
+[editable path="GemManager/Skull1"]
+[editable path="GemManager/Skull2"]
