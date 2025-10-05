@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://f1hja0tppynh"]
+[gd_scene load_steps=12 format=4 uid="uid://f1hja0tppynh"]
 
 [ext_resource type="TileSet" uid="uid://dw66ve3yqcms5" path="res://world/pirate_ship_interior_tileset.tres" id="1_gkqmi"]
 [ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_lmbsv"]
@@ -6,8 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="3_7jial"]
 [ext_resource type="PackedScene" uid="uid://cxd8utj06nd2h" path="res://world/gem_manager.tscn" id="4_m8xer"]
 [ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="5_m8xer"]
+[ext_resource type="Resource" uid="uid://bpq85jnyrhdc2" path="res://gems/gem_info/scope.tres" id="6_ju8ad"]
+[ext_resource type="Resource" uid="uid://bgj8b8kv2jglw" path="res://gems/gem_info/multiplier_star.tres" id="6_qu6iq"]
 [ext_resource type="Resource" uid="uid://bjxfrsxpn3sa0" path="res://gems/gem_info/regular_ruby.tres" id="6_wfoj0"]
 [ext_resource type="Resource" uid="uid://tdn31p45ulk7" path="res://gems/gem_info/regular_diamond.tres" id="6_yrxgs"]
+[ext_resource type="Resource" uid="uid://lolpuixwjb8u" path="res://gems/gem_info/gold_coin.tres" id="7_egsys"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lmbsv")
@@ -23,6 +26,40 @@ tile_map_data = PackedByteArray("AAAAAAAAGAACAAIAAAAAAAEAGAACAAIAAAAAAAIAGAAHAAE
 tile_set = ExtResource("1_gkqmi")
 
 [node name="GemManager" parent="." instance=ExtResource("4_m8xer")]
+
+[node name="multiplier1" parent="GemManager" instance=ExtResource("5_m8xer")]
+position = Vector2(256, 136)
+gem_info = ExtResource("6_qu6iq")
+
+[node name="scope1" parent="GemManager" instance=ExtResource("5_m8xer")]
+position = Vector2(64, 144)
+gem_info = ExtResource("6_ju8ad")
+is_moving = true
+
+[node name="MoveManager" parent="GemManager/scope1" index="3"]
+direction = Vector2(0, -1)
+
+[node name="scope2" parent="GemManager" instance=ExtResource("5_m8xer")]
+position = Vector2(448, 144)
+gem_info = ExtResource("6_ju8ad")
+is_moving = true
+
+[node name="MoveManager" parent="GemManager/scope2" index="3"]
+direction = Vector2(0, -1)
+
+[node name="silver1" parent="GemManager" instance=ExtResource("5_m8xer")]
+position = Vector2(320, 80)
+
+[node name="silver2" parent="GemManager" instance=ExtResource("5_m8xer")]
+position = Vector2(192, 80)
+
+[node name="gold1" parent="GemManager" instance=ExtResource("5_m8xer")]
+position = Vector2(192, 56)
+gem_info = ExtResource("7_egsys")
+
+[node name="gold2" parent="GemManager" instance=ExtResource("5_m8xer")]
+position = Vector2(320, 56)
+gem_info = ExtResource("7_egsys")
 
 [node name="ruby1" parent="GemManager" instance=ExtResource("5_m8xer")]
 position = Vector2(304, 248)
@@ -44,3 +81,6 @@ gem_info = ExtResource("6_yrxgs")
 position = Vector2(256, 264)
 
 [connection signal="score_calculated" from="GemManager" to="." method="_on_gem_manager_score_calculated"]
+
+[editable path="GemManager/scope1"]
+[editable path="GemManager/scope2"]

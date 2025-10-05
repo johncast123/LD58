@@ -28,5 +28,5 @@ func decrease_base_multiplier(amount: int = 1):
 func increase_max_hook_count(amount: int = 2, time_sec: int = 10):
 	Global.increase_max_hook_count(amount, time_sec)
 
-func enable_scope(time_sec: int = 5):
+func enable_scope(time_sec: int = 10):
 	Global.enable_scope(time_sec)
