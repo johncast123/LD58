@@ -2,7 +2,7 @@ extends Node2D
 
 class_name GemManager
 
-signal score_calculated
+signal score_calculated(gem_score: int)
 
 var gem_folder: Array[Gem] = []
 
@@ -18,9 +18,10 @@ func _ready():
 func _on_gem_collected(gem: Gem):
 	if gem.gem_info.extra_function_index >= 0: # if there is some extra function to execute
 		gem.gem_info.execute_extra_function(gem.gem_info.extra_function_index)
-	Global.update_total_score(calculate_score(gem.point, Global.current_multiplier))
+	var gem_score := calculate_score(gem.point, Global.current_multiplier)
+	Global.update_total_score(gem_score)
 	gem.queue_free()
-	score_calculated.emit()
+	score_calculated.emit(gem_score)
 
-func calculate_score(raw_points: int, multiplier: int):
+func calculate_score(raw_points: int, multiplier: int) -> int:
 	return raw_points * multiplier

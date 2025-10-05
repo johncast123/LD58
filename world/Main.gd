@@ -3,6 +3,8 @@ extends Node2D
 
 class_name Level
 
+const SCORE_POPUP = preload("res://UI/score_popup.tscn")
+
 @export var level_name: String
 @export var next_level: PackedScene
 @export var total_time_sec: int = 20
@@ -10,6 +12,7 @@ class_name Level
 
 @onready var level_hud = $LevelHUD
 @onready var countdown_timer = $CountdownTimer
+@onready var cannon = $Cannon
 
 var time_left_sec: int = total_time_sec
 
@@ -34,7 +37,11 @@ func _update_hud(element_name: String) -> void:
 			level_hud.update_multiplier(Global.current_multiplier)
 			level_hud.update_timeleft(time_left_sec)
 
-func _on_gem_manager_score_calculated():
+func _on_gem_manager_score_calculated(gem_score: int):
+	var a = SCORE_POPUP.instantiate() as ScorePopup
+	add_child(a)
+	a.global_position = cannon.global_position + Vector2.LEFT * 25
+	a.set_popup(gem_score)
 	_update_hud("score")
 
 func _update_current_multiplier():
