@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://b8s8csuqfv2ts"]
+
+[ext_resource type="Texture2D" uid="uid://cmymg3spx5awx" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/01.png" id="1_lgun5"]
+[ext_resource type="Texture2D" uid="uid://cdtmxnfxsw2q5" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/02.png" id="2_f5vje"]
+[ext_resource type="Texture2D" uid="uid://ca8utcobhhnfc" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/03.png" id="3_d5amu"]
+[ext_resource type="Texture2D" uid="uid://bf6o7e3f0qshw" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/04.png" id="4_f570y"]
+[ext_resource type="Texture2D" uid="uid://tyxeg6oub462" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/05.png" id="5_xybcr"]
+[ext_resource type="Texture2D" uid="uid://cdk72gxo25xkx" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/06.png" id="6_fprti"]
+[ext_resource type="Texture2D" uid="uid://b8dq7m651x5qi" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/07.png" id="7_wtv7r"]
+[ext_resource type="Texture2D" uid="uid://c3yxudf7ippux" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/08.png" id="8_j2x7w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n5kkr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lgun5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_f5vje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d5amu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f570y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xybcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fprti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wtv7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_j2x7w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="BigChain" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n5kkr")
+frame_progress = 0.632897

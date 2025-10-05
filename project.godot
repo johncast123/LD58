@@ -23,7 +23,7 @@ EventBus="*res://singletons/event_bus.gd"
 [display]
 
 window/size/viewport_width=512
-window/size/viewport_height=286
+window/size/viewport_height=288
 window/stretch/mode="canvas_items"
 
 [global_group]

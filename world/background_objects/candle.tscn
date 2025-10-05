@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvc5i2620paop"]
+
+[ext_resource type="Texture2D" uid="uid://bsx5e1ldjr1wf" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Candle/Candle/01.png" id="1_4rtxw"]
+[ext_resource type="Texture2D" uid="uid://t30eqttwjtih" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Candle/Candle/02.png" id="2_0sx4i"]
+[ext_resource type="Texture2D" uid="uid://dv13iwct7qv8" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Candle/Candle/03.png" id="3_sola1"]
+[ext_resource type="Texture2D" uid="uid://b1vmu3dxniumm" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Candle/Candle/04.png" id="4_hv6vk"]
+[ext_resource type="Texture2D" uid="uid://bwprvfjp1gf2l" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Candle/Candle/05.png" id="5_fcm66"]
+[ext_resource type="Texture2D" uid="uid://8vw5b8dn0g0g" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Candle/Candle/06.png" id="6_wreqt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xb7cj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4rtxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0sx4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sola1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hv6vk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fcm66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wreqt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Candle" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xb7cj")
+frame_progress = 0.0361375

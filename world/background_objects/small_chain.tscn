@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://byqy17g31njmx"]
+
+[ext_resource type="Texture2D" uid="uid://crkwgmsr2x52h" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Small/01.png" id="1_upkhn"]
+[ext_resource type="Texture2D" uid="uid://0qoimihj547e" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Small/02.png" id="2_awqrw"]
+[ext_resource type="Texture2D" uid="uid://vfs0org8ax6i" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Small/03.png" id="3_h6vf5"]
+[ext_resource type="Texture2D" uid="uid://btf7heqprq0ve" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Small/04.png" id="4_vx31i"]
+[ext_resource type="Texture2D" uid="uid://k40w6faes6uc" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Small/05.png" id="5_du43h"]
+[ext_resource type="Texture2D" uid="uid://cc34meo0nqa41" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Small/06.png" id="6_wdmcs"]
+[ext_resource type="Texture2D" uid="uid://d04e5gga78ny" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Small/07.png" id="7_lpwsn"]
+[ext_resource type="Texture2D" uid="uid://bmccqgp1iqr2o" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Small/08.png" id="8_t8gvy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iwqb6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_upkhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_awqrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h6vf5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vx31i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_du43h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wdmcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lpwsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t8gvy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="SmallChain" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iwqb6")
+frame = 4
+frame_progress = 0.980801

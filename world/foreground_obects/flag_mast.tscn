@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqwm378dcgail"]
+
+[ext_resource type="Texture2D" uid="uid://yfm4djsicepl" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Flag/Platform.png" id="1_n0pov"]
+
+[node name="flagmast" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_n0pov")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(15, -8, 10, 8, -10, 8, -15, -8)
