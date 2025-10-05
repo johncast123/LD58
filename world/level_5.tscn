@@ -1,26 +1,82 @@
-[gd_scene load_steps=5 format=4 uid="uid://bmt2cbsa2a46"]
+[gd_scene load_steps=15 format=4 uid="uid://bmt2cbsa2a46"]
 
+[ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_8j5sd"]
 [ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/level_HUD.tscn" id="1_c7ncy"]
 [ext_resource type="TileSet" uid="uid://cprmnu1l4rubt" path="res://world/exterior_tilemap.tres" id="1_fdx5w"]
+[ext_resource type="PackedScene" uid="uid://bloorqt752mpr" path="res://world/level_6.tscn" id="2_aqbh6"]
+[ext_resource type="Texture2D" uid="uid://bhx53r62le711" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="2_yg4t6"]
 [ext_resource type="PackedScene" uid="uid://cxd8utj06nd2h" path="res://world/gem_manager.tscn" id="3_0syn7"]
+[ext_resource type="PackedScene" uid="uid://nvj0bko6hg7h" path="res://world/foreground_obects/palm_tree.tscn" id="3_cihxq"]
 [ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="4_0syn7"]
+[ext_resource type="PackedScene" uid="uid://ch08dn88t20xl" path="res://world/foreground_obects/barrel.tscn" id="5_b5mtn"]
+[ext_resource type="PackedScene" uid="uid://bpbsxdf2ydkt7" path="res://world/foreground_obects/box.tscn" id="6_aqbh6"]
+[ext_resource type="PackedScene" uid="uid://bt2wiosukdqan" path="res://world/countdown_timer.tscn" id="8_ahn4k"]
+[ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="10_ogn1y"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cihxq"]
+texture = ExtResource("2_yg4t6")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_jpnu6"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_cihxq")
+
+[node name="Node2D2" type="Node2D"]
+script = ExtResource("1_8j5sd")
+next_level = ExtResource("2_aqbh6")
+total_time_sec = 999
 
 [node name="LevelHUD" parent="." instance=ExtResource("1_c7ncy")]
 visible = false
 
 [node name="Background" type="TileMapLayer" parent="."]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAEAAQACAAEAAAAAAAIAAQACAAEAAAAAAAMAAQACAAEAAAABAAgAAQABAAAAAAACAAgAAQABAAAAAAAFAAgAAQABAAAAAAAGAAgAAQACAAAAAAAJAAAAAQABAAIAAAAJAAgAAQAAAAAAAAAKAAAAAQABAAIAAAAKAAgAAQABAAAAAAALAAgAAQABAAAAAAAMAAgAAQABAAAAAAANAAgAAQABAAAAAAAOAAgAAQABAAAAAAAPAAIAAQAAAAEAAAAPAAMAAQAAAAEAAAAPAAQAAQAAAAEAAAAPAAYAAQAAAAEAAAAPAAcAAQAAAAEAAAAPAAgAAQAHAAEAAAAPAAUAAQAAAAEAAAAAAAUAAQACAAEAAAAAAAYAAQACAAEAAAAAAAcAAQACAAEAAAAAAAgAAQAGAAEAAAACAAEAAQAAAAIAAAADAAEAAQABAAIAAAAEAAEAAQABAAIAAAAFAAEAAQABAAIAAAAGAAEAAQABAAIAAAAHAAEAAQABAAIAAAAIAAEAAQACAAIAAAAAAAAAAQAGAAAAAAABAAAAAQABAAIAAAACAAAAAQAHAAAAAAADAAAAAQABAAEAAAAEAAAAAQABAAEAAAAFAAAAAQABAAEAAAAGAAAAAQABAAEAAAAHAAAAAQABAAEAAAAIAAAAAQAGAAAAAAALAAEAAQAAAAIAAAALAAAAAQAHAAAAAAAMAAAAAQABAAEAAAANAAAAAQABAAEAAAAOAAAAAQABAAEAAAAMAAEAAQABAAIAAAANAAEAAQABAAIAAAAOAAEAAQABAAIAAAAPAAEAAQAHAAAAAAAPAAAAAQABAAEAAAABAAQAAQAEAAEAAGAAAAQAAQAKAAEAAGACAAQAAQAEAAEAAGADAAQAAQAEAAIAAGAEAAcAAQACAAAAAAAHAAMAAQACAAQAAAAFAAMAAQAAAAQAAAAGAAMAAQABAAQAAAADAAcAAQAAAAAAAAADAAgAAQAHAAEAAAAEAAgAAQAGAAEAAAA=")
+[node name="MainLevel" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAEAAQACAAEAAAAAAAIAAQACAAEAAAAAAAMAAQACAAEAAAABAAgAAQABAAAAAAACAAgAAQABAAAAAAAFAAgAAQABAAAAAAAGAAgAAQABAAAAAAAJAAAAAQABAAIAAAAJAAgAAQABAAAAAAAKAAAAAQABAAIAAAAKAAgAAQABAAAAAAALAAgAAQABAAAAAAAMAAgAAQABAAAAAAANAAgAAQABAAAAAAAOAAgAAQABAAAAAAAPAAIAAQAAAAEAAAAPAAMAAQAAAAEAAAAPAAQAAQAAAAEAAAAPAAYAAQAAAAEAAAAPAAcAAQAAAAEAAAAPAAgAAQAHAAEAAAAPAAUAAQAAAAEAAAAAAAUAAQACAAEAAAAAAAYAAQACAAEAAAAAAAcAAQACAAEAAAAAAAgAAQAGAAEAAAACAAEAAQAAAAIAAAADAAEAAQABAAIAAAAEAAEAAQABAAIAAAAFAAEAAQABAAIAAAAGAAEAAQABAAIAAAAHAAEAAQABAAIAAAAIAAEAAQACAAIAAAAAAAAAAQAGAAAAAAABAAAAAQABAAIAAAACAAAAAQAHAAAAAAADAAAAAQABAAEAAAAEAAAAAQABAAEAAAAFAAAAAQABAAEAAAAGAAAAAQABAAEAAAAHAAAAAQABAAEAAAAIAAAAAQAGAAAAAAALAAEAAQAAAAIAAAALAAAAAQAHAAAAAAAMAAAAAQABAAEAAAANAAAAAQABAAEAAAAOAAAAAQABAAEAAAAMAAEAAQABAAIAAAANAAEAAQABAAIAAAAOAAEAAQABAAIAAAAPAAEAAQAHAAAAAAAPAAAAAQABAAEAAAABAAQAAQAEAAEAAGAAAAQAAQAKAAEAAGACAAQAAQAEAAEAAGADAAQAAQAEAAIAAGAEAAcAAQACAAAAAAAHAAMAAQACAAQAAAAGAAMAAQAAAAQAAAADAAcAAQAAAAAAAAADAAgAAQAHAAEAAAAEAAgAAQAGAAEAAAAHAAgAAQACAAAAAAAIAAgAAQAAAAAAAAA=")
 tile_set = ExtResource("1_fdx5w")
 
 [node name="Foreground" type="TileMapLayer" parent="."]
 
+[node name="PalmTree" parent="Foreground" instance=ExtResource("3_cihxq")]
+position = Vector2(367, 208)
+
+[node name="PalmTree2" parent="Foreground" instance=ExtResource("3_cihxq")]
+position = Vector2(432, 112)
+
+[node name="PalmTree3" parent="Foreground" instance=ExtResource("3_cihxq")]
+position = Vector2(431, 240)
+
+[node name="PalmTree4" parent="Foreground" instance=ExtResource("3_cihxq")]
+position = Vector2(303, 176)
+
+[node name="Barrel" parent="Foreground" instance=ExtResource("5_b5mtn")]
+position = Vector2(65, 243)
+
+[node name="Box" parent="Foreground" instance=ExtResource("6_aqbh6")]
+position = Vector2(54, 120)
+
+[node name="Tree Roots" type="TileMapLayer" parent="."]
+modulate = Color(0.574998, 0.574998, 0.574998, 1)
+tile_map_data = PackedByteArray("AAADAAYAAQABAAIAAAAMAAcAAQACAAIAAAALAAgAAQAAAAEAAAALAAcAAQAAAAAAAAAPAAQAAQACAAAAAAAOAAQAAQAAAAIAAAANAAQAAQABAAAAAAANAAgAAQAAAAEAAAAJAAgAAQAAAAEAAAAJAAcAAQAAAAAAAAAJAAYAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_jpnu6")
+
 [node name="GemManager" parent="." instance=ExtResource("3_0syn7")]
+
+[node name="Gem" parent="GemManager" instance=ExtResource("10_ogn1y")]
 
 [node name="Cannon" parent="." instance=ExtResource("4_0syn7")]
 position = Vector2(256, 264)
 
-[connection signal="score_calculated" from="GemManager" to="LevelHUD" method="_on_gem_manager_score_calculated"]
+[node name="CountdownTimer" parent="." instance=ExtResource("8_ahn4k")]
+
+[connection signal="score_calculated" from="GemManager" to="." method="_on_gem_manager_score_calculated"]
+[connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]
