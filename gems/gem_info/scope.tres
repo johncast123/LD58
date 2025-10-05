@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GemInfo" load_steps=3 format=3 uid="uid://bpq85jnyrhdc2"]
+
+[ext_resource type="Script" uid="uid://b7kem3jx1r5na" path="res://gems/gem_info/gem_info.gd" id="1_g0qfq"]
+[ext_resource type="SpriteFrames" uid="uid://ddk2md7my42y8" path="res://gems/scope.tres" id="2_g0qfq"]
+
+[resource]
+script = ExtResource("1_g0qfq")
+gem_name = "Scope"
+sprite_frame = ExtResource("2_g0qfq")
+point = 0
+extra_function_index = 3
+metadata/_custom_type_script = "uid://b7kem3jx1r5na"

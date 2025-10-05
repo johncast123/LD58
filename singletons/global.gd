@@ -8,8 +8,10 @@ var base_multiplier := DEFAULT_MULTIPLIER
 var current_multiplier: int = base_multiplier
 
 var max_hook_count: int = 1
-
 var powerup_timer: Timer = Timer.new()
+
+var scope_enabled: bool = false
+var scope_timer: Timer = Timer.new()
 
 func _ready():
 	EventBus.connect("update_bounce_count", _on_update_bounce_count)
@@ -17,12 +19,19 @@ func _ready():
 	total_score = 0
 	
 	initialize_powerup_timer(10)
+	initialize_scope_timer(5)
 	
 func initialize_powerup_timer(time_sec: int):
 	powerup_timer.one_shot = true
 	powerup_timer.wait_time = time_sec
 	powerup_timer.connect("timeout", _on_powerup_timer_timeout)
 	get_tree().current_scene.add_child(powerup_timer)
+
+func initialize_scope_timer(time_sec: int):
+	scope_timer.one_shot = true
+	scope_timer.wait_time = time_sec
+	scope_timer.connect("timeout", _on_scope_timer_timeout)
+	get_tree().current_scene.add_child(scope_timer)
 	
 func _on_update_bounce_count(new_count: int):
 	bounce_count = new_count
@@ -48,3 +57,10 @@ func increase_max_hook_count(delta: int = 1, time_sec: int = 10):
 func _on_powerup_timer_timeout():
 	#print("timeout!")
 	reset_max_hook_count()
+
+func enable_scope(time_sec: int = 5):
+	scope_enabled = true
+	scope_timer.start(time_sec)
+
+func _on_scope_timer_timeout():
+	scope_enabled = false

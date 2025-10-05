@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5avxrb5wnqor"]
+[gd_scene load_steps=5 format=3 uid="uid://c5avxrb5wnqor"]
 
 [ext_resource type="Script" uid="uid://ou42wonxwca6" path="res://actors/Cannon.gd" id="1_dgm0w"]
 [ext_resource type="Texture2D" uid="uid://dnm2nltxbp62p" path="res://icon.svg" id="2_3pe62"]
 [ext_resource type="PackedScene" uid="uid://dqgketbcml54p" path="res://actors/Hook.tscn" id="2_cvoka"]
+[ext_resource type="Texture2D" uid="uid://r7dmndf0ew63" path="res://asset/dotted.png" id="4_kg75n"]
 
 [node name="Cannon" type="Node2D"]
 script = ExtResource("1_dgm0w")
@@ -15,5 +16,8 @@ texture = ExtResource("2_3pe62")
 [node name="Muzzle" type="Marker2D" parent="."]
 
 [node name="PreviewLine" type="Line2D" parent="."]
+texture_repeat = 2
 width = 2.0
 default_color = Color(1, 0.592157, 1, 1)
+texture = ExtResource("4_kg75n")
+texture_mode = 1

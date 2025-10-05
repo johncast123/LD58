@@ -15,17 +15,17 @@ var active_hooks: Array[Hook] = []
 @onready var muzzle: Node2D = $Muzzle
 
 func _physics_process(delta: float) -> void:
+	if Global.scope_enabled:
+		$PreviewLine.visible = true
+	else: $PreviewLine.visible = false
+	
 	max_hook_count = Global.max_hook_count
 	_aim_with_mouse(delta)
 
 	# Fire with Space or Left Click
 	if _if_can_fire() and Input.is_action_just_pressed("fire"):
 		_fire_hook()
-	
-	# preview line stuff
-	var mouse_dir = (get_global_mouse_position() - global_position).normalized()
-	var preview_points = get_hook_preview(global_position, mouse_dir, 500, 8)
-	$PreviewLine.points = preview_points
+
 
 func _aim_with_mouse(delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
@@ -48,6 +48,11 @@ func _aim_with_mouse(delta: float) -> void:
 	else:
 		# snap instantly
 		rotation_degrees = desired_deg
+	
+	# Preview line stuff
+	var preview_dir = Vector2.RIGHT.rotated(deg_to_rad(desired_deg))
+	var preview_points = get_hook_preview(global_position, preview_dir, 500, 8)
+	$PreviewLine.points = preview_points
 
 func _fire_hook() -> void:
 	if not hook_scene:
@@ -96,6 +101,7 @@ func get_hook_preview(start_pos: Vector2, direction: Vector2, max_length: float,
 	var traveled = 0.0
 	var bounces = 0
 	
+	# Loop to ensure multiple bounces in one frame are all calculated
 	while traveled < max_length and bounces < max_bounces:
 		# Determine ray distance for this step
 		var step_distance = 20.0  # small step for preview
@@ -111,6 +117,7 @@ func get_hook_preview(start_pos: Vector2, direction: Vector2, max_length: float,
 			
 			dir = dir.bounce(normal).normalized()
 			pos = collision_point + dir * 0.1  # nudge off the wall
+			# calculate the distance traveled from the previous point to the collision point (pos)
 			traveled += pos.distance_to(points[points.size()-2])
 			bounces += 1
 		else:
