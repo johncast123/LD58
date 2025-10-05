@@ -1,11 +1,39 @@
-[gd_scene load_steps=10 format=4 uid="uid://b5bhj2u10pqsv"]
+[gd_scene load_steps=41 format=4 uid="uid://b5bhj2u10pqsv"]
 
+[ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/level_HUD.tscn" id="1_8wntc"]
+[ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_owy45"]
 [ext_resource type="TileSet" uid="uid://cprmnu1l4rubt" path="res://world/exterior_tilemap.tres" id="1_td8px"]
 [ext_resource type="Texture2D" uid="uid://bhx53r62le711" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="2_0q0gw"]
+[ext_resource type="PackedScene" uid="uid://bmt2cbsa2a46" path="res://world/level_5.tscn" id="2_i5dfj"]
 [ext_resource type="Texture2D" uid="uid://bxs4n0ti2w01g" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Spikes/Spikes.png" id="3_cl1rl"]
-[ext_resource type="PackedScene" uid="uid://nvj0bko6hg7h" path="res://world/foreground_obects/palm_tree.tscn" id="3_fbu15"]
-[ext_resource type="PackedScene" uid="uid://choiwpst5i61a" path="res://world/foreground_obects/flag.tscn" id="4_8jmv6"]
-[ext_resource type="PackedScene" uid="uid://bqwm378dcgail" path="res://world/foreground_obects/flag_mast.tscn" id="6_ikmku"]
+[ext_resource type="Resource" uid="uid://lolpuixwjb8u" path="res://gems/gem_info/gold_coin.tres" id="7_q2tud"]
+[ext_resource type="Resource" uid="uid://dvawghkvy4xuh" path="res://gems/gem_info/regular_emerald.tres" id="8_bkns3"]
+[ext_resource type="PackedScene" uid="uid://cxd8utj06nd2h" path="res://world/gem_manager.tscn" id="8_owy45"]
+[ext_resource type="Resource" uid="uid://bjxfrsxpn3sa0" path="res://gems/gem_info/regular_ruby.tres" id="8_yd8k0"]
+[ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="9_1e3lg"]
+[ext_resource type="PackedScene" uid="uid://bjcqegknhn2in" path="res://world/foreground_obects/ship.tscn" id="9_uxsqw"]
+[ext_resource type="Texture2D" uid="uid://b5taula0vuyu3" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/1.png" id="10_jkyup"]
+[ext_resource type="Texture2D" uid="uid://cxnpbd4jub8ym" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/2.png" id="11_mkt25"]
+[ext_resource type="Texture2D" uid="uid://xhgplh2qga44" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/3.png" id="12_84cyb"]
+[ext_resource type="Texture2D" uid="uid://buqh0q3xoopke" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/4.png" id="13_1odk4"]
+[ext_resource type="Texture2D" uid="uid://cc04hubcg73my" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Water/Bottom/1.png" id="14_fwb0o"]
+[ext_resource type="Texture2D" uid="uid://037uxb1atacx" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Reflexes 1/1.png" id="15_4i5mt"]
+[ext_resource type="Texture2D" uid="uid://biv12rikbdwi" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Reflexes 1/2.png" id="16_r85x8"]
+[ext_resource type="Texture2D" uid="uid://br0x0arugyqnr" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Reflexes 1/3.png" id="17_c23s7"]
+[ext_resource type="Texture2D" uid="uid://lv468iq3p0bw" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Reflexes 1/4.png" id="18_i5dfj"]
+[ext_resource type="Texture2D" uid="uid://ck2qw4viljvm4" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Reflexes 1/5.png" id="19_q2tud"]
+[ext_resource type="Texture2D" uid="uid://5th8xeqag8jj" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Reflexes 1/6.png" id="20_yd8k0"]
+[ext_resource type="Texture2D" uid="uid://bssjt0krnhage" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Reflexes 2/1.png" id="21_bkns3"]
+[ext_resource type="Texture2D" uid="uid://bd25u4etf85w3" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Reflexes 2/2.png" id="22_xwpv2"]
+[ext_resource type="Texture2D" uid="uid://d4iyllf48bifr" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Reflexes 2/3.png" id="23_6edii"]
+[ext_resource type="Texture2D" uid="uid://bhn668rycjcan" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Reflexes 2/4.png" id="24_ojh0i"]
+[ext_resource type="Texture2D" uid="uid://b4sjgd7ebfpbi" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Reflexes 2/5.png" id="25_wi2oq"]
+[ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="26_4i5mt"]
+[ext_resource type="Texture2D" uid="uid://ckj77eiusyyhf" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Reflexes 2/6.png" id="26_4pl3b"]
+[ext_resource type="Resource" uid="uid://bpq85jnyrhdc2" path="res://gems/gem_info/scope.tres" id="27_r85x8"]
+[ext_resource type="Resource" uid="uid://tdn31p45ulk7" path="res://gems/gem_info/regular_diamond.tres" id="28_c23s7"]
+[ext_resource type="PackedScene" uid="uid://dm0njofpklcy8" path="res://world/foreground_obects/totem.tscn" id="29_q2tud"]
+[ext_resource type="PackedScene" uid="uid://bt2wiosukdqan" path="res://world/countdown_timer.tscn" id="31_c23s7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cl1rl"]
 texture = ExtResource("2_0q0gw")
@@ -31,21 +59,182 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_cl1rl")
 sources/2 = SubResource("TileSetAtlasSource_lamin")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_72klw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_jkyup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mkt25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_84cyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1odk4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hla8x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_4i5mt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_r85x8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_c23s7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_i5dfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_q2tud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_yd8k0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fk653"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_bkns3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_xwpv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_6edii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ojh0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_wi2oq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_4pl3b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_owy45")
+next_level = ExtResource("2_i5dfj")
+total_time_sec = 999
+
+[node name="LevelHUD" parent="." instance=ExtResource("1_8wntc")]
+visible = false
 
 [node name="Background" type="TileMapLayer" parent="."]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAEAAQAGAAAAAAAAAAIAAQACAAEAAAAAAAMAAQACAAEAAAAJAAAAAQABAAIAAAAJAAgAAQAGAAQAAAAKAAAAAQABAAIAAAAKAAgAAQABAAAAAAALAAgAAQABAAAAAAAMAAgAAQABAAAAAAANAAgAAQABAAAAAAAOAAgAAQABAAAAAAAPAAIAAQAAAAEAAAAPAAMAAQAAAAEAAAAPAAQAAQAAAAEAAAAPAAYAAQAAAAEAAAAPAAcAAQAAAAEAAAAPAAgAAQAHAAEAAAAPAAUAAQAAAAEAAAAAAAUAAQACAAEAAAAAAAYAAQACAAEAAAAAAAcAAQACAAEAAAACAAEAAQABAAIAAAADAAEAAQABAAIAAAAEAAEAAQABAAIAAAAFAAEAAQABAAIAAAAGAAEAAQABAAIAAAAHAAEAAQACAAIAAAAAAAAAAQABAAEAAAABAAAAAQABAAEAAAACAAAAAQABAAEAAAADAAAAAQABAAEAAAAEAAAAAQABAAEAAAAFAAAAAQABAAEAAAAGAAAAAQABAAEAAAAHAAAAAQAGAAAAAAAIAAAAAQABAAIAAAALAAAAAQABAAIAAAAMAAAAAQABAAIAAAANAAAAAQABAAIAAAAOAAAAAQAHAAAAAAAOAAEAAQAAAAIAAAAPAAEAAQAHAAAAAAAPAAAAAQABAAEAAAAAAAQAAQACAAEAAAAAAAgAAQACAAEAAAABAAEAAQABAAIAAAAJAAMAAQAEAAAAAAAJAAQAAQAEAAIAAAALAAMAAQAAAAIAAAAMAAMAAQACAAIAAAALAAIAAQAAAAAAAAAMAAIAAQACAAAAAAAJAAcAAQAEAAAAAAAGAAcAAQAEAAAAAAAGAAgAAQAEAAEAAAA=")
-tile_set = ExtResource("1_td8px")
+[node name="GemManager" parent="." instance=ExtResource("8_owy45")]
+
+[node name="Scope1" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(304, 80)
+gem_info = ExtResource("27_r85x8")
+
+[node name="Scope2" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(48, 80)
+gem_info = ExtResource("27_r85x8")
+
+[node name="Silver1" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(392, 184)
+
+[node name="Silver2" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(440, 184)
+
+[node name="Gold1" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(80, 200)
+gem_info = ExtResource("7_q2tud")
+
+[node name="Gold2" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(104, 176)
+gem_info = ExtResource("7_q2tud")
+
+[node name="Emerald1" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(392, 248)
+gem_info = ExtResource("8_bkns3")
+
+[node name="Ruby1" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(104, 200)
+gem_info = ExtResource("8_yd8k0")
+
+[node name="Diamond1" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(80, 264)
+gem_info = ExtResource("28_c23s7")
+
+[node name="Diamond2" parent="GemManager" instance=ExtResource("26_4i5mt")]
+position = Vector2(256, 264)
+gem_info = ExtResource("28_c23s7")
+is_moving = true
 
 [node name="Foreground" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_8jmv6")
 
-[node name="PalmTree" parent="Foreground" instance=ExtResource("3_fbu15")]
-position = Vector2(-17, 16)
+[node name="Ship" parent="Foreground" instance=ExtResource("9_uxsqw")]
+position = Vector2(-85, 286)
 
-[node name="Flag" parent="Foreground" instance=ExtResource("4_8jmv6")]
+[node name="WaterTop" type="AnimatedSprite2D" parent="Foreground"]
+position = Vector2(78, 243)
+sprite_frames = SubResource("SpriteFrames_72klw")
+autoplay = "default"
+frame_progress = 0.962399
 
-[node name="FlagMast" parent="Foreground" instance=ExtResource("6_ikmku")]
-position = Vector2(22, -13)
+[node name="WaterTop2" type="AnimatedSprite2D" parent="Foreground"]
+position = Vector2(174, 243)
+sprite_frames = SubResource("SpriteFrames_72klw")
+autoplay = "default"
+frame_progress = 0.195729
+
+[node name="WaterBottom" type="Sprite2D" parent="Foreground"]
+position = Vector2(78, 273.5)
+scale = Vector2(1, 0.90625)
+texture = ExtResource("14_fwb0o")
+
+[node name="WaterBottom2" type="Sprite2D" parent="Foreground"]
+position = Vector2(161, 273.5)
+scale = Vector2(0.729167, 0.90625)
+texture = ExtResource("14_fwb0o")
+
+[node name="Reflection1" type="AnimatedSprite2D" parent="Foreground"]
+position = Vector2(76, 246)
+sprite_frames = SubResource("SpriteFrames_hla8x")
+autoplay = "default"
+frame = 5
+frame_progress = 0.554536
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Foreground"]
+position = Vector2(138, 247)
+sprite_frames = SubResource("SpriteFrames_fk653")
+autoplay = "default"
+
+[node name="Totem" parent="Foreground" instance=ExtResource("29_q2tud")]
+position = Vector2(477, 132)
+scale = Vector2(1.04993, 0.999918)
+
+[node name="Cannon" parent="." instance=ExtResource("9_1e3lg")]
+position = Vector2(256, 232)
+
+[node name="MainLevel" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAEAAQAGAAAAAAAAAAIAAQACAAEAAAAAAAMAAQACAAEAAAAJAAAAAQABAAIAAAAJAAgAAQAGAAQAAAAKAAAAAQABAAIAAAAKAAgAAQABAAAAAAALAAgAAQABAAAAAAAMAAgAAQABAAAAAAANAAgAAQABAAAAAAAOAAgAAQABAAAAAAAPAAIAAQAAAAEAAAAPAAMAAQAAAAEAAAAPAAQAAQAAAAEAAAAPAAYAAQAAAAEAAAAPAAcAAQAAAAEAAAAPAAgAAQAHAAEAAAAPAAUAAQAAAAEAAAAAAAUAAQACAAEAAAAAAAYAAQACAAEAAAAAAAcAAQACAAEAAAACAAEAAQABAAIAAAADAAEAAQABAAIAAAAEAAEAAQABAAIAAAAFAAEAAQABAAIAAAAGAAEAAQABAAIAAAAHAAEAAQACAAIAAAAAAAAAAQABAAEAAAABAAAAAQABAAEAAAACAAAAAQABAAEAAAADAAAAAQABAAEAAAAEAAAAAQABAAEAAAAFAAAAAQABAAEAAAAGAAAAAQABAAEAAAAHAAAAAQAGAAAAAAAIAAAAAQABAAIAAAALAAAAAQABAAIAAAAMAAAAAQABAAIAAAANAAAAAQABAAIAAAAOAAAAAQAHAAAAAAAOAAEAAQAAAAIAAAAPAAEAAQAHAAAAAAAPAAAAAQABAAEAAAAAAAQAAQACAAEAAAAAAAgAAQACAAEAAAABAAEAAQABAAIAAAAJAAMAAQAEAAAAAAAJAAQAAQAEAAIAAAALAAMAAQAAAAIAAAAMAAMAAQACAAIAAAALAAIAAQAAAAAAAAAMAAIAAQACAAAAAAAJAAcAAQAEAAAAAAAGAAcAAQAEAAAAAAAGAAgAAQAEAAEAAAA=")
+tile_set = ExtResource("1_td8px")
+
+[node name="CountdownTimer" parent="." instance=ExtResource("31_c23s7")]
+
+[connection signal="score_calculated" from="GemManager" to="." method="_on_gem_manager_score_calculated"]
+[connection signal="score_calculated" from="GemManager" to="LevelHUD" method="_on_gem_manager_score_calculated"]
+[connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]

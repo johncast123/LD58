@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dsamr2xxuqs5y"]
+
+[node name="PirateShipFilter" type="ColorRect"]
+offset_right = 512.0
+offset_bottom = 288.0
+color = Color(0, 0, 0, 0.411765)

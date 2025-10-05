@@ -1,0 +1,84 @@
+[gd_scene load_steps=15 format=3 uid="uid://bjcqegknhn2in"]
+
+[ext_resource type="Texture2D" uid="uid://dvdti0k6h6tjp" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/1.png" id="1_l7oku"]
+[ext_resource type="Texture2D" uid="uid://ldj0oq4hoc5" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/2.png" id="2_16ef1"]
+[ext_resource type="Texture2D" uid="uid://duf0m1ifeorpg" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/3.png" id="3_p42sj"]
+[ext_resource type="Texture2D" uid="uid://cwxfrxfe3d660" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/4.png" id="4_fqi8w"]
+[ext_resource type="Texture2D" uid="uid://c4j165x6p8d8v" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/5.png" id="5_jhurc"]
+[ext_resource type="Texture2D" uid="uid://bpm783aqnnq00" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/6.png" id="6_g6nvw"]
+[ext_resource type="Texture2D" uid="uid://cke5814tuffbu" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/Wind/1.png" id="7_p1wg7"]
+[ext_resource type="Texture2D" uid="uid://gcqla67lbu3" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/Wind/2.png" id="8_qrxf7"]
+[ext_resource type="Texture2D" uid="uid://d2i1uae07us57" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/Wind/3.png" id="9_l1k0f"]
+[ext_resource type="Texture2D" uid="uid://dlwirgex7thu7" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/Wind/4.png" id="10_qvmb4"]
+[ext_resource type="Texture2D" uid="uid://csq4pdakbk7lu" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Ship/Anchor/1.png" id="11_ti54w"]
+[ext_resource type="Texture2D" uid="uid://cja7mn51px83d" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Ship/Anchor/2.png" id="12_c4vfa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vubgn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l7oku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_16ef1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p42sj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fqi8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jhurc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g6nvw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ak4dk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_p1wg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qrxf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l1k0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qvmb4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Ship" type="StaticBody2D"]
+
+[node name="ShipBody" type="AnimatedSprite2D" parent="."]
+position = Vector2(201, -61)
+sprite_frames = SubResource("SpriteFrames_vubgn")
+frame_progress = 0.94145
+
+[node name="ShipSail" type="AnimatedSprite2D" parent="."]
+position = Vector2(213, -97)
+sprite_frames = SubResource("SpriteFrames_ak4dk")
+autoplay = "default"
+frame_progress = 0.234423
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(200, -122, 204, -122, 204, -72, 240, -72, 212, -51, 170, -51, 162, -72, 200, -72)
+
+[node name="Anchor" type="Sprite2D" parent="."]
+position = Vector2(178, -49)
+texture = ExtResource("11_ti54w")
+
+[node name="Chain" type="Sprite2D" parent="."]
+position = Vector2(178, -60)
+texture = ExtResource("12_c4vfa")

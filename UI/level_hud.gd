@@ -61,3 +61,7 @@ func _on_next_pressed():
 	
 func _on_menu_pressed():
 	pass # Replace with function body.
+
+
+func _on_gem_manager_score_calculated(gem_score: int) -> void:
+	pass # Replace with function body.

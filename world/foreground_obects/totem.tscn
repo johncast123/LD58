@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm0njofpklcy8"]
+
+[ext_resource type="Texture2D" uid="uid://dr362w16hfmd8" path="res://asset/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 3/Idle 2/1.png" id="1_df8ub"]
+[ext_resource type="Texture2D" uid="uid://d58dh21i2sw5" path="res://asset/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 2/Idle 2/1.png" id="2_iamgc"]
+[ext_resource type="Texture2D" uid="uid://boq5et7wm3aq8" path="res://asset/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Idle 1/1.png" id="3_1ec8v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdebm"]
+size = Vector2(20, 64)
+
+[node name="Totem" type="StaticBody2D"]
+
+[node name="BottemTotem" type="Sprite2D" parent="."]
+position = Vector2(-59, 108)
+texture = ExtResource("1_df8ub")
+
+[node name="MiddleTotem" type="Sprite2D" parent="."]
+position = Vector2(-56, 87)
+texture = ExtResource("2_iamgc")
+
+[node name="TopTotem" type="Sprite2D" parent="."]
+position = Vector2(-52, 67)
+texture = ExtResource("3_1ec8v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-56, 92)
+shape = SubResource("RectangleShape2D_cdebm")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://da2coqoappdoh"]
+[gd_scene load_steps=26 format=4 uid="uid://da2coqoappdoh"]
 
 [ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_5y0yy"]
 [ext_resource type="PackedScene" uid="uid://cm7k1xy2dt7an" path="res://world/background_objects/window.tscn" id="1_6f1wx"]
@@ -8,12 +8,21 @@
 [ext_resource type="Texture2D" uid="uid://b508jx3dpytx8" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="2_go5pu"]
 [ext_resource type="PackedScene" uid="uid://crxg6pgki3jcv" path="res://world/level_2.tscn" id="2_iedf8"]
 [ext_resource type="PackedScene" uid="uid://cxd8utj06nd2h" path="res://world/gem_manager.tscn" id="6_cbh7h"]
+[ext_resource type="PackedScene" uid="uid://clx8grjirfiox" path="res://world/background_objects/door.tscn" id="6_ksl00"]
+[ext_resource type="PackedScene" uid="uid://dlswpm3kh5vc7" path="res://world/background_objects/barrel_side.tscn" id="7_fmtod"]
 [ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="7_phy56"]
 [ext_resource type="Resource" uid="uid://tdn31p45ulk7" path="res://gems/gem_info/regular_diamond.tres" id="8_0fba2"]
+[ext_resource type="PackedScene" uid="uid://c6fjg0fork52x" path="res://world/background_objects/barrel_standing.tscn" id="8_2dlxi"]
 [ext_resource type="Resource" uid="uid://lolpuixwjb8u" path="res://gems/gem_info/gold_coin.tres" id="9_8s6e0"]
 [ext_resource type="Resource" uid="uid://dvawghkvy4xuh" path="res://gems/gem_info/regular_emerald.tres" id="9_phy56"]
+[ext_resource type="PackedScene" uid="uid://cvc5i2620paop" path="res://world/background_objects/candle.tscn" id="9_t7y30"]
 [ext_resource type="Resource" uid="uid://bjxfrsxpn3sa0" path="res://gems/gem_info/regular_ruby.tres" id="10_0fba2"]
+[ext_resource type="PackedScene" uid="uid://cxdrift70mgi1" path="res://world/background_objects/blue_bottle_side.tscn" id="10_5jua3"]
+[ext_resource type="PackedScene" uid="uid://ckrc8rwekua4u" path="res://world/background_objects/green_bottle_standing.tscn" id="11_o8umg"]
+[ext_resource type="PackedScene" uid="uid://byqy17g31njmx" path="res://world/background_objects/small_chain.tscn" id="12_87vrv"]
 [ext_resource type="PackedScene" uid="uid://bt2wiosukdqan" path="res://world/countdown_timer.tscn" id="13_8s6e0"]
+[ext_resource type="PackedScene" uid="uid://b8s8csuqfv2ts" path="res://world/background_objects/big_chain.tscn" id="13_fnv45"]
+[ext_resource type="PackedScene" uid="uid://dsamr2xxuqs5y" path="res://world/pirate_ship_filter.tscn" id="14_t7y30"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5y0yy"]
 texture = ExtResource("2_go5pu")
@@ -127,12 +136,60 @@ score_threshold = 10
 visible = false
 
 [node name="Background" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAEAAQABAAcAAAACAAEAAQACAAcAAAADAAEAAQACAAcAAAAEAAEAAQACAAcAAAAFAAEAAQACAAcAAAAGAAEAAQACAAcAAAAHAAEAAQACAAcAAAAIAAEAAQACAAcAAAAJAAEAAQACAAcAAAAKAAEAAQACAAcAAAALAAEAAQAKAAoAAAAMAAEAAQACAAsAAAANAAEAAQALAAoAAAAOAAEAAQADAAcAAAAOAAIAAQADAAgAAAAOAAMAAQADAAgAAAAOAAQAAQADAAgAAAAOAAUAAQADAAgAAAAOAAYAAQADAAgAAAAOAAcAAQADAAkAAAANAAcAAQACAAkAAAAMAAcAAQACAAkAAAALAAcAAQACAAkAAAAKAAcAAQACAAkAAAAJAAcAAQACAAkAAAAIAAcAAQACAAkAAAAHAAcAAQACAAkAAAAGAAcAAQACAAkAAAAFAAcAAQALAAsAAAAEAAcAAQACAAsAAAADAAcAAQAKAAsAAAACAAcAAQACAAkAAAABAAcAAQABAAkAAAABAAYAAQABAAgAAAABAAUAAQABAAgAAAABAAQAAQABAAgAAAABAAMAAQABAAgAAAABAAIAAQABAAgAAAACAAYAAQACAAgAAAACAAUAAQACAAgAAAADAAUAAQAHAAcAAAAEAAUAAQACAAkAAAAGAAUAAQACAAgAAAAHAAUAAQACAAgAAAAIAAUAAQACAAgAAAAJAAUAAQACAAgAAAAKAAUAAQACAAgAAAAKAAQAAQACAAgAAAAJAAQAAQACAAgAAAAIAAQAAQACAAgAAAAHAAQAAQACAAgAAAAHAAMAAQACAAgAAAAIAAMAAQACAAgAAAAJAAMAAQACAAgAAAAKAAMAAQACAAgAAAAKAAIAAQACAAgAAAAJAAIAAQACAAgAAAAIAAIAAQACAAgAAAAHAAIAAQACAAgAAAAGAAIAAQAIAAcAAAAFAAIAAQACAAkAAAAEAAIAAQACAAkAAAADAAIAAQACAAkAAAACAAIAAQAHAAcAAAACAAMAAQADAAgAAAACAAQAAQAHAAgAAAADAAQAAQACAAcAAAAEAAQAAQACAAcAAAAFAAQAAQACAAcAAAAGAAQAAQAIAAgAAAAGAAMAAQABAAgAAAAFAAUAAQAIAAcAAAAFAAYAAQALAAoAAAADAAYAAQAIAAoAAAAGAAYAAQACAAgAAAAHAAYAAQACAAgAAAAIAAYAAQACAAgAAAAJAAYAAQACAAgAAAAKAAYAAQACAAgAAAALAAYAAQAHAAgAAAAMAAYAAQACAAcAAAANAAYAAQAIAAgAAAANAAUAAQABAAgAAAANAAQAAQABAAgAAAANAAMAAQABAAgAAAANAAIAAQABAAgAAAALAAIAAQADAAgAAAALAAMAAQADAAgAAAALAAQAAQADAAgAAAALAAUAAQADAAgAAAA=")
 tile_set = SubResource("TileSet_dhmri")
 
 [node name="BackgroundObjects" type="Node2D" parent="."]
 
 [node name="Window" parent="BackgroundObjects" instance=ExtResource("1_6f1wx")]
-position = Vector2(74, 65)
+position = Vector2(304, 200)
+
+[node name="Window2" parent="BackgroundObjects" instance=ExtResource("1_6f1wx")]
+position = Vector2(224, 200)
+
+[node name="Window3" parent="BackgroundObjects" instance=ExtResource("1_6f1wx")]
+position = Vector2(120, 64)
+
+[node name="Window4" parent="BackgroundObjects" instance=ExtResource("1_6f1wx")]
+position = Vector2(264, 64)
+
+[node name="Door" parent="BackgroundObjects" instance=ExtResource("6_ksl00")]
+position = Vector2(80, 224)
+
+[node name="BarrelSide" parent="BackgroundObjects" instance=ExtResource("7_fmtod")]
+position = Vector2(470, 240)
+
+[node name="BarrelSide2" parent="BackgroundObjects" instance=ExtResource("7_fmtod")]
+position = Vector2(450, 240)
+
+[node name="BarrelSide3" parent="BackgroundObjects" instance=ExtResource("7_fmtod")]
+position = Vector2(460, 221)
+
+[node name="BarrelStanding" parent="BackgroundObjects" instance=ExtResource("8_2dlxi")]
+position = Vector2(160, 80)
+
+[node name="BarrelStanding2" parent="BackgroundObjects" instance=ExtResource("8_2dlxi")]
+position = Vector2(368, 113)
+
+[node name="Candle" parent="BackgroundObjects" instance=ExtResource("9_t7y30")]
+position = Vector2(400, 216)
+
+[node name="Candle2" parent="BackgroundObjects" instance=ExtResource("9_t7y30")]
+position = Vector2(48, 216)
+
+[node name="BlueBottleSide" parent="BackgroundObjects" instance=ExtResource("10_5jua3")]
+position = Vector2(189, 80)
+
+[node name="GreenBottleStanding" parent="BackgroundObjects" instance=ExtResource("11_o8umg")]
+position = Vector2(205, 240)
+
+[node name="SmallChain" parent="BackgroundObjects" instance=ExtResource("12_87vrv")]
+position = Vector2(318, 48)
+
+[node name="BigChain" parent="BackgroundObjects" instance=ExtResource("13_fnv45")]
+position = Vector2(344, 104)
+
+[node name="PirateShipFilter" parent="." instance=ExtResource("14_t7y30")]
 
 [node name="MainLevel" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAAAGAAHAAEAAAAAAAEAGAADAAIAAAAAAAIAGAADAAIAAAAAAAMAGAADAAIAAAAAAAQAGAADAAIAAAAAAAUAGAADAAIAAAAAAAYAGAADAAIAAAAAAAcAGAADAAIAAAAAAAgAGAAHAAIAAAABAAAAGAACAAMAAAABAAgAGAACAAEAAAACAAAAGAACAAMAAAACAAgAGAACAAEAAAADAAAAGAACAAMAAAADAAgAGAACAAEAAAAEAAAAGAACAAMAAAAEAAgAGAACAAEAAAAFAAAAGAACAAMAAAAFAAgAGAACAAEAAAAGAAAAGAACAAMAAAAGAAgAGAACAAEAAAAHAAAAGAACAAMAAAAHAAgAGAADAAEAAAAIAAAAGAACAAMAAAAIAAgAGAABAAEAAAAJAAAAGAACAAMAAAAJAAgAGAACAAEAAAAKAAAAGAACAAMAAAAKAAgAGAACAAEAAAALAAAAGAACAAMAAAALAAgAGAACAAEAAAAMAAAAGAACAAMAAAAMAAgAGAACAAEAAAANAAAAGAACAAMAAAANAAgAGAACAAEAAAAOAAAAGAACAAMAAAAOAAgAGAACAAEAAAAPAAAAGAAIAAEAAAAPAAEAGAABAAIAAAAPAAIAGAABAAIAAAAPAAMAGAABAAIAAAAPAAQAGAABAAIAAAAPAAUAGAABAAIAAAAPAAYAGAABAAIAAAAPAAcAGAABAAIAAAAPAAgAGAAIAAIAAAAEAAYAGAAFAAUAAAADAAMAGAABAAUAAAAEAAMAGAACAAUAAAAFAAMAGAADAAUAAAAMAAIAGAAFAAEAAAAMAAMAGAAFAAIAAAAMAAQAGAAFAAIAAAAMAAUAGAAFAAEAACALAAQAAAABAAEAAAAKAAIAAAABAAIAAAALAAIAAAACAAIAAAA=")
@@ -156,14 +213,11 @@ position = Vector2(17, -10)
 [node name="Silver5" parent="GemManager" instance=ExtResource("7_phy56")]
 position = Vector2(33, 6)
 
+[node name="Silver7" parent="GemManager" instance=ExtResource("7_phy56")]
+position = Vector2(289, 6)
+
 [node name="Silver6" parent="GemManager" instance=ExtResource("7_phy56")]
 position = Vector2(225, -130)
-
-[node name="Silver7" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(289, -42)
-
-[node name="Silver8" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(321, -66)
 
 [node name="Gold7" parent="GemManager" instance=ExtResource("7_phy56")]
 position = Vector2(193, -130)
@@ -171,6 +225,10 @@ gem_info = ExtResource("9_8s6e0")
 
 [node name="Gold2" parent="GemManager" instance=ExtResource("7_phy56")]
 position = Vector2(225, -26)
+gem_info = ExtResource("9_8s6e0")
+
+[node name="Gold3" parent="GemManager" instance=ExtResource("7_phy56")]
+position = Vector2(321, 6)
 gem_info = ExtResource("9_8s6e0")
 
 [node name="Gold5" parent="GemManager" instance=ExtResource("7_phy56")]
@@ -210,20 +268,20 @@ position = Vector2(1, 62)
 gem_info = ExtResource("9_phy56")
 
 [node name="Emerald4" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(289, 6)
+position = Vector2(289, -42)
 gem_info = ExtResource("9_phy56")
 
-[node name="Ruby1" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(321, -18)
+[node name="Ruby3" parent="GemManager" instance=ExtResource("7_phy56")]
+position = Vector2(321, -42)
+gem_info = ExtResource("10_0fba2")
+
+[node name="Ruby2" parent="GemManager" instance=ExtResource("7_phy56")]
+position = Vector2(1, 6)
 gem_info = ExtResource("10_0fba2")
 
 [node name="Ruby4" parent="GemManager" instance=ExtResource("7_phy56")]
 position = Vector2(-103, 70)
 gem_info = ExtResource("10_0fba2")
-
-[node name="Diamond1" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(1, 6)
-gem_info = ExtResource("8_0fba2")
 
 [node name="Diamond2" parent="GemManager" instance=ExtResource("7_phy56")]
 position = Vector2(-103, -122)

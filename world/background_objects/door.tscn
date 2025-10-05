@@ -1,14 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://clx8grjirfiox"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hys52"]
-animations = [{
-"frames": [],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
+[ext_resource type="Texture2D" uid="uid://c64u4viadxd6y" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Decorations/Door/Opening/01.png" id="1_cluas"]
 
 [node name="Door" type="Node2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_hys52")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cluas")

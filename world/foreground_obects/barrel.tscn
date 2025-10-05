@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch08dn88t20xl"]
+
+[ext_resource type="Texture2D" uid="uid://dfik2r43kxll5" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Barrel/Idle/1.png" id="1_b4aee"]
+
+[node name="Barrel" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b4aee")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8, -12, 7, -12, 11, -6, 11, 7, 7, 13, -8, 13, -12, 7, -12, -6)
