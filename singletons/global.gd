@@ -29,13 +29,13 @@ func initialize_powerup_timer(time_sec: int):
 	powerup_timer.one_shot = true
 	powerup_timer.wait_time = time_sec
 	powerup_timer.connect("timeout", _on_powerup_timer_timeout)
-	get_tree().current_scene.add_child(powerup_timer)
+	add_child(powerup_timer)
 
 func initialize_scope_timer(time_sec: int):
 	scope_timer.one_shot = true
 	scope_timer.wait_time = time_sec
 	scope_timer.connect("timeout", _on_scope_timer_timeout)
-	get_tree().current_scene.add_child(scope_timer)
+	add_child(scope_timer)
 	
 func _on_update_bounce_count(new_count: int):
 	bounce_count = new_count
