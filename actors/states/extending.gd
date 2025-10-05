@@ -3,12 +3,41 @@ extends State
 class_name ExtendingState
 
 func update_physics_frame(delta: float):
-	var step_vec := state_owner.dir * state_owner.extend_speed * delta
-	state_owner.global_position += step_vec
-	state_owner.traveled += step_vec.length()
+	var hook := state_owner
+	var step_distance := hook.extend_speed * delta
+	var remaining := step_distance
 
-	state_owner._check_wall_bounce()
-	state_owner._update_line()
+	while remaining > 0 and hook.bounces < hook.max_bounces:
+		# Configure ray to check the next travel segment
+		hook.ray.global_position = hook.global_position
+		hook.ray.target_position = hook.dir * remaining
+		hook.ray.force_raycast_update()
 
-	if state_owner.traveled >= state_owner.max_length or state_owner.bounces > state_owner.max_bounces:
-		state_owner.state_machine.change_state("retracting")
+		if hook.ray.is_colliding():
+			var collision_point = hook.ray.get_collision_point()
+			var normal = hook.ray.get_collision_normal()
+			var distance_to_hit = hook.global_position.distance_to(collision_point)
+			
+			# Move to collision point
+			hook.global_position = collision_point
+			hook.add_fixed_point(collision_point)
+
+			# Bounce
+			hook.dir = hook.dir.bounce(normal).normalized()
+			hook.bounces += 1
+			remaining -= distance_to_hit
+
+			# Slight offset to avoid re-colliding instantly
+			hook.global_position += hook.dir * 0.1
+		else:
+			# No collision — move the rest of the way
+			hook.global_position += hook.dir * remaining
+			hook.traveled += remaining
+			remaining = 0
+	
+	hook.update_line()
+	
+	# Reached max length?
+	if hook.traveled >= hook.max_length or hook.bounces >= hook.max_bounces:
+		hook.state_machine.change_state("retracting")
+	

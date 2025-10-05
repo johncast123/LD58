@@ -8,3 +8,4 @@ script = ExtResource("1_jorn1")
 gem_name = "Gold Coin"
 sprite_frame = ExtResource("2_4cu61")
 point = 20
+extra_function_index = -1

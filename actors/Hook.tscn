@@ -37,3 +37,5 @@ state_name = "extending"
 script = ExtResource("5_lpax8")
 state_owner = NodePath("../..")
 state_name = "retracting"
+
+[node name="ForwardRay" type="RayCast2D" parent="."]
