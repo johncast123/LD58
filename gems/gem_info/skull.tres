@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GemInfo" load_steps=3 format=3 uid="uid://btpkvxn517y71"]
+
+[ext_resource type="Script" uid="uid://b7kem3jx1r5na" path="res://gems/gem_info/gem_info.gd" id="1_cq54m"]
+[ext_resource type="SpriteFrames" uid="uid://btubgtei0bmre" path="res://gems/skull.tres" id="2_cq54m"]
+
+[resource]
+script = ExtResource("1_cq54m")
+gem_name = "Skull"
+sprite_frame = ExtResource("2_cq54m")
+point = 0
+extra_function_index = 1
+metadata/_custom_type_script = "uid://b7kem3jx1r5na"

@@ -1,0 +1,70 @@
+[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://btubgtei0bmre"]
+
+[ext_resource type="Texture2D" uid="uid://cl0skw0kjn3l3" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Skull Effect/01.png" id="1_kvdig"]
+[ext_resource type="Texture2D" uid="uid://c13sgaoe6dxmi" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Skull Effect/02.png" id="2_debni"]
+[ext_resource type="Texture2D" uid="uid://bhq7wkvg1rfiq" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Skull Effect/03.png" id="3_ehe4y"]
+[ext_resource type="Texture2D" uid="uid://dn2qamy2u48f5" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Skull Effect/04.png" id="4_cvkhe"]
+[ext_resource type="Texture2D" uid="uid://cwf2igmtk84re" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Skull Effect/05.png" id="5_oku7d"]
+[ext_resource type="Texture2D" uid="uid://bhmsprcn75bud" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/01.png" id="5_yjkch"]
+[ext_resource type="Texture2D" uid="uid://dgusuppq3aphm" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/02.png" id="6_kvdig"]
+[ext_resource type="Texture2D" uid="uid://w0enwdexxnuu" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/03.png" id="7_debni"]
+[ext_resource type="Texture2D" uid="uid://hd2022kqk4le" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/04.png" id="8_ehe4y"]
+[ext_resource type="Texture2D" uid="uid://dyf2f7ql8rx8d" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/05.png" id="9_cvkhe"]
+[ext_resource type="Texture2D" uid="uid://eycxrhwiusnb" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/06.png" id="10_oku7d"]
+[ext_resource type="Texture2D" uid="uid://bp5dub08hioht" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/07.png" id="11_2b3pv"]
+[ext_resource type="Texture2D" uid="uid://cvuefd8qgc8yv" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/08.png" id="12_v06mk"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kvdig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_debni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ehe4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cvkhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oku7d")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"collected",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_yjkch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kvdig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_debni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ehe4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cvkhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_oku7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2b3pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_v06mk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]

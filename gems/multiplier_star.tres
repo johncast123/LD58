@@ -1,0 +1,62 @@
+[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://bo87lg474suin"]
+
+[ext_resource type="Texture2D" uid="uid://yoqklytbt4im" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Potion Effect/01.png" id="1_a1hpm"]
+[ext_resource type="Texture2D" uid="uid://c6ryt3gansn0m" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Potion Effect/02.png" id="2_yfovy"]
+[ext_resource type="Texture2D" uid="uid://dsytg0uj26w21" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Potion Effect/03.png" id="3_8mhev"]
+[ext_resource type="Texture2D" uid="uid://cqsgrc3wfidcn" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Potion Effect/04.png" id="4_8w0ec"]
+[ext_resource type="Texture2D" uid="uid://ceno3ml2fktik" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/01.png" id="5_a1hpm"]
+[ext_resource type="Texture2D" uid="uid://cjpgi747tiw3d" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/02.png" id="6_yfovy"]
+[ext_resource type="Texture2D" uid="uid://deyjgffjq65dq" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/03.png" id="7_8mhev"]
+[ext_resource type="Texture2D" uid="uid://e226ig2ru5hw" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/04.png" id="8_8w0ec"]
+[ext_resource type="Texture2D" uid="uid://bmgxr84kvv15d" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/05.png" id="9_vhe3b"]
+[ext_resource type="Texture2D" uid="uid://bu5olfsy8n7m7" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/06.png" id="10_fwno7"]
+[ext_resource type="Texture2D" uid="uid://di2s2ebqvm8h6" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/07.png" id="11_tu36x"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a1hpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yfovy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8mhev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8w0ec")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"collected",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_a1hpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yfovy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8mhev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8w0ec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vhe3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fwno7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tu36x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]

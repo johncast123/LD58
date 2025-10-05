@@ -4,8 +4,6 @@ class_name Gem
 
 signal collected(gem: Gem)
 
-enum GEM_TYPE{SILVER_COIN, GOLD_COIN, RUBY, EMERALD, DIAMOND}
-
 @export var gem_info: GemInfo = preload("res://gems/gem_info/silver_coin.tres")
 
 @onready var placeholder = preload("res://gems/placeholder_gem.tscn")
@@ -26,10 +24,14 @@ func _enable_self():
 
 func set_collected():
 	collected.emit(self)
-	animated_sprite_2d.play("collected")
+	#play_collected_effect()
 
-func set_snatched():
+func play_collected_effect():
 	var a = placeholder.instantiate()
 	get_tree().current_scene.add_child(a)
+	a.animated_sprite_2d.sprite_frames = gem_info.sprite_frame
 	a.global_position = global_position
 	a.play_effect()
+	
+func set_snatched():
+	play_collected_effect()
