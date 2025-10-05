@@ -38,11 +38,13 @@ func _update_hud(element_name: String) -> void:
 			level_hud.update_timeleft(time_left_sec)
 
 func _on_gem_manager_score_calculated(gem_score: int):
+	_update_hud("score")
+	if gem_score <= 5: # if smaller than a certain threshold, do not display the popup
+		return
 	var a = SCORE_POPUP.instantiate() as ScorePopup
 	add_child(a)
 	a.global_position = cannon.global_position + Vector2.LEFT * 25
 	a.set_popup(gem_score)
-	_update_hud("score")
 
 func _update_current_multiplier():
 	_update_hud("multiplier")
