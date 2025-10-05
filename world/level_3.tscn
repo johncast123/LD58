@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=4 uid="uid://f1hja0tppynh"]
+[gd_scene load_steps=8 format=4 uid="uid://f1hja0tppynh"]
 
 [ext_resource type="TileSet" uid="uid://dw66ve3yqcms5" path="res://world/pirate_ship_interior_tileset.tres" id="1_gkqmi"]
+[ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_lmbsv"]
 [ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/canvas_layer.tscn" id="1_v5igl"]
 [ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="3_7jial"]
+[ext_resource type="PackedScene" uid="uid://cxd8utj06nd2h" path="res://world/gem_manager.tscn" id="4_m8xer"]
+[ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="5_m8xer"]
+[ext_resource type="Resource" uid="uid://tdn31p45ulk7" path="res://gems/gem_info/regular_diamond.tres" id="6_yrxgs"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_lmbsv")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("1_v5igl")]
 
@@ -16,5 +21,20 @@
 tile_map_data = PackedByteArray("AAAAAAAAGAACAAIAAAAAAAEAGAACAAIAAAAAAAIAGAAHAAEAAAAAAAMAGAADAAIAAAABAAAAGAACAAIAAAABAAgAGAACAAIAAAACAAAAGAAHAAEAAAACAAgAGAAHAAIAAAADAAAAGAACAAMAAAAEAAAAGAACAAMAAAAEAAgAGAACAAEAAAAFAAAAGAACAAMAAAAFAAgAGAACAAEAAAAGAAAAGAACAAMAAAAGAAgAGAACAAEAAAAHAAAAGAACAAMAAAAIAAAAGAACAAMAAAAJAAAAGAACAAMAAAAJAAgAGAACAAEAAAAKAAAAGAACAAMAAAAKAAgAGAACAAEAAAALAAAAGAACAAMAAAALAAgAGAACAAEAAAAMAAAAGAACAAMAAAAMAAgAGAACAAEAAAANAAAAGAAIAAEAAAANAAgAGAAIAAIAAAAOAAAAGAACAAIAAAAOAAgAGAACAAIAAAAPAAEAGAACAAIAAAAPAAIAGAAIAAEAAAAPAAMAGAABAAIAAAAPAAQAGAABAAIAAAAPAAYAGAAIAAIAAAAPAAcAGAACAAIAAAAPAAgAGAACAAIAAAAHAAgAGAADAAEAAAAIAAgAGAABAAEAAAAPAAUAGAABAAIAAAAAAAQAGAADAAIAAAAAAAUAGAADAAIAAAAAAAYAGAAHAAIAAAAAAAcAGAACAAIAAAAAAAgAGAACAAIAAAAOAAEAGAACAAIAAAAPAAAAGAACAAIAAAANAAIAGAABAAMAAAANAAEAGAABAAIAAAAOAAIAGAACAAMAAAABAAEAGAACAAIAAAACAAEAGAADAAIAAAACAAIAGAADAAMAAAABAAIAGAACAAMAAAADAAgAGAACAAEAAAABAAcAGAACAAIAAAACAAYAGAADAAEAAAANAAYAGAABAAEAAAAOAAcAGAACAAIAAAABAAYAGAACAAEAAAAOAAYAGAACAAEAAAACAAcAGAADAAIAAAANAAcAGAABAAIAAAAFAAQAGAABAAIAAAAGAAQAGAADAAIAAAAGAAUAGAADAAMAAAAFAAUAGAABAAMAAAAJAAMAGAABAAEAAAAKAAMAGAADAAEAAAAJAAQAGAABAAIAAAAKAAQAGAADAAIAAAAKAAUAGAADAAMAAAAJAAUAGAABAAMAAAAFAAMAGAABAAEAAAAGAAMAGAADAAEAAAAGAAIAAAADAAIAAAAFAAIAAAABAAIAAAAJAAIAAAABAAIAAAAKAAIAAAADAAIAAAA=")
 tile_set = ExtResource("1_gkqmi")
 
+[node name="GemManager" parent="." instance=ExtResource("4_m8xer")]
+
+[node name="Gem" parent="GemManager" instance=ExtResource("5_m8xer")]
+position = Vector2(208, 248)
+
+[node name="diamond1" parent="GemManager" instance=ExtResource("5_m8xer")]
+position = Vector2(104, 40)
+gem_info = ExtResource("6_yrxgs")
+
+[node name="diamond2" parent="GemManager" instance=ExtResource("5_m8xer")]
+position = Vector2(408, 40)
+gem_info = ExtResource("6_yrxgs")
+
 [node name="Cannon" parent="." instance=ExtResource("3_7jial")]
 position = Vector2(256, 264)
+
+[connection signal="score_calculated" from="GemManager" to="." method="_on_gem_manager_score_calculated"]
