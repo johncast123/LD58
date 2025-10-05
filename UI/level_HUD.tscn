@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cv32htv08f005" path="res://UI/level_hud.gd" id="1_o8tsg"]
 
 [node name="LevelHUD" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_o8tsg")
 
 [node name="Backboard" type="ColorRect" parent="."]

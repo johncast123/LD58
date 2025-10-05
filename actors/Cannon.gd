@@ -20,8 +20,12 @@ var active_indicators: Array[Node] = []
 func _ready():
 	EventBus.connect("spawn_scope_indicator", _on_show_indicator.bind("scope"))
 	EventBus.connect("spawn_multihook_indicator", _on_show_indicator.bind("multihook"))
-	
+	EventBus.connect("remove_all_buffs", _on_remove_all_buffs)
 
+func _on_remove_all_buffs():
+	scope_timer_indicator.hide()
+	multihook_timer_indicator.hide()
+	
 func _on_show_indicator(indicator_name: String):
 	match indicator_name:
 		"scope":

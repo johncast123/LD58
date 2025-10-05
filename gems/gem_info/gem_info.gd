@@ -6,10 +6,11 @@ class_name GemInfo
 @export var sprite_frame: SpriteFrames = preload("res://gems/silver_coin.tres")
 @export var point: int = 10
 @export var extra_function_index: int = -1
+@export var sprite_off_set: Vector2 = Vector2.ZERO
 
 var extra_function_list: Array[Callable] = [
 	increase_base_multiplier,
-	decrease_base_multiplier,
+	remove_all_buffs,
 	increase_max_hook_count,
 	enable_scope
 ]
@@ -22,8 +23,9 @@ func execute_extra_function(index: int):
 func increase_base_multiplier(amount: int = 1):
 	Global.base_multiplier += amount
 
-func decrease_base_multiplier(amount: int = 1):
-	Global.base_multiplier -= amount
+func remove_all_buffs():
+	Global.base_multiplier = 1
+	EventBus.emit_signal("remove_all_buffs")
 
 func increase_max_hook_count(amount: int = 2, time_sec: int = 10):
 	Global.increase_max_hook_count(amount, time_sec)

@@ -7,6 +7,7 @@
 script = ExtResource("1_cq54m")
 gem_name = "Skull"
 sprite_frame = ExtResource("2_cq54m")
-point = 0
+point = -250
 extra_function_index = 1
+sprite_off_set = Vector2(0, -5)
 metadata/_custom_type_script = "uid://b7kem3jx1r5na"

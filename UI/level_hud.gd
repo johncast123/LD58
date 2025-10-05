@@ -62,9 +62,16 @@ func show_buttons():
 func set_and_show_buttons(outcome: String):
 	match outcome:
 		"win":
+			set_and_show_level_end_message("Victory!")
 			$VBoxContainer/ButtonsContainer/Next.show()
 			$VBoxContainer/TotalScoreContainer.show()
 		"lose":
+			set_and_show_level_end_message("You failed...")
+			$VBoxContainer/ButtonsContainer/Next.hide()
+			$VBoxContainer/TotalScoreContainer.hide()
+		"pause":
+			get_tree().paused = true
+			set_and_show_level_end_message("Paused")
 			$VBoxContainer/ButtonsContainer/Next.hide()
 			$VBoxContainer/TotalScoreContainer.hide()
 	show_buttons()
@@ -75,9 +82,12 @@ func update_total_score(delta: int):
 	internal_score_delta = delta
 	
 func _on_restart_pressed():
+	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 func _on_next_pressed():
+	get_tree().paused = false
+	
 	disable_all_buttons()
 	Global.update_total_score(internal_score_delta)
 	var a = get_tree().create_tween().set_parallel()
@@ -89,6 +99,7 @@ func _on_next_pressed():
 	Global.go_to_next_level()
 	
 func _on_menu_pressed():
+	get_tree().paused = false
 	pass # Replace with function body.
 
 func disable_all_buttons():

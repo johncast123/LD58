@@ -4,13 +4,15 @@ class_name ScorePopup
 
 const DURATION_SEC: int = 1.5
 
-var comment_list = ["Nice", "Good!", "Beautiful!", "Fantastic!", "AMAZING!", "UNBELIEVABLE!"]
+var comment_list = ["Oh no!", "Nice", "Good!", "Beautiful!", "Fantastic!", "AMAZING!", "UNBELIEVABLE!"]
 
 @onready var label = $VBoxContainer/Label
 @onready var comment = $VBoxContainer/Comment
 
 func set_popup(score: int):
-	label.text = "+" + str(score)
+	if score > 0:
+		label.text = "+" + str(score)
+	else: label.text = "-" + str(abs(score))
 	
 	comment.text = comment_list[get_comment_index(score)]
 	
@@ -18,7 +20,7 @@ func set_popup(score: int):
 
 func get_comment_index(score: int) -> int:
 	# Define thresholds in increasing order
-	var thresholds = [50, 200, 800, 2000, 5000]
+	var thresholds = [0, 50, 200, 800, 2000, 5000]
 	
 	for i in range(thresholds.size()):
 		if score < thresholds[i]:

@@ -21,7 +21,7 @@ var next_level: PackedScene
 
 func _ready():
 	EventBus.connect("update_bounce_count", _on_update_bounce_count)
-	
+	EventBus.connect("remove_all_buffs", _on_all_buff_removed)
 	initialize_total_score()
 	
 	initialize_powerup_timer(10)
@@ -81,3 +81,7 @@ func go_to_next_level():
 func set_next_level(packed_level: PackedScene):
 	if packed_level:
 		next_level = packed_level
+
+func _on_all_buff_removed():
+	scope_enabled = false
+	reset_max_hook_count()

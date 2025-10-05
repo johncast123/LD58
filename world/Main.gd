@@ -42,7 +42,7 @@ func _update_hud(element_name: String) -> void:
 func _on_gem_manager_score_calculated(gem_score: int):
 	level_score += gem_score
 	_update_hud("score")
-	if gem_score <= 5: # if smaller than a certain threshold, do not display the popup
+	if abs(gem_score) <= 5: # if smaller than a certain threshold, do not display the popup
 		return
 	var a = SCORE_POPUP.instantiate() as ScorePopup
 	add_child(a)
@@ -68,13 +68,16 @@ func _on_countdown_timer_timeout():
 		countdown_timer.stop()
 		Global.player_can_move = false
 		if check_if_score_met(level_score, score_threshold):
-			level_hud.set_and_show_level_end_message("VICTORY!")
 			level_hud.set_and_show_buttons("win")
 			level_hud.update_total_score(level_score)
 		else:
-			level_hud.set_and_show_level_end_message("You failed...")
 			level_hud.set_and_show_buttons("lose")
 		#get_tree().paused = true
 
 func check_if_score_met(player_score: int, score_threshold: int):
 	return player_score >= score_threshold
+
+func _input(event):
+	if event is InputEvent and Input.is_action_just_pressed("pause"):
+		level_hud.set_and_show_buttons("pause")
+		get_tree().paused = true

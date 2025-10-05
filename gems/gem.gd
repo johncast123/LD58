@@ -15,6 +15,7 @@ var point: int = 0
 func _ready():
 	point = gem_info.point
 	animated_sprite_2d.sprite_frames = gem_info.sprite_frame
+	animated_sprite_2d.offset = gem_info.sprite_off_set
 	animated_sprite_2d.play("idle")
 	
 	$MoveManager.enabled = is_moving
