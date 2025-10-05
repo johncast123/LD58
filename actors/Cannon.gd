@@ -55,6 +55,8 @@ func _aim_with_mouse(delta: float) -> void:
 	$PreviewLine.points = preview_points
 
 func _fire_hook() -> void:
+	if !Global.player_can_move:
+		return
 	if not hook_scene:
 		push_error("hook_scene not assigned on Cannon")
 		return

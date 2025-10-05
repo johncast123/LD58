@@ -4,6 +4,7 @@ extends Node2D
 class_name Level
 
 @export var level_name: String
+@export var next_level: PackedScene
 @export var total_time_sec: int = 20
 @export var score_threshold: int
 
@@ -13,11 +14,13 @@ class_name Level
 var time_left_sec: int = total_time_sec
 
 func _ready() -> void:
+	Global.set_next_level(next_level)
+	level_hud.initialize()
 	initialize_countdown()
-	
 	_update_hud("all")
+	Global.player_can_move = true
 	start_countdown()
-
+	
 func _update_hud(element_name: String) -> void:
 	match element_name:
 		"score":
@@ -51,7 +54,14 @@ func _on_countdown_timer_timeout():
 	_update_hud("time_left")
 	if time_left_sec <= 0:
 		countdown_timer.stop()
-		print(check_if_score_met(Global.total_score, score_threshold))
+		Global.player_can_move = false
+		if check_if_score_met(Global.total_score, score_threshold):
+			level_hud.set_and_show_level_end_message("VICTORY!")
+			level_hud.set_and_show_buttons("win")
+		else:
+			level_hud.set_and_show_level_end_message("You failed...")
+			level_hud.set_and_show_buttons("lose")
+		#get_tree().paused = true
 
 func check_if_score_met(player_score: int, score_threshold: int):
 	return player_score >= score_threshold

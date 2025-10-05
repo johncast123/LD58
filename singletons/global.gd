@@ -2,6 +2,8 @@ extends Node
 
 const DEFAULT_MULTIPLIER: int = 1
 
+var player_can_move: bool = true
+
 var bounce_count: int = 0
 var total_score: int = 0
 var base_multiplier := DEFAULT_MULTIPLIER
@@ -12,6 +14,8 @@ var powerup_timer: Timer = Timer.new()
 
 var scope_enabled: bool = false
 var scope_timer: Timer = Timer.new()
+
+var next_level: PackedScene
 
 func _ready():
 	EventBus.connect("update_bounce_count", _on_update_bounce_count)
@@ -64,3 +68,11 @@ func enable_scope(time_sec: int = 5):
 
 func _on_scope_timer_timeout():
 	scope_enabled = false
+
+func go_to_next_level():
+	if next_level:
+		get_tree().change_scene_to_packed(next_level)
+
+func set_next_level(packed_level: PackedScene):
+	if packed_level:
+		next_level = packed_level

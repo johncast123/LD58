@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://da2coqoappdoh"]
+[gd_scene load_steps=17 format=4 uid="uid://da2coqoappdoh"]
 
 [ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_5y0yy"]
 [ext_resource type="PackedScene" uid="uid://cm7k1xy2dt7an" path="res://world/background_objects/window.tscn" id="1_6f1wx"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/level_HUD.tscn" id="1_uhyhg"]
 [ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="2_dhmri"]
 [ext_resource type="Texture2D" uid="uid://b508jx3dpytx8" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="2_go5pu"]
+[ext_resource type="PackedScene" uid="uid://crxg6pgki3jcv" path="res://world/level_2.tscn" id="2_iedf8"]
 [ext_resource type="PackedScene" uid="uid://cxd8utj06nd2h" path="res://world/gem_manager.tscn" id="6_cbh7h"]
 [ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="7_phy56"]
 [ext_resource type="Resource" uid="uid://tdn31p45ulk7" path="res://gems/gem_info/regular_diamond.tres" id="8_0fba2"]
@@ -118,6 +119,9 @@ sources/1 = SubResource("TileSetAtlasSource_5y0yy")
 
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_5y0yy")
+level_name = "Level 1"
+next_level = ExtResource("2_iedf8")
+score_threshold = 10
 
 [node name="LevelHUD" parent="." instance=ExtResource("1_uhyhg")]
 

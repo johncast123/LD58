@@ -32,6 +32,7 @@ gem=""
 
 [gui]
 
+theme/custom="uid://dagdkrfjqi2h5"
 theme/custom_font="uid://cdv37m8yko2gi"
 
 [input]
