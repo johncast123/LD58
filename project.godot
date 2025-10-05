@@ -22,13 +22,17 @@ EventBus="*res://singletons/event_bus.gd"
 
 [display]
 
-window/size/viewport_width=520
-window/size/viewport_height=300
+window/size/viewport_width=512
+window/size/viewport_height=286
 window/stretch/mode="canvas_items"
 
 [global_group]
 
 gem=""
+
+[gui]
+
+theme/custom_font="uid://cdv37m8yko2gi"
 
 [input]
 

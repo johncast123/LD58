@@ -1,5 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://f1hja0tppynh"]
-
+[gd_scene load_steps=6 format=4 uid="uid://j3e1stwxt5kl"]
 
 [ext_resource type="Texture2D" uid="uid://b508jx3dpytx8" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="1_y2h64"]
 [ext_resource type="Texture2D" uid="uid://c81x3vaitmy7r" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Platforms (32x32).png" id="2_v5igl"]
