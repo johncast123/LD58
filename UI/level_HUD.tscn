@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3w5r4vookj4s"]
+
+[ext_resource type="Script" uid="uid://cv32htv08f005" path="res://UI/level_hud.gd" id="1_o8tsg"]
+
+[node name="LevelHUD" type="CanvasLayer"]
+script = ExtResource("1_o8tsg")
+
+[node name="Score" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 192.0
+offset_bottom = 28.0
+text = "Score: 0 "
+
+[node name="CurrentMultiplier" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -130.0
+offset_right = 131.0
+offset_bottom = 16.0
+grow_horizontal = 2
+text = "Current Multiplier"
+horizontal_alignment = 1
+
+[node name="MultiplierNumber" type="Label" parent="CurrentMultiplier"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 17.0
+offset_right = 20.0
+offset_bottom = 33.0
+grow_horizontal = 2
+text = "X1"
+horizontal_alignment = 1
+
+[node name="TimeLeft" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 5.0
+offset_bottom = 21.0
+grow_horizontal = 0
+text = "Time Left: X"
+horizontal_alignment = 2

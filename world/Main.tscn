@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://dslo264mpyvmn"]
+[gd_scene load_steps=15 format=4 uid="uid://dslo264mpyvmn"]
 
 [ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_hh730"]
-[ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/canvas_layer.tscn" id="2_hlc4e"]
+[ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/level_HUD.tscn" id="2_hlc4e"]
 [ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="2_rqm65"]
 [ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="3_cojv5"]
 [ext_resource type="PackedScene" uid="uid://cxd8utj06nd2h" path="res://world/gem_manager.tscn" id="4_hlc4e"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://lolpuixwjb8u" path="res://gems/gem_info/gold_coin.tres" id="7_hlc4e"]
 [ext_resource type="Resource" uid="uid://btpkvxn517y71" path="res://gems/gem_info/skull.tres" id="7_jrdxq"]
 [ext_resource type="Resource" uid="uid://bpq85jnyrhdc2" path="res://gems/gem_info/scope.tres" id="10_hlc4e"]
+[ext_resource type="PackedScene" uid="uid://bt2wiosukdqan" path="res://world/countdown_timer.tscn" id="12_jrdxq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l4nkr"]
 texture = ExtResource("5_cojv5")
@@ -210,8 +211,9 @@ sources/24 = SubResource("TileSetAtlasSource_l4nkr")
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_hh730")
+score_threshold = 50
 
-[node name="CanvasLayer" parent="." instance=ExtResource("2_hlc4e")]
+[node name="LevelHUD" parent="." instance=ExtResource("2_hlc4e")]
 
 [node name="Cannon" parent="." instance=ExtResource("2_rqm65")]
 position = Vector2(257, 238)
@@ -246,3 +248,8 @@ position = Vector2(254, 143)
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAAAGAAHAAEAAAAAAAEAGAADAAIAAAAAAAIAGAADAAIAAAAAAAMAGAADAAIAAAAAAAQAGAADAAIAAAAAAAUAGAADAAIAAAAAAAYAGAADAAIAAAAAAAcAGAADAAIAAAAAAAgAGAAHAAIAAAABAAAAGAACAAMAAAABAAgAGAACAAEAAAACAAAAGAACAAMAAAACAAgAGAACAAEAAAADAAAAGAACAAMAAAADAAgAGAACAAEAAAAEAAAAGAACAAMAAAAEAAgAGAACAAEAAAAFAAAAGAACAAMAAAAFAAgAGAACAAEAAAAGAAAAGAACAAMAAAAGAAgAGAACAAEAAAAHAAAAGAACAAMAAAAHAAgAGAACAAEAAAAIAAAAGAACAAMAAAAIAAgAGAACAAEAAAAJAAAAGAACAAMAAAAJAAgAGAACAAEAAAAKAAAAGAACAAMAAAAKAAgAGAACAAEAAAALAAAAGAACAAMAAAALAAgAGAACAAEAAAAMAAAAGAACAAMAAAAMAAgAGAACAAEAAAANAAAAGAACAAMAAAANAAgAGAACAAEAAAAOAAAAGAACAAMAAAAOAAgAGAACAAEAAAAPAAAAGAAIAAEAAAAPAAEAGAABAAIAAAAPAAIAGAABAAIAAAAPAAMAGAABAAIAAAAPAAQAGAABAAIAAAAPAAUAGAABAAIAAAAPAAYAGAABAAIAAAAPAAcAGAABAAIAAAAPAAgAGAAIAAIAAAA=")
 tile_set = SubResource("TileSet_o3y07")
+
+[node name="CountdownTimer" parent="." instance=ExtResource("12_jrdxq")]
+
+[connection signal="score_calculated" from="GemManager" to="." method="_on_gem_manager_score_calculated"]
+[connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]

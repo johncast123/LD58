@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=4 uid="uid://crxg6pgki3jcv"]
+[gd_scene load_steps=12 format=4 uid="uid://crxg6pgki3jcv"]
 
 [ext_resource type="TileSet" uid="uid://dw66ve3yqcms5" path="res://world/pirate_ship_interior_tileset.tres" id="1_h27rw"]
 [ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_lm1wg"]
-[ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/canvas_layer.tscn" id="3_wpvgc"]
+[ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/level_HUD.tscn" id="3_wpvgc"]
 [ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="4_85yey"]
 [ext_resource type="PackedScene" uid="uid://cxd8utj06nd2h" path="res://world/gem_manager.tscn" id="4_wpvgc"]
 [ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="5_85yey"]
@@ -10,11 +10,12 @@
 [ext_resource type="Resource" uid="uid://dvawghkvy4xuh" path="res://gems/gem_info/regular_emerald.tres" id="7_1ed1g"]
 [ext_resource type="Resource" uid="uid://bjxfrsxpn3sa0" path="res://gems/gem_info/regular_ruby.tres" id="8_k85ya"]
 [ext_resource type="Resource" uid="uid://tdn31p45ulk7" path="res://gems/gem_info/regular_diamond.tres" id="9_k85ya"]
+[ext_resource type="PackedScene" uid="uid://bt2wiosukdqan" path="res://world/countdown_timer.tscn" id="11_04rgn"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lm1wg")
 
-[node name="CanvasLayer" parent="." instance=ExtResource("3_wpvgc")]
+[node name="LevelHUD" parent="." instance=ExtResource("3_wpvgc")]
 
 [node name="Background" type="TileMapLayer" parent="."]
 
@@ -242,7 +243,10 @@ is_moving = true
 [node name="Cannon" parent="." instance=ExtResource("4_85yey")]
 position = Vector2(256, 264)
 
+[node name="CountdownTimer" parent="." instance=ExtResource("11_04rgn")]
+
 [connection signal="score_calculated" from="GemManager" to="." method="_on_gem_manager_score_calculated"]
+[connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]
 
 [editable path="GemManager/silver1"]
 [editable path="GemManager/silver2"]

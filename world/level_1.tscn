@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://da2coqoappdoh"]
+[gd_scene load_steps=16 format=4 uid="uid://da2coqoappdoh"]
 
 [ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_5y0yy"]
 [ext_resource type="PackedScene" uid="uid://cm7k1xy2dt7an" path="res://world/background_objects/window.tscn" id="1_6f1wx"]
 [ext_resource type="TileSet" uid="uid://dw66ve3yqcms5" path="res://world/pirate_ship_interior_tileset.tres" id="1_lis17"]
-[ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/canvas_layer.tscn" id="1_uhyhg"]
+[ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/level_HUD.tscn" id="1_uhyhg"]
 [ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="2_dhmri"]
 [ext_resource type="Texture2D" uid="uid://b508jx3dpytx8" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="2_go5pu"]
 [ext_resource type="PackedScene" uid="uid://cxd8utj06nd2h" path="res://world/gem_manager.tscn" id="6_cbh7h"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://lolpuixwjb8u" path="res://gems/gem_info/gold_coin.tres" id="9_8s6e0"]
 [ext_resource type="Resource" uid="uid://dvawghkvy4xuh" path="res://gems/gem_info/regular_emerald.tres" id="9_phy56"]
 [ext_resource type="Resource" uid="uid://bjxfrsxpn3sa0" path="res://gems/gem_info/regular_ruby.tres" id="10_0fba2"]
+[ext_resource type="PackedScene" uid="uid://bt2wiosukdqan" path="res://world/countdown_timer.tscn" id="13_8s6e0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5y0yy"]
 texture = ExtResource("2_go5pu")
@@ -118,7 +119,7 @@ sources/1 = SubResource("TileSetAtlasSource_5y0yy")
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_5y0yy")
 
-[node name="CanvasLayer" parent="." instance=ExtResource("1_uhyhg")]
+[node name="LevelHUD" parent="." instance=ExtResource("1_uhyhg")]
 
 [node name="Background" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_dhmri")
@@ -298,4 +299,7 @@ gem_info = ExtResource("8_0fba2")
 [node name="Cannon" parent="." instance=ExtResource("2_dhmri")]
 position = Vector2(256, 264)
 
+[node name="CountdownTimer" parent="." instance=ExtResource("13_8s6e0")]
+
 [connection signal="score_calculated" from="GemManager" to="." method="_on_gem_manager_score_calculated"]
+[connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]
