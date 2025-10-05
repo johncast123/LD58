@@ -1,6 +1,8 @@
 # scripts/Cannon.gd
 extends Node2D
 
+const HOOKLINE = preload("res://actors/hook_line.tscn")
+
 @export var rotate_speed_deg: float = 360.0     # used only for smooth aiming
 @export var min_angle_deg: float = -160.0       # up-left limit (global degrees)
 @export var max_angle_deg: float = -20.0        # up-right limit (global degrees)
@@ -8,17 +10,16 @@ extends Node2D
 @export var max_hook_count: int = 1
 @export var use_smooth_mouse_aim: bool = true   # set false to snap-aim
 
-var can_fire := true
-var current_hook_count: int = 0
+var active_hooks: Array[Hook] = []
 
 @onready var muzzle: Node2D = $Muzzle
-@onready var line_2d = $Line2D
 
 func _physics_process(delta: float) -> void:
+	max_hook_count = Global.max_hook_count
 	_aim_with_mouse(delta)
 
 	# Fire with Space or Left Click
-	if _if_can_fire() and (Input.is_action_just_pressed("fire") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
+	if _if_can_fire() and Input.is_action_just_pressed("fire"):
 		_fire_hook()
 
 func _aim_with_mouse(delta: float) -> void:
@@ -44,24 +45,25 @@ func _aim_with_mouse(delta: float) -> void:
 		rotation_degrees = desired_deg
 
 func _fire_hook() -> void:
-	if !_if_can_fire():
-		return
 	if not hook_scene:
 		push_error("hook_scene not assigned on Cannon")
 		return
-	current_hook_count += 1
+	
+	# instantiate hookline
+	var line = HOOKLINE.instantiate()
+	add_child(line)
+	
+	# instantiate hook
 	var hook = hook_scene.instantiate()
+	active_hooks.append(hook)
 	get_tree().current_scene.add_child(hook)
-	hook.connect("update_line_points", update_line_points)
-	hook.connect("hook_queue_freed", _on_hook_queue_freed)
+	hook.connect("update_line_points", update_line_points.bind(line))
+	hook.connect("hook_queue_freed", _on_hook_queue_freed.bind(hook, line))
 	var dir = Vector2.RIGHT.rotated(global_rotation)  # +X is forward
 	hook.begin(muzzle.global_position, dir)
 
 func _if_can_fire() -> bool:
-	if current_hook_count >= max_hook_count:
-		return false
-	else:
-		return true
+	return active_hooks.size() < max_hook_count
 
 # Helper: like lerp_angle but with a max step (deg)
 func move_toward_angle(from: float, to: float, delta_step: float) -> float:
@@ -69,14 +71,15 @@ func move_toward_angle(from: float, to: float, delta_step: float) -> float:
 	var step = clamp(diff, -delta_step, delta_step)
 	return from + step
 
-func update_line_points(global_point_array: PackedVector2Array):
-	line_2d.clear_points()
+func update_line_points(global_point_array: PackedVector2Array, line: Line2D):
+	line.clear_points()
 	for point in global_point_array:
-		line_2d.add_point(to_local(point))
+		line.add_point(to_local(point))
 
-func _on_hook_queue_freed():
-	line_2d.clear_points()
-	current_hook_count -= 1
+func _on_hook_queue_freed(hook: Hook, line: Line2D):
+	line.clear_points()
+	if hook in active_hooks:
+		active_hooks.erase(hook)
 	# only reset multiplayer if all current hook count == 0
-	if current_hook_count <= 0:
+	if active_hooks.is_empty():
 		Global.reset_bounce_count()

@@ -2,14 +2,15 @@ extends Resource
 
 class_name GemInfo
 
-@export_enum("Silver Coin", "Gold Coin", "Ruby", "Emerald", "Diamond", "Multiplier Star", "Skull") var gem_name: String = "Silver Coin"
+@export_enum("Silver Coin", "Gold Coin", "Ruby", "Emerald", "Diamond", "Multiplier Star", "Skull", "Multi Hook") var gem_name: String = "Silver Coin"
 @export var sprite_frame: SpriteFrames = preload("res://gems/silver_coin.tres")
 @export var point: int = 10
 @export var extra_function_index: int = -1
 
 var extra_function_list: Array[Callable] = [
 	increase_base_multiplier,
-	decrease_base_multiplier
+	decrease_base_multiplier,
+	increase_max_hook_count
 ]
 
 func execute_extra_function(index: int):
@@ -22,3 +23,6 @@ func increase_base_multiplier(amount: int = 1):
 
 func decrease_base_multiplier(amount: int = 1):
 	Global.base_multiplier -= amount
+
+func increase_max_hook_count(amount: int = 1, time_sec: int = 10):
+	Global.increase_max_hook_count(amount, time_sec)

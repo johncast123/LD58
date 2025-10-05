@@ -13,6 +13,3 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_3pe62")
 
 [node name="Muzzle" type="Marker2D" parent="."]
-
-[node name="Line2D" type="Line2D" parent="."]
-width = 2.0
