@@ -12,7 +12,6 @@ enum State { IDLE, EXTENDING, RETRACTING }
 @export var retract_speed: float = 650.0
 @export var max_length: float = 500.0
 @export var max_bounces: int = 8   # how many wall bounces allowed during extension
-@export var raycast_multiplier: int = 15
 
 @onready var state_machine = $StateMachine
 @onready var ray = $ForwardRay

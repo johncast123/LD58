@@ -7,6 +7,7 @@ func update_physics_frame(delta: float):
 	var step_distance := hook.extend_speed * delta
 	var remaining := step_distance
 
+	# NOTE: Collision/bounce checks should happen before actually executing the moving! 
 	while remaining > 0 and hook.bounces < hook.max_bounces:
 		# Configure ray to check the next travel segment
 		hook.ray.global_position = hook.global_position

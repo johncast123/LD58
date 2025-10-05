@@ -21,6 +21,11 @@ func _physics_process(delta: float) -> void:
 	# Fire with Space or Left Click
 	if _if_can_fire() and Input.is_action_just_pressed("fire"):
 		_fire_hook()
+	
+	# preview line stuff
+	var mouse_dir = (get_global_mouse_position() - global_position).normalized()
+	var preview_points = get_hook_preview(global_position, mouse_dir, 500, 8)
+	$PreviewLine.points = preview_points
 
 func _aim_with_mouse(delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
@@ -83,3 +88,36 @@ func _on_hook_queue_freed(hook: Hook, line: Line2D):
 	# only reset multiplayer if all current hook count == 0
 	if active_hooks.is_empty():
 		Global.reset_bounce_count()
+
+func get_hook_preview(start_pos: Vector2, direction: Vector2, max_length: float, max_bounces: int) -> PackedVector2Array:
+	var points: Array[Vector2]
+	var pos = start_pos
+	var dir = direction.normalized()
+	var traveled = 0.0
+	var bounces = 0
+	
+	while traveled < max_length and bounces < max_bounces:
+		# Determine ray distance for this step
+		var step_distance = 20.0  # small step for preview
+		var space_state = get_world_2d().direct_space_state
+		var physics_argument := PhysicsRayQueryParameters2D.create(pos, pos + dir * step_distance, 1)
+		physics_argument.collide_with_bodies = true
+		var result = space_state.intersect_ray(physics_argument)  # 1 = collision mask for walls
+		
+		if result:
+			var collision_point = result.position
+			var normal = result.normal
+			points.append(collision_point)
+			
+			dir = dir.bounce(normal).normalized()
+			pos = collision_point + dir * 0.1  # nudge off the wall
+			traveled += pos.distance_to(points[points.size()-2])
+			bounces += 1
+		else:
+			pos += dir * step_distance
+			traveled += step_distance
+			points.append(pos)
+	
+	# convert all points to local
+	var local_points := PackedVector2Array(points.map(to_local))
+	return local_points
