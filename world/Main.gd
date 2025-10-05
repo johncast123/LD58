@@ -19,6 +19,8 @@ var level_score: int = 0
 
 func _ready() -> void:
 	Global.set_next_level(next_level)
+	EventBus.remove_all_buffs.emit()
+	
 	level_hud.initialize()
 	initialize_countdown()
 	level_score = 0

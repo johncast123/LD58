@@ -24,7 +24,6 @@ func increase_base_multiplier(amount: int = 1):
 	Global.base_multiplier += amount
 
 func remove_all_buffs():
-	Global.base_multiplier = 1
 	EventBus.emit_signal("remove_all_buffs")
 
 func increase_max_hook_count(amount: int = 2, time_sec: int = 10):

@@ -83,5 +83,7 @@ func set_next_level(packed_level: PackedScene):
 		next_level = packed_level
 
 func _on_all_buff_removed():
+	base_multiplier = 1
+	current_multiplier = 1
 	scope_enabled = false
 	reset_max_hook_count()
