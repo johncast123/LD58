@@ -9,7 +9,7 @@ class_name MoveManager
 
 var _start_pos: Vector2
 var _moving_forward := true
-var _traveled_distance := 0.0
+var _traveled_distance : float = move_range_px/2
 
 func _ready() -> void:
 	# Save the starting position of the parent
