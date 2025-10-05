@@ -15,11 +15,13 @@ const SCORE_POPUP = preload("res://UI/score_popup.tscn")
 @onready var cannon = $Cannon
 
 var time_left_sec: int = total_time_sec
+var level_score: int = 0
 
 func _ready() -> void:
 	Global.set_next_level(next_level)
 	level_hud.initialize()
 	initialize_countdown()
+	level_score = 0
 	_update_hud("all")
 	Global.player_can_move = true
 	start_countdown()
@@ -27,17 +29,18 @@ func _ready() -> void:
 func _update_hud(element_name: String) -> void:
 	match element_name:
 		"score":
-			level_hud.update_score(Global.total_score)
+			level_hud.update_score(level_score, score_threshold)
 		"multiplier":
 			level_hud.update_multiplier(Global.current_multiplier)
 		"time_left":
 			level_hud.update_timeleft(time_left_sec)
 		"all":
-			level_hud.update_score(Global.total_score)
+			level_hud.update_score(level_score, score_threshold)
 			level_hud.update_multiplier(Global.current_multiplier)
 			level_hud.update_timeleft(time_left_sec)
 
 func _on_gem_manager_score_calculated(gem_score: int):
+	level_score += gem_score
 	_update_hud("score")
 	if gem_score <= 5: # if smaller than a certain threshold, do not display the popup
 		return
@@ -64,9 +67,10 @@ func _on_countdown_timer_timeout():
 	if time_left_sec <= 0:
 		countdown_timer.stop()
 		Global.player_can_move = false
-		if check_if_score_met(Global.total_score, score_threshold):
+		if check_if_score_met(level_score, score_threshold):
 			level_hud.set_and_show_level_end_message("VICTORY!")
 			level_hud.set_and_show_buttons("win")
+			level_hud.update_total_score(level_score)
 		else:
 			level_hud.set_and_show_level_end_message("You failed...")
 			level_hud.set_and_show_buttons("lose")

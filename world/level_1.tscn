@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://byqy17g31njmx" path="res://world/background_objects/small_chain.tscn" id="12_87vrv"]
 [ext_resource type="PackedScene" uid="uid://bt2wiosukdqan" path="res://world/countdown_timer.tscn" id="13_8s6e0"]
 [ext_resource type="PackedScene" uid="uid://b8s8csuqfv2ts" path="res://world/background_objects/big_chain.tscn" id="13_fnv45"]
-[ext_resource type="PackedScene" uid="uid://dsamr2xxuqs5y" path="res://world/pirate_ship_filter.tscn" id="14_t7y30"]
+[ext_resource type="PackedScene" path="res://world/pirate_ship_filter.tscn" id="14_t7y30"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5y0yy"]
 texture = ExtResource("2_go5pu")
@@ -130,7 +130,7 @@ sources/1 = SubResource("TileSetAtlasSource_5y0yy")
 script = ExtResource("1_5y0yy")
 level_name = "Level 1"
 next_level = ExtResource("2_iedf8")
-score_threshold = 10
+score_threshold = 250
 
 [node name="LevelHUD" parent="." instance=ExtResource("1_uhyhg")]
 visible = false

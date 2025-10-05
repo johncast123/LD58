@@ -19,7 +19,7 @@ func _on_gem_collected(gem: Gem):
 	if gem.gem_info.extra_function_index >= 0: # if there is some extra function to execute
 		gem.gem_info.execute_extra_function(gem.gem_info.extra_function_index)
 	var gem_score := calculate_score(gem.point, Global.current_multiplier)
-	Global.update_total_score(gem_score)
+	#Global.update_total_score(gem_score)
 	gem.queue_free()
 	score_calculated.emit(gem_score)
 

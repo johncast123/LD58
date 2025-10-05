@@ -70,32 +70,58 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 text = "Message"
 
-[node name="ButtonsContainer" type="HBoxContainer" parent="."]
-anchors_preset = 12
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -90.0
-offset_bottom = -56.0
+offset_left = -131.0
+offset_top = -103.0
+offset_right = 132.0
+offset_bottom = -53.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = 5
+
+[node name="TotalScoreContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
 alignment = 1
 
-[node name="Next" type="Button" parent="ButtonsContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/TotalScoreContainer"]
+layout_mode = 2
+text = "Total score:"
+horizontal_alignment = 1
+
+[node name="TotalScore" type="Label" parent="VBoxContainer/TotalScoreContainer"]
+layout_mode = 2
+text = "XXXXX"
+horizontal_alignment = 1
+
+[node name="Delta" type="Label" parent="VBoxContainer/TotalScoreContainer"]
+layout_mode = 2
+text = "+XXX"
+horizontal_alignment = 1
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Next" type="Button" parent="VBoxContainer/ButtonsContainer"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 text = "Next Level"
 
-[node name="Restart" type="Button" parent="ButtonsContainer"]
+[node name="Restart" type="Button" parent="VBoxContainer/ButtonsContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Restart Level"
 
-[node name="Menu" type="Button" parent="ButtonsContainer"]
+[node name="Menu" type="Button" parent="VBoxContainer/ButtonsContainer"]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 text = "To Menu"
 
-[connection signal="pressed" from="ButtonsContainer/Next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="ButtonsContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="ButtonsContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonsContainer/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonsContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonsContainer/Menu" to="." method="_on_menu_pressed"]
