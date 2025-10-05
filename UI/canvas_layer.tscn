@@ -3,7 +3,8 @@
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="Label" type="Label" parent="."]
-offset_right = 228.0
+offset_left = 8.0
+offset_right = 236.0
 offset_bottom = 23.0
 text = "Score: 0 "
 
