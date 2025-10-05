@@ -1,11 +1,125 @@
-[gd_scene load_steps=3 format=4 uid="uid://da2coqoappdoh"]
+[gd_scene load_steps=13 format=4 uid="uid://da2coqoappdoh"]
 
+[ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_5y0yy"]
 [ext_resource type="PackedScene" uid="uid://cm7k1xy2dt7an" path="res://world/background_objects/window.tscn" id="1_6f1wx"]
 [ext_resource type="TileSet" uid="uid://dw66ve3yqcms5" path="res://world/pirate_ship_interior_tileset.tres" id="1_lis17"]
+[ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/canvas_layer.tscn" id="1_uhyhg"]
+[ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="2_dhmri"]
+[ext_resource type="Texture2D" uid="uid://b508jx3dpytx8" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="2_go5pu"]
+[ext_resource type="PackedScene" uid="uid://cxd8utj06nd2h" path="res://world/gem_manager.tscn" id="6_cbh7h"]
+[ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="7_phy56"]
+[ext_resource type="Resource" uid="uid://tdn31p45ulk7" path="res://gems/gem_info/regular_diamond.tres" id="8_0fba2"]
+[ext_resource type="Resource" uid="uid://lolpuixwjb8u" path="res://gems/gem_info/gold_coin.tres" id="9_8s6e0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5y0yy"]
+texture = ExtResource("2_go5pu")
+texture_region_size = Vector2i(32, 32)
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+5:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+16:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+5:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+5:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+16:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+5:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+5:9/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+5:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dhmri"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_5y0yy")
 
 [node name="Node2D2" type="Node2D"]
+script = ExtResource("1_5y0yy")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("1_uhyhg")]
 
 [node name="Background" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_dhmri")
 
 [node name="BackgroundObjects" type="Node2D" parent="."]
 
@@ -13,5 +127,28 @@
 position = Vector2(74, 65)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAAAGAAHAAEAAAAAAAEAGAADAAIAAAAAAAIAGAADAAIAAAAAAAMAGAADAAIAAAAAAAQAGAADAAIAAAAAAAUAGAADAAIAAAAAAAYAGAADAAIAAAAAAAcAGAADAAIAAAAAAAgAGAAHAAIAAAABAAAAGAACAAMAAAABAAgAGAACAAEAAAACAAAAGAACAAMAAAACAAgAGAACAAEAAAADAAAAGAACAAMAAAADAAgAGAACAAEAAAAEAAAAGAACAAMAAAAEAAgAGAACAAEAAAAFAAAAGAACAAMAAAAFAAgAGAACAAEAAAAGAAAAGAACAAMAAAAGAAgAGAACAAEAAAAHAAAAGAACAAMAAAAHAAgAGAACAAEAAAAIAAAAGAACAAMAAAAIAAgAGAACAAEAAAAJAAAAGAACAAMAAAAJAAgAGAACAAEAAAAKAAAAGAACAAMAAAAKAAgAGAACAAEAAAALAAAAGAACAAMAAAALAAgAGAACAAEAAAAMAAAAGAACAAMAAAAMAAgAGAACAAEAAAANAAAAGAACAAMAAAANAAgAGAACAAEAAAAOAAAAGAACAAMAAAAOAAgAGAACAAEAAAAPAAAAGAAIAAEAAAAPAAEAGAABAAIAAAAPAAIAGAABAAIAAAAPAAMAGAABAAIAAAAPAAQAGAABAAIAAAAPAAUAGAABAAIAAAAPAAYAGAABAAIAAAAPAAcAGAABAAIAAAAPAAgAGAAIAAIAAAAEAAYAGAAFAAUAAAADAAMAGAABAAUAAAAEAAMAGAACAAUAAAAFAAMAGAADAAUAAAAMAAIAGAAFAAEAAAAMAAMAGAAFAAIAAAAMAAQAGAAFAAIAAAAMAAUAGAAFAAEAACALAAQAAAABAAEAAAAKAAIAAAABAAIAAAALAAIAAAACAAIAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAGAAHAAEAAAAAAAEAGAADAAIAAAAAAAIAGAADAAIAAAAAAAMAGAADAAIAAAAAAAQAGAADAAIAAAAAAAUAGAADAAIAAAAAAAYAGAADAAIAAAAAAAcAGAADAAIAAAAAAAgAGAAHAAIAAAABAAAAGAACAAMAAAABAAgAGAACAAEAAAACAAAAGAACAAMAAAACAAgAGAACAAEAAAADAAAAGAACAAMAAAADAAgAGAACAAEAAAAEAAAAGAACAAMAAAAEAAgAGAACAAEAAAAFAAAAGAACAAMAAAAFAAgAGAACAAEAAAAGAAAAGAACAAMAAAAGAAgAGAACAAEAAAAHAAAAGAACAAMAAAAHAAgAGAADAAEAAAAIAAAAGAACAAMAAAAIAAgAGAABAAEAAAAJAAAAGAACAAMAAAAJAAgAGAACAAEAAAAKAAAAGAACAAMAAAAKAAgAGAACAAEAAAALAAAAGAACAAMAAAALAAgAGAACAAEAAAAMAAAAGAACAAMAAAAMAAgAGAACAAEAAAANAAAAGAACAAMAAAANAAgAGAACAAEAAAAOAAAAGAACAAMAAAAOAAgAGAACAAEAAAAPAAAAGAAIAAEAAAAPAAEAGAABAAIAAAAPAAIAGAABAAIAAAAPAAMAGAABAAIAAAAPAAQAGAABAAIAAAAPAAUAGAABAAIAAAAPAAYAGAABAAIAAAAPAAcAGAABAAIAAAAPAAgAGAAIAAIAAAAEAAYAGAAFAAUAAAADAAMAGAABAAUAAAAEAAMAGAACAAUAAAAFAAMAGAADAAUAAAAMAAIAGAAFAAEAAAAMAAMAGAAFAAIAAAAMAAQAGAAFAAIAAAAMAAUAGAAFAAEAACALAAQAAAABAAEAAAAKAAIAAAABAAIAAAALAAIAAAACAAIAAAA=")
 tile_set = ExtResource("1_lis17")
+
+[node name="GemManager" parent="." instance=ExtResource("6_cbh7h")]
+position = Vector2(143, 178)
+
+[node name="Gem2" parent="GemManager" instance=ExtResource("7_phy56")]
+position = Vector2(256, -130)
+gem_info = ExtResource("8_0fba2")
+
+[node name="Gem" parent="GemManager" instance=ExtResource("7_phy56")]
+position = Vector2(0, 3)
+gem_info = ExtResource("9_8s6e0")
+
+[node name="Gem3" parent="GemManager" instance=ExtResource("7_phy56")]
+position = Vector2(223, -32)
+gem_info = ExtResource("9_8s6e0")
+
+[node name="Gem4" parent="GemManager" instance=ExtResource("7_phy56")]
+position = Vector2(223, -10)
+
+[node name="Cannon" parent="." instance=ExtResource("2_dhmri")]
+position = Vector2(256, 259)
+
+[connection signal="score_calculated" from="GemManager" to="." method="_on_gem_manager_score_calculated"]

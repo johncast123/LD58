@@ -1,17 +1,18 @@
-[gd_scene format=3 uid="uid://cd02sqlooh6pj"]
+[gd_scene format=3 uid="uid://b3w5r4vookj4s"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="Label" type="Label" parent="."]
-offset_right = 40.0
+offset_right = 228.0
 offset_bottom = 23.0
-text = "Score: 0 ←/→ to aim, Space to fire"
+text = "Score: 0 "
 
 [node name="CurrentMultiplier" type="Label" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -261.0
+offset_left = -269.0
+offset_right = -8.0
 offset_bottom = 23.0
 grow_horizontal = 0
 text = "Current Multiplier: X1"

@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://dslo264mpyvmn"]
+[gd_scene load_steps=14 format=4 uid="uid://dslo264mpyvmn"]
 
 [ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_hh730"]
+[ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/canvas_layer.tscn" id="2_hlc4e"]
 [ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="2_rqm65"]
 [ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="3_cojv5"]
-[ext_resource type="Script" uid="uid://1sttqo44gd1x" path="res://gems/gem_manager.gd" id="3_rqm65"]
+[ext_resource type="PackedScene" uid="uid://cxd8utj06nd2h" path="res://world/gem_manager.tscn" id="4_hlc4e"]
 [ext_resource type="Resource" uid="uid://bimu7ghsfa88p" path="res://gems/gem_info/multi_hook.tres" id="5_6qrix"]
 [ext_resource type="Texture2D" uid="uid://b508jx3dpytx8" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="5_cojv5"]
 [ext_resource type="Resource" uid="uid://bgj8b8kv2jglw" path="res://gems/gem_info/multiplier_star.tres" id="6_6qrix"]
@@ -210,30 +211,13 @@ sources/24 = SubResource("TileSetAtlasSource_l4nkr")
 [node name="Main" type="Node2D"]
 script = ExtResource("1_hh730")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_right = 228.0
-offset_bottom = 23.0
-text = "Score: 0 ←/→ to aim, Space to fire"
-
-[node name="CurrentMultiplier" type="Label" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -269.0
-offset_right = -8.0
-offset_bottom = 23.0
-grow_horizontal = 0
-text = "Current Multiplier: X1"
-horizontal_alignment = 2
+[node name="CanvasLayer" parent="." instance=ExtResource("2_hlc4e")]
 
 [node name="Cannon" parent="." instance=ExtResource("2_rqm65")]
 position = Vector2(257, 238)
 
-[node name="GemManager" type="Node2D" parent="."]
+[node name="GemManager" parent="." instance=ExtResource("4_hlc4e")]
 position = Vector2(0, -7)
-script = ExtResource("3_rqm65")
 
 [node name="Gem" parent="GemManager" instance=ExtResource("3_cojv5")]
 position = Vector2(92, 101)
@@ -261,5 +245,3 @@ position = Vector2(254, 143)
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAAAGAAHAAEAAAAAAAEAGAADAAIAAAAAAAIAGAADAAIAAAAAAAMAGAADAAIAAAAAAAQAGAADAAIAAAAAAAUAGAADAAIAAAAAAAYAGAADAAIAAAAAAAcAGAADAAIAAAAAAAgAGAAHAAIAAAABAAAAGAACAAMAAAABAAgAGAACAAEAAAACAAAAGAACAAMAAAACAAgAGAACAAEAAAADAAAAGAACAAMAAAADAAgAGAACAAEAAAAEAAAAGAACAAMAAAAEAAgAGAACAAEAAAAFAAAAGAACAAMAAAAFAAgAGAACAAEAAAAGAAAAGAACAAMAAAAGAAgAGAACAAEAAAAHAAAAGAACAAMAAAAHAAgAGAACAAEAAAAIAAAAGAACAAMAAAAIAAgAGAACAAEAAAAJAAAAGAACAAMAAAAJAAgAGAACAAEAAAAKAAAAGAACAAMAAAAKAAgAGAACAAEAAAALAAAAGAACAAMAAAALAAgAGAACAAEAAAAMAAAAGAACAAMAAAAMAAgAGAACAAEAAAANAAAAGAACAAMAAAANAAgAGAACAAEAAAAOAAAAGAACAAMAAAAOAAgAGAACAAEAAAAPAAAAGAAIAAEAAAAPAAEAGAABAAIAAAAPAAIAGAABAAIAAAAPAAMAGAABAAIAAAAPAAQAGAABAAIAAAAPAAUAGAABAAIAAAAPAAYAGAABAAIAAAAPAAcAGAABAAIAAAAPAAgAGAAIAAIAAAA=")
 tile_set = SubResource("TileSet_o3y07")
-
-[connection signal="score_calculated" from="GemManager" to="." method="_on_gem_manager_score_calculated"]

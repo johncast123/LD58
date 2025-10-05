@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxd8utj06nd2h"]
+
+[ext_resource type="Script" uid="uid://1sttqo44gd1x" path="res://gems/gem_manager.gd" id="1_5nb44"]
+
+[node name="GemManager" type="Node2D"]
+script = ExtResource("1_5nb44")
