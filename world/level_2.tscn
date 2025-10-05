@@ -19,7 +19,7 @@
 [ext_resource type="Resource" uid="uid://tdn31p45ulk7" path="res://gems/gem_info/regular_diamond.tres" id="9_k85ya"]
 [ext_resource type="PackedScene" uid="uid://cvc5i2620paop" path="res://world/background_objects/candle.tscn" id="10_wh86m"]
 [ext_resource type="PackedScene" uid="uid://bt2wiosukdqan" path="res://world/countdown_timer.tscn" id="11_04rgn"]
-[ext_resource type="PackedScene" path="res://world/pirate_ship_filter.tscn" id="11_wh86m"]
+[ext_resource type="PackedScene" uid="uid://dsamr2xxuqs5y" path="res://world/pirate_ship_filter.tscn" id="11_wh86m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1t23h"]
 texture = ExtResource("4_51wcm")

@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cxd8utj06nd2h" path="res://world/gem_manager.tscn" id="8_owy45"]
 [ext_resource type="Resource" uid="uid://bjxfrsxpn3sa0" path="res://gems/gem_info/regular_ruby.tres" id="8_yd8k0"]
 [ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="9_1e3lg"]
-[ext_resource type="PackedScene" path="res://world/foreground_obects/ship.tscn" id="9_uxsqw"]
+[ext_resource type="PackedScene" uid="uid://bjcqegknhn2in" path="res://world/foreground_obects/ship.tscn" id="9_uxsqw"]
 [ext_resource type="Texture2D" uid="uid://b5taula0vuyu3" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/1.png" id="10_jkyup"]
 [ext_resource type="Texture2D" uid="uid://cxnpbd4jub8ym" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/2.png" id="11_mkt25"]
 [ext_resource type="Texture2D" uid="uid://xhgplh2qga44" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/3.png" id="12_84cyb"]
@@ -32,7 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://ckj77eiusyyhf" path="res://asset/Treasure Hunters/Merchant Ship/Sprites/Water/Reflexes 2/6.png" id="26_4pl3b"]
 [ext_resource type="Resource" uid="uid://bpq85jnyrhdc2" path="res://gems/gem_info/scope.tres" id="27_r85x8"]
 [ext_resource type="Resource" uid="uid://tdn31p45ulk7" path="res://gems/gem_info/regular_diamond.tres" id="28_c23s7"]
-[ext_resource type="PackedScene" path="res://world/foreground_obects/totem.tscn" id="29_q2tud"]
+[ext_resource type="PackedScene" uid="uid://dm0njofpklcy8" path="res://world/foreground_obects/totem.tscn" id="29_q2tud"]
 [ext_resource type="PackedScene" uid="uid://bt2wiosukdqan" path="res://world/countdown_timer.tscn" id="31_c23s7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cl1rl"]

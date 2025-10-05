@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbk3yy5hc43j5"]
+
+[ext_resource type="Texture2D" uid="uid://c4vp0gch3gs0h" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/02.png" id="1_6xnoj"]
+[ext_resource type="Texture2D" uid="uid://o7paseuyi7m0" path="res://asset/countdown_clock_under.png" id="2_apila"]
+[ext_resource type="Script" uid="uid://d1pn23eqrbk57" path="res://UI/scope_timer_indicator.gd" id="2_cq3ma"]
+[ext_resource type="Texture2D" uid="uid://bb4nkscq76g2t" path="res://asset/countdown_clock_over.png" id="3_cq3ma"]
+[ext_resource type="Texture2D" uid="uid://ciqokak0nogbo" path="res://asset/countdown_clock_progress.png" id="4_oji47"]
+
+[node name="ScopeTimerIndicator" type="Sprite2D"]
+top_level = true
+texture = ExtResource("1_6xnoj")
+script = ExtResource("2_cq3ma")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 8.0
+offset_bottom = 12.0
+value = 100.0
+fill_mode = 4
+texture_under = ExtResource("2_apila")
+texture_over = ExtResource("3_cq3ma")
+texture_progress = ExtResource("4_oji47")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

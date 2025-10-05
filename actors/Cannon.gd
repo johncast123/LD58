@@ -11,8 +11,27 @@ const HOOKLINE = preload("res://actors/hook_line.tscn")
 @export var use_smooth_mouse_aim: bool = true   # set false to snap-aim
 
 var active_hooks: Array[Hook] = []
+var active_indicators: Array[Node] = []
 
 @onready var muzzle: Node2D = $Muzzle
+@onready var scope_timer_indicator = $ScopeTimerIndicator
+@onready var multihook_timer_indicator = $MultihookTimerIndicator
+
+func _ready():
+	EventBus.connect("spawn_scope_indicator", _on_show_indicator.bind("scope"))
+	EventBus.connect("spawn_multihook_indicator", _on_show_indicator.bind("multihook"))
+	
+
+func _on_show_indicator(indicator_name: String):
+	match indicator_name:
+		"scope":
+			scope_timer_indicator.show()
+			scope_timer_indicator.init()
+			scope_timer_indicator.global_position = global_position + Vector2.RIGHT * 15
+		"multihook":
+			multihook_timer_indicator.show()
+			multihook_timer_indicator.init()
+			multihook_timer_indicator.global_position = global_position + Vector2.LEFT * 15
 
 func _physics_process(delta: float) -> void:
 	if Global.scope_enabled:

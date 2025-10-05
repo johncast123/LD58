@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5avxrb5wnqor"]
+[gd_scene load_steps=7 format=3 uid="uid://c5avxrb5wnqor"]
 
 [ext_resource type="Script" uid="uid://ou42wonxwca6" path="res://actors/Cannon.gd" id="1_dgm0w"]
 [ext_resource type="Texture2D" uid="uid://dnm2nltxbp62p" path="res://icon.svg" id="2_3pe62"]
 [ext_resource type="PackedScene" uid="uid://dqgketbcml54p" path="res://actors/Hook.tscn" id="2_cvoka"]
 [ext_resource type="Texture2D" uid="uid://r7dmndf0ew63" path="res://asset/dotted.png" id="4_kg75n"]
+[ext_resource type="PackedScene" uid="uid://cbk3yy5hc43j5" path="res://UI/scope_timer_indicator.tscn" id="5_vkd7r"]
+[ext_resource type="PackedScene" uid="uid://dvsc53hx4svp5" path="res://UI/multihook_timer_indicator.tscn" id="6_8vco2"]
 
 [node name="Cannon" type="Node2D"]
 script = ExtResource("1_dgm0w")
@@ -21,3 +23,11 @@ width = 2.0
 default_color = Color(1, 0.592157, 1, 1)
 texture = ExtResource("4_kg75n")
 texture_mode = 1
+
+[node name="ScopeTimerIndicator" parent="." instance=ExtResource("5_vkd7r")]
+visible = false
+position = Vector2(16, 0)
+
+[node name="MultihookTimerIndicator" parent="." instance=ExtResource("6_8vco2")]
+visible = false
+position = Vector2(-16, 0)

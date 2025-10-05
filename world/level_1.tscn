@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://byqy17g31njmx" path="res://world/background_objects/small_chain.tscn" id="12_87vrv"]
 [ext_resource type="PackedScene" uid="uid://bt2wiosukdqan" path="res://world/countdown_timer.tscn" id="13_8s6e0"]
 [ext_resource type="PackedScene" uid="uid://b8s8csuqfv2ts" path="res://world/background_objects/big_chain.tscn" id="13_fnv45"]
-[ext_resource type="PackedScene" path="res://world/pirate_ship_filter.tscn" id="14_t7y30"]
+[ext_resource type="PackedScene" uid="uid://dsamr2xxuqs5y" path="res://world/pirate_ship_filter.tscn" id="14_t7y30"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5y0yy"]
 texture = ExtResource("2_go5pu")
@@ -289,6 +289,11 @@ gem_info = ExtResource("8_0fba2")
 
 [node name="Cannon" parent="." instance=ExtResource("2_dhmri")]
 position = Vector2(256, 264)
+rotate_speed_deg = 360.0
+min_angle_deg = -160.0
+max_angle_deg = -20.0
+max_hook_count = 1
+use_smooth_mouse_aim = true
 
 [node name="CountdownTimer" parent="." instance=ExtResource("13_8s6e0")]
 

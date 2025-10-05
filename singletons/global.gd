@@ -2,6 +2,8 @@ extends Node
 
 const DEFAULT_MULTIPLIER: int = 1
 
+const SCOPE_INDICATOR = preload("res://UI/scope_timer_indicator.tscn")
+
 var player_can_move: bool = true
 
 var bounce_count: int = 0
@@ -67,6 +69,7 @@ func _on_powerup_timer_timeout():
 func enable_scope(time_sec: int = 5):
 	scope_enabled = true
 	scope_timer.start(time_sec)
+	EventBus.emit_signal("spawn_scope_indicator")
 
 func _on_scope_timer_timeout():
 	scope_enabled = false

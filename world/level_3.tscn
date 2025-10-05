@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="3_7jial"]
 [ext_resource type="Texture2D" uid="uid://b508jx3dpytx8" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="4_eef73"]
 [ext_resource type="PackedScene" uid="uid://cxd8utj06nd2h" path="res://world/gem_manager.tscn" id="4_m8xer"]
-[ext_resource type="PackedScene" path="res://world/pirate_ship_filter.tscn" id="5_3uihl"]
+[ext_resource type="PackedScene" uid="uid://dsamr2xxuqs5y" path="res://world/pirate_ship_filter.tscn" id="5_3uihl"]
 [ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="5_m8xer"]
 [ext_resource type="Resource" uid="uid://bpq85jnyrhdc2" path="res://gems/gem_info/scope.tres" id="6_ju8ad"]
 [ext_resource type="Resource" uid="uid://bgj8b8kv2jglw" path="res://gems/gem_info/multiplier_star.tres" id="6_qu6iq"]
