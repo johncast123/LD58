@@ -226,6 +226,7 @@ gem_info = ExtResource("5_6qrix")
 [node name="Gem2" parent="GemManager" instance=ExtResource("3_cojv5")]
 position = Vector2(181, 143)
 gem_info = ExtResource("6_6qrix")
+is_moving = true
 
 [node name="Gem3" parent="GemManager" instance=ExtResource("3_cojv5")]
 position = Vector2(315, 118)

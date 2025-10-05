@@ -5,6 +5,7 @@ class_name Gem
 signal collected(gem: Gem)
 
 @export var gem_info: GemInfo = preload("res://gems/gem_info/silver_coin.tres")
+@export var is_moving: bool = false
 
 @onready var placeholder = preload("res://gems/placeholder_gem.tscn")
 @onready var animated_sprite_2d = $AnimatedSprite2D
@@ -15,6 +16,8 @@ func _ready():
 	point = gem_info.point
 	animated_sprite_2d.sprite_frames = gem_info.sprite_frame
 	animated_sprite_2d.play("idle")
+	
+	$MoveManager.enabled = is_moving
 
 func _disable_self():
 	monitorable = false
