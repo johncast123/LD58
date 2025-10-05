@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func _update_hud() -> void:
 	if hud:
-		hud.text = "Score: %d   ←/→ to aim, Space to fire" % Global.total_score
+		hud.text = "Score: %d" % Global.total_score
 
 func _on_gem_manager_score_calculated():
 	_update_hud()

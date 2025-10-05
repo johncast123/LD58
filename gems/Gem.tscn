@@ -14,6 +14,7 @@ script = ExtResource("1_hnrki")
 shape = SubResource("CircleShape2D_26ra8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
 sprite_frames = ExtResource("2_pyn50")
 animation = &"idle"
 frame_progress = 0.722903
