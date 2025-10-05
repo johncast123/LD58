@@ -54,28 +54,33 @@ func initialize_buttons():
 	hide_buttons()
 	
 func hide_buttons():
+	$Backboard.hide()
+	hide_level_end_message()
 	buttons_container.hide()
 
 func show_buttons():
+	$Backboard.show()
 	buttons_container.show()
 
 func set_and_show_buttons(outcome: String):
+	get_tree().paused = true
 	match outcome:
 		"win":
 			set_and_show_level_end_message("Victory!")
+			$VBoxContainer/ButtonsContainer/Continue.hide()
 			$VBoxContainer/ButtonsContainer/Next.show()
 			$VBoxContainer/TotalScoreContainer.show()
 		"lose":
 			set_and_show_level_end_message("You failed...")
+			$VBoxContainer/ButtonsContainer/Continue.hide()
 			$VBoxContainer/ButtonsContainer/Next.hide()
 			$VBoxContainer/TotalScoreContainer.hide()
 		"pause":
-			get_tree().paused = true
 			set_and_show_level_end_message("Paused")
+			$VBoxContainer/ButtonsContainer/Continue.show()
 			$VBoxContainer/ButtonsContainer/Next.hide()
 			$VBoxContainer/TotalScoreContainer.hide()
 	show_buttons()
-	$Backboard.show()
 
 func update_total_score(delta: int):
 	internal_total_score = Global.total_score
@@ -109,3 +114,7 @@ func disable_all_buttons():
 func enable_all_buttons():
 	for child: Button in buttons_container.get_children():
 		child.disabled = false
+
+func _on_continue_pressed():
+	get_tree().paused = false
+	hide_buttons()

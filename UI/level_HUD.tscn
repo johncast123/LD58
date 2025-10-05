@@ -6,14 +6,6 @@
 process_mode = 3
 script = ExtResource("1_o8tsg")
 
-[node name="Backboard" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 1, 0.294118)
-
 [node name="Score" type="Label" parent="."]
 offset_left = 8.0
 offset_top = 5.0
@@ -55,6 +47,14 @@ offset_bottom = 21.0
 grow_horizontal = 0
 text = "Time Left: X"
 horizontal_alignment = 2
+
+[node name="Backboard" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.185383, 0.185383, 0.185383, 0.294118)
 
 [node name="LevelEndMessage" type="Label" parent="."]
 anchors_preset = 8
@@ -108,6 +108,11 @@ horizontal_alignment = 1
 layout_mode = 2
 alignment = 1
 
+[node name="Continue" type="Button" parent="VBoxContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "Resume"
+
 [node name="Next" type="Button" parent="VBoxContainer/ButtonsContainer"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
@@ -123,6 +128,7 @@ custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 text = "To Menu"
 
+[connection signal="pressed" from="VBoxContainer/ButtonsContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonsContainer/Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonsContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonsContainer/Menu" to="." method="_on_menu_pressed"]
