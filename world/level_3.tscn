@@ -20,6 +20,7 @@ level_name = "Level 3"
 next_level = ExtResource("2_de6op")
 
 [node name="LevelHUD" parent="." instance=ExtResource("1_v5igl")]
+visible = false
 
 [node name="Background" type="TileMapLayer" parent="."]
 

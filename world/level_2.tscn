@@ -19,6 +19,7 @@ level_name = "Level 2"
 next_level = ExtResource("2_r546c")
 
 [node name="LevelHUD" parent="." instance=ExtResource("3_wpvgc")]
+visible = false
 
 [node name="Background" type="TileMapLayer" parent="."]
 
@@ -30,160 +31,70 @@ tile_set = ExtResource("1_h27rw")
 
 [node name="GemManager" parent="." instance=ExtResource("4_wpvgc")]
 
-[node name="silver1" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(128, 120)
-is_moving = true
-
-[node name="silver2" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(128, 40)
-is_moving = true
-
-[node name="MoveManager" parent="GemManager/silver2" index="3"]
-direction = Vector2(-1, 0)
-
-[node name="silver3" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(144, 120)
-is_moving = true
-
-[node name="silver4" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(112, 120)
-is_moving = true
-
-[node name="silver5" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(112, 40)
-is_moving = true
-
-[node name="MoveManager" parent="GemManager/silver5" index="3"]
-direction = Vector2(-1, 0)
-
-[node name="silver6" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(144, 40)
-is_moving = true
-
-[node name="MoveManager" parent="GemManager/silver6" index="3"]
-direction = Vector2(-1, 0)
-
 [node name="silver7" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(160, 40)
+position = Vector2(152, 48)
 is_moving = true
 
 [node name="MoveManager" parent="GemManager/silver7" index="3"]
 direction = Vector2(-1, 0)
 
 [node name="silver8" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(96, 40)
+position = Vector2(104, 48)
 is_moving = true
 
 [node name="MoveManager" parent="GemManager/silver8" index="3"]
 direction = Vector2(-1, 0)
 
-[node name="silver9" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(160, 120)
-is_moving = true
-
-[node name="silver10" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(96, 120)
-is_moving = true
-
 [node name="silver11" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(136, 240)
-
-[node name="silver12" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(232, 168)
-
-[node name="silver13" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(216, 168)
+position = Vector2(144, 240)
 
 [node name="silver14" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(200, 168)
+position = Vector2(216, 168)
+
+[node name="silver12" parent="GemManager" instance=ExtResource("5_85yey")]
+position = Vector2(296, 144)
 
 [node name="gold1" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(128, 104)
+position = Vector2(104, 112)
 gem_info = ExtResource("6_3aral")
 is_moving = true
 
 [node name="gold2" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(144, 104)
-gem_info = ExtResource("6_3aral")
-is_moving = true
-
-[node name="gold3" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(112, 104)
+position = Vector2(152, 112)
 gem_info = ExtResource("6_3aral")
 is_moving = true
 
 [node name="gold4" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(280, 88)
+position = Vector2(272, 88)
 gem_info = ExtResource("6_3aral")
 
 [node name="gold5" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(280, 168)
-gem_info = ExtResource("6_3aral")
-
-[node name="gold6" parent="GemManager" instance=ExtResource("5_85yey")]
 position = Vector2(264, 168)
-gem_info = ExtResource("6_3aral")
-
-[node name="gold7" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(248, 168)
 gem_info = ExtResource("6_3aral")
 
 [node name="gold8" parent="GemManager" instance=ExtResource("5_85yey")]
 position = Vector2(216, 120)
 gem_info = ExtResource("6_3aral")
 
-[node name="gold9" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(216, 104)
-gem_info = ExtResource("6_3aral")
-
 [node name="gold10" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(200, 120)
+position = Vector2(168, 240)
 gem_info = ExtResource("6_3aral")
 
 [node name="gold11" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(368, 40)
+position = Vector2(344, 104)
 gem_info = ExtResource("6_3aral")
-is_moving = true
 
 [node name="emerald1" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(128, 56)
+position = Vector2(240, 88)
 gem_info = ExtResource("7_1ed1g")
-is_moving = true
-
-[node name="MoveManager" parent="GemManager/emerald1" index="3"]
-direction = Vector2(-1, 0)
-
-[node name="emerald2" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(144, 56)
-gem_info = ExtResource("7_1ed1g")
-is_moving = true
-
-[node name="MoveManager" parent="GemManager/emerald2" index="3"]
-direction = Vector2(-1, 0)
-
-[node name="emerald3" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(112, 56)
-gem_info = ExtResource("7_1ed1g")
-is_moving = true
-
-[node name="MoveManager" parent="GemManager/emerald3" index="3"]
-direction = Vector2(-1, 0)
 
 [node name="emerald4" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(416, 104)
+position = Vector2(424, 136)
 gem_info = ExtResource("7_1ed1g")
 is_moving = true
-
-[node name="emerald5" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(416, 160)
-gem_info = ExtResource("7_1ed1g")
-is_moving = true
-
-[node name="MoveManager" parent="GemManager/emerald5" index="3"]
-direction = Vector2(-1, 0)
 
 [node name="emerald6" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(368, 56)
+position = Vector2(368, 48)
 gem_info = ExtResource("7_1ed1g")
 is_moving = true
 
@@ -205,14 +116,13 @@ is_moving = true
 direction = Vector2(0, -1)
 move_speed = 80.0
 
-[node name="ruby4" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(296, 144)
-gem_info = ExtResource("8_k85ya")
-
 [node name="ruby5" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(368, 72)
+position = Vector2(56, 80)
 gem_info = ExtResource("8_k85ya")
 is_moving = true
+
+[node name="MoveManager" parent="GemManager/ruby5" index="3"]
+direction = Vector2(0, -1)
 
 [node name="diamond1" parent="GemManager" instance=ExtResource("5_85yey")]
 position = Vector2(128, 72)
@@ -230,19 +140,6 @@ is_moving = true
 [node name="MoveManager" parent="GemManager/diamond2" index="3"]
 direction = Vector2(0, -1)
 
-[node name="diamond3" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(344, 184)
-gem_info = ExtResource("9_k85ya")
-
-[node name="diamond4" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(344, 104)
-gem_info = ExtResource("9_k85ya")
-
-[node name="diamond5" parent="GemManager" instance=ExtResource("5_85yey")]
-position = Vector2(368, 88)
-gem_info = ExtResource("9_k85ya")
-is_moving = true
-
 [node name="Cannon" parent="." instance=ExtResource("4_85yey")]
 position = Vector2(256, 264)
 
@@ -251,29 +148,14 @@ position = Vector2(256, 264)
 [connection signal="score_calculated" from="GemManager" to="." method="_on_gem_manager_score_calculated"]
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]
 
-[editable path="GemManager/silver1"]
-[editable path="GemManager/silver2"]
-[editable path="GemManager/silver3"]
-[editable path="GemManager/silver4"]
-[editable path="GemManager/silver5"]
-[editable path="GemManager/silver6"]
 [editable path="GemManager/silver7"]
 [editable path="GemManager/silver8"]
-[editable path="GemManager/silver9"]
-[editable path="GemManager/silver10"]
 [editable path="GemManager/gold1"]
 [editable path="GemManager/gold2"]
-[editable path="GemManager/gold3"]
-[editable path="GemManager/gold11"]
-[editable path="GemManager/emerald1"]
-[editable path="GemManager/emerald2"]
-[editable path="GemManager/emerald3"]
 [editable path="GemManager/emerald4"]
-[editable path="GemManager/emerald5"]
 [editable path="GemManager/emerald6"]
 [editable path="GemManager/ruby1"]
 [editable path="GemManager/ruby3"]
 [editable path="GemManager/ruby5"]
 [editable path="GemManager/diamond1"]
 [editable path="GemManager/diamond2"]
-[editable path="GemManager/diamond5"]

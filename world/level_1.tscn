@@ -124,6 +124,7 @@ next_level = ExtResource("2_iedf8")
 score_threshold = 10
 
 [node name="LevelHUD" parent="." instance=ExtResource("1_uhyhg")]
+visible = false
 
 [node name="Background" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_dhmri")
@@ -141,107 +142,51 @@ tile_set = ExtResource("1_lis17")
 position = Vector2(143, 178)
 
 [node name="Silver1" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(225, -10)
-
-[node name="Silver4" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(233, -130)
-
-[node name="Silver5" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(201, -130)
-
-[node name="Silver6" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(217, -130)
-
-[node name="Silver2" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(225, 6)
-
-[node name="Silver3" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(289, -42)
-
-[node name="Silver15" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(289, -18)
-
-[node name="Silver16" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(321, -18)
-
-[node name="Silver7" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(33, 6)
-
-[node name="Silver8" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(17, -10)
-
-[node name="Silver9" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(1, -26)
-
-[node name="Silver10" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(-15, -10)
-
-[node name="Silver11" parent="GemManager" instance=ExtResource("7_phy56")]
 position = Vector2(-31, 6)
 
-[node name="Silver12" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(-15, 70)
+[node name="Silver2" parent="GemManager" instance=ExtResource("7_phy56")]
+position = Vector2(-15, -10)
 
-[node name="Silver13" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(17, 70)
+[node name="Silver3" parent="GemManager" instance=ExtResource("7_phy56")]
+position = Vector2(1, -26)
 
-[node name="Silver14" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(321, -42)
+[node name="Silver4" parent="GemManager" instance=ExtResource("7_phy56")]
+position = Vector2(17, -10)
 
-[node name="Gold1" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(1, -10)
-gem_info = ExtResource("9_8s6e0")
+[node name="Silver5" parent="GemManager" instance=ExtResource("7_phy56")]
+position = Vector2(33, 6)
+
+[node name="Silver6" parent="GemManager" instance=ExtResource("7_phy56")]
+position = Vector2(225, -130)
+
+[node name="Silver7" parent="GemManager" instance=ExtResource("7_phy56")]
+position = Vector2(289, -42)
+
+[node name="Silver8" parent="GemManager" instance=ExtResource("7_phy56")]
+position = Vector2(321, -66)
 
 [node name="Gold7" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(185, -130)
+position = Vector2(193, -130)
 gem_info = ExtResource("9_8s6e0")
 
 [node name="Gold2" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(225, -34)
-gem_info = ExtResource("9_8s6e0")
-
-[node name="Gold3" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(17, 6)
-gem_info = ExtResource("9_8s6e0")
-
-[node name="Gold4" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(-15, 6)
+position = Vector2(225, -26)
 gem_info = ExtResource("9_8s6e0")
 
 [node name="Gold5" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(225, -58)
+position = Vector2(225, -2)
 gem_info = ExtResource("9_8s6e0")
 
 [node name="Gold6" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(225, -74)
-gem_info = ExtResource("9_8s6e0")
-
-[node name="Gold8" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(17, 54)
-gem_info = ExtResource("9_8s6e0")
-
-[node name="Gold9" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(-15, 54)
+position = Vector2(225, -66)
 gem_info = ExtResource("9_8s6e0")
 
 [node name="Gold13" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(121, -74)
-gem_info = ExtResource("9_8s6e0")
-
-[node name="Gold14" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(145, -74)
-gem_info = ExtResource("9_8s6e0")
-
-[node name="Gold15" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(145, -50)
+position = Vector2(33, -90)
 gem_info = ExtResource("9_8s6e0")
 
 [node name="Gold16" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(121, -50)
-gem_info = ExtResource("9_8s6e0")
-
-[node name="Gold10" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(-103, 70)
+position = Vector2(-31, -90)
 gem_info = ExtResource("9_8s6e0")
 
 [node name="Gold11" parent="GemManager" instance=ExtResource("7_phy56")]
@@ -253,7 +198,7 @@ position = Vector2(-103, 54)
 gem_info = ExtResource("9_8s6e0")
 
 [node name="Emerald1" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(225, -98)
+position = Vector2(225, -90)
 gem_info = ExtResource("9_phy56")
 
 [node name="Emerald2" parent="GemManager" instance=ExtResource("7_phy56")]
@@ -261,35 +206,19 @@ position = Vector2(1, -90)
 gem_info = ExtResource("9_phy56")
 
 [node name="Emerald3" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(1, 70)
+position = Vector2(1, 62)
 gem_info = ExtResource("9_phy56")
 
 [node name="Emerald4" parent="GemManager" instance=ExtResource("7_phy56")]
 position = Vector2(289, 6)
 gem_info = ExtResource("9_phy56")
 
-[node name="Emerald5" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(321, 6)
-gem_info = ExtResource("9_phy56")
-
-[node name="Emerald6" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(-103, 38)
-gem_info = ExtResource("9_phy56")
-
 [node name="Ruby1" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(289, -66)
+position = Vector2(321, -18)
 gem_info = ExtResource("10_0fba2")
 
 [node name="Ruby4" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(-71, 70)
-gem_info = ExtResource("10_0fba2")
-
-[node name="Ruby2" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(321, -66)
-gem_info = ExtResource("10_0fba2")
-
-[node name="Ruby3" parent="GemManager" instance=ExtResource("7_phy56")]
-position = Vector2(1, 54)
+position = Vector2(-103, 70)
 gem_info = ExtResource("10_0fba2")
 
 [node name="Diamond1" parent="GemManager" instance=ExtResource("7_phy56")]
