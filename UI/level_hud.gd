@@ -9,7 +9,7 @@ const GAP_SEC: float = 1.5
 @onready var score = $Score
 @onready var current_multiplier = $CurrentMultiplier
 @onready var multiplier_number = $CurrentMultiplier/MultiplierNumber
-@onready var time_left = $TimeLeft
+@onready var time_left = $HBoxContainer/TimeLeft
 @onready var level_end_message = $LevelEndMessage
 @onready var buttons_container = $VBoxContainer/ButtonsContainer
 @onready var total_score_container = $VBoxContainer/TotalScoreContainer
@@ -104,13 +104,13 @@ func _on_next_pressed():
 	b.tween_callback(play_tally_sfx).set_delay(0.15)
 	await a.finished
 	$VBoxContainer/TotalScoreContainer/Delta.hide()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(2).timeout
 	Global.go_to_next_level()
 	
 func _on_menu_pressed():
 	AudioManager.play_sfx("ui_click")
 	get_tree().paused = false
-	get_tree().change_scene_to_packed(load("res://UI/MainMenu.tscn"))
+	get_tree().change_scene_to_packed(load("res://UI/main_menu.tscn"))
 	pass # Replace with function body.
 
 func disable_all_buttons():
@@ -128,3 +128,7 @@ func _on_continue_pressed():
 
 func play_tally_sfx():
 	AudioManager.play_sfx("score_tally")
+
+func _on_pause_pressed():
+	get_tree().paused = true
+	set_and_show_buttons("pause")

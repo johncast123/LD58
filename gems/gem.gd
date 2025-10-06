@@ -31,8 +31,6 @@ func _enable_self():
 
 func set_collected():
 	collected.emit(self)
-	play_sfx()
-	#play_collected_effect()
 
 func play_collected_effect():
 	var a = placeholder.instantiate()

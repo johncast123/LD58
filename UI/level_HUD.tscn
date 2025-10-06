@@ -37,17 +37,27 @@ grow_horizontal = 2
 text = "X1"
 horizontal_alignment = 1
 
-[node name="TimeLeft" type="Label" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -81.0
+offset_left = -84.0
 offset_top = 5.0
-offset_right = -4.0
+offset_right = -7.0
 offset_bottom = 21.0
 grow_horizontal = 0
+alignment = 2
+
+[node name="TimeLeft" type="Label" parent="HBoxContainer"]
+layout_mode = 2
 text = "Time Left: X"
 horizontal_alignment = 2
+
+[node name="Pause" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "||"
 
 [node name="Backboard" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -129,6 +139,7 @@ custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 text = "To Menu"
 
+[connection signal="pressed" from="HBoxContainer/Pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonsContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonsContainer/Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonsContainer/Restart" to="." method="_on_restart_pressed"]

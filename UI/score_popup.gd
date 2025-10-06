@@ -18,7 +18,7 @@ func set_popup(score: int):
 	
 	var comment_index = get_comment_index(score)
 	comment.text = comment_list[comment_index]
-	set_font_size(max(BASE_FONT_SIZE * (comment_index + 1), 12))
+	set_font_size(max(BASE_FONT_SIZE * (comment_index + 1)/2, 12))
 	
 	show_and_fade()
 
