@@ -12,6 +12,7 @@ signal collected(gem: Gem)
 
 var point: int = 0
 var sfx_name: String
+var snatched: bool = false
 
 func _ready():
 	point = gem_info.point
@@ -41,6 +42,7 @@ func play_collected_effect():
 	a.play_effect()
 	
 func set_snatched():
+	snatched = true
 	play_collected_effect()
 
 func play_sfx():

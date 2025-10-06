@@ -35,7 +35,7 @@ func begin(_start_global: Vector2, _direction: Vector2) -> void:
 	bounces = 0
 	traveled = 0.0
 	state_machine.init()
-
+	
 func _physics_process(delta: float) -> void:
 	state_machine.update_physics_frame(delta)
 
@@ -48,11 +48,11 @@ func add_fixed_point(new_global_point: Vector2):
 	fixed_points.append(new_global_point)
 
 func _on_Hook_area_entered(area: Area2D) -> void:
-	if state_machine.current_state is ExtendingState and carried_gem == null and area is Gem:
+	if state_machine.current_state is ExtendingState and carried_gem == null and area is Gem and !area.snatched:
 		carried_gem = area
-		state_machine.change_state("retracting")
-		carried_gem.monitoring = false
+		carried_gem.set_deferred("monitorable", false)
 		carried_gem.set_snatched()
+		state_machine.change_state("retracting")
 
 func _deliver_and_die() -> void:
 	if carried_gem:
