@@ -46,6 +46,7 @@ offset_right = -13.0
 offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 2
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -57,7 +58,13 @@ vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-text = "Each wall bounce doubles your point multiplier."
+text = "Aim and shoot hook with your mouse."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Each wall-bounce doubles your point multiplier."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -175,7 +182,7 @@ texture = ExtResource("9_231om")
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer6"]
 layout_mode = 2
-text = "-250 pts and removes all buffs"
+text = "-250 pts & removes buffs (don't hit this!)"
 
 [node name="Button" type="Button" parent="Panel"]
 layout_mode = 1

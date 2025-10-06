@@ -1,0 +1,151 @@
+[gd_scene load_steps=18 format=4 uid="uid://c7d5nbiejd3dg"]
+
+[ext_resource type="Script" uid="uid://bvxf621iyjllm" path="res://UI/main_menu.gd" id="1_voib7"]
+[ext_resource type="PackedScene" uid="uid://da2coqoappdoh" path="res://world/level_1.tscn" id="2_t2nhh"]
+[ext_resource type="PackedScene" uid="uid://d0uenqkq5dgnh" path="res://UI/visual_guide.tscn" id="3_saki1"]
+[ext_resource type="PackedScene" uid="uid://d2qil4oibi2ok" path="res://world/exterior_background.tscn" id="4_cwv5u"]
+[ext_resource type="TileSet" uid="uid://cprmnu1l4rubt" path="res://world/exterior_tilemap.tres" id="5_c2iqt"]
+[ext_resource type="Texture2D" uid="uid://d0y86pq4yw7vm" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 01.png" id="6_27vi8"]
+[ext_resource type="Texture2D" uid="uid://c6a5smir67sjn" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 02.png" id="7_xmcc3"]
+[ext_resource type="Texture2D" uid="uid://bqbmojs7most3" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 03.png" id="8_dtq41"]
+[ext_resource type="Texture2D" uid="uid://cely5c6qneevd" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 04.png" id="9_b61ai"]
+[ext_resource type="Texture2D" uid="uid://bcfxn6x70tbb0" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 05.png" id="10_0d8gf"]
+[ext_resource type="Texture2D" uid="uid://cy2d4mei63ley" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 06.png" id="11_bt32w"]
+[ext_resource type="Texture2D" uid="uid://g6jv2bt7lrnx" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 07.png" id="12_l25lq"]
+[ext_resource type="Texture2D" uid="uid://dv3nq14ovfqvb" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 08.png" id="13_n8nh2"]
+[ext_resource type="Texture2D" uid="uid://82jyjfis34r3" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 09.png" id="14_cppxk"]
+[ext_resource type="Texture2D" uid="uid://dun0mw36hn217" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 10.png" id="15_cm0ae"]
+[ext_resource type="Texture2D" uid="uid://d1eanbot0pht" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Open 01.png" id="16_r17ju"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n3vlb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_27vi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xmcc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dtq41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_b61ai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0d8gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0d8gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0d8gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0d8gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0d8gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0d8gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bt32w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_l25lq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_n8nh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cppxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_cm0ae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_r17ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_r17ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_r17ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_r17ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_r17ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_r17ju")
+}],
+"loop": true,
+"name": &"open",
+"speed": 10.0
+}]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_voib7")
+first_level = ExtResource("2_t2nhh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -70.0
+offset_right = 90.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "Mutiny's
+Last Reward"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -102.0
+offset_right = 100.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Start" type="Button" parent="CanvasLayer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Start Game"
+
+[node name="VisualGuide" parent="." instance=ExtResource("3_saki1")]
+visible = false
+
+[node name="Background" parent="." instance=ExtResource("4_cwv5u")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAkAAQAAAAEAAAABAAkAAQABAAEAAAACAAkAAQABAAEAAAADAAkAAQABAAEAAAAEAAkAAQABAAEAAAAFAAkAAQABAAEAAAAGAAkAAQABAAEAAAAHAAkAAQABAAEAAAAIAAkAAQABAAEAAAAJAAkAAQABAAEAAAAKAAkAAQABAAEAAAALAAkAAQABAAEAAAAMAAkAAQABAAEAAAANAAkAAQABAAEAAAAOAAkAAQABAAEAAAAPAAkAAQACAAEAAAAAAAgAAQAAAAAAAAABAAgAAQABAAAAAAACAAgAAQABAAAAAAADAAgAAQABAAAAAAAEAAgAAQABAAAAAAAFAAgAAQABAAAAAAAGAAgAAQABAAAAAAAHAAgAAQABAAAAAAAIAAgAAQABAAAAAAAJAAgAAQABAAAAAAAKAAgAAQABAAAAAAALAAgAAQABAAAAAAAMAAgAAQABAAAAAAANAAgAAQABAAAAAAAOAAgAAQABAAAAAAAPAAgAAQACAAAAAAA=")
+tile_set = ExtResource("5_c2iqt")
+
+[node name="Chest" type="AnimatedSprite2D" parent="."]
+position = Vector2(394, 240)
+sprite_frames = SubResource("SpriteFrames_n3vlb")
+animation = &"open"
+autoplay = "open"
+frame_progress = 0.184005
+
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/Start" to="." method="_on_start_pressed"]
