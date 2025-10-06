@@ -40,7 +40,7 @@ sources/1 = SubResource("TileSetAtlasSource_kgo1c")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_j0lxs")
-total_time_sec = 30
+score_threshold = 5000
 
 [node name="LevelHUD" parent="." instance=ExtResource("2_vo3rj")]
 visible = false
@@ -69,7 +69,7 @@ position = Vector2(125, 247)
 position = Vector2(346, 243)
 
 [node name="TreeRoots" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAOAAMAAQABAAAAAAAPAAMAAQACAAAAAAA=")
+tile_map_data = PackedByteArray("AAAOAAMAAQABAAAAAAAPAAMAAQACAAAAAAAKAAIAAQABAAIAAAAOAAcAAQACAAIAAAAFAAcAAQACAAIAAAACAAEAAQABAAIAAAACAAcAAQABAAIAAAA=")
 tile_set = SubResource("TileSet_khkkq")
 
 [node name="Cannon" parent="." instance=ExtResource("4_b6a1b")]
