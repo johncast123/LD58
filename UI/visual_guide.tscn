@@ -1,0 +1,200 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0uenqkq5dgnh"]
+
+[ext_resource type="Texture2D" uid="uid://b6x2ij36q3j2n" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Silver Coin/01.png" id="1_ojdog"]
+[ext_resource type="Texture2D" uid="uid://cuu6ifhytitmw" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="2_vli7o"]
+[ext_resource type="Texture2D" uid="uid://ba4toss6exusi" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Green Diamond/01.png" id="3_l7lnp"]
+[ext_resource type="Texture2D" uid="uid://cjs7574udjkq2" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Red Diamond/01.png" id="4_n81km"]
+[ext_resource type="Texture2D" uid="uid://de0it1uvxvjbq" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/01.png" id="5_pasb5"]
+[ext_resource type="Texture2D" uid="uid://deyjgffjq65dq" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/03.png" id="6_l7lnp"]
+[ext_resource type="Texture2D" uid="uid://c4vp0gch3gs0h" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/02.png" id="7_n81km"]
+[ext_resource type="Texture2D" uid="uid://cql8kv01n1s7j" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Blue Potion/03.png" id="8_pasb5"]
+[ext_resource type="Texture2D" uid="uid://bhmsprcn75bud" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/01.png" id="9_231om"]
+
+[node name="VisualGuide" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.294118)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.5
+offset_top = -136.0
+offset_right = 169.5
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -13.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.92549, 0.607843, 1)
+theme_override_font_sizes/font_size = 18
+text = "How to Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Each wall bounce doubles your multiplier."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Get enough points before time runs out!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.501961, 0.839216, 0.901961, 1)
+text = "The Gems:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_ojdog")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "10 Pts "
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_vli7o")
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "20 Pts "
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("3_l7lnp")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "30 Pts "
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("4_n81km")
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "40 Pts "
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("5_pasb5")
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "50 Pts "
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.882353, 0.580392, 0.403922, 1)
+text = "The Items:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("6_l7lnp")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "+1 Base Multipler"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("7_n81km")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Assist Line for 10 sec"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+texture = ExtResource("8_pasb5")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Shoot multiple hooks for 10 sec"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+texture = ExtResource("9_231om")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "-250 pts and removes all buffs"
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -22.0
+offset_right = 22.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "Got it"
