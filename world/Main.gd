@@ -49,7 +49,7 @@ func _on_gem_manager_score_calculated(gem_score: int):
 		return
 	var a = SCORE_POPUP.instantiate() as ScorePopup
 	add_child(a)
-	a.global_position = cannon.global_position + Vector2.LEFT * 25
+	a.global_position = get_viewport_rect().size / 2 # screen center
 	a.set_popup(gem_score)
 
 func _update_current_multiplier():

@@ -35,3 +35,5 @@ vertical_alignment = 1
 [node name="Comment" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Reaction!"
+horizontal_alignment = 1
+vertical_alignment = 1

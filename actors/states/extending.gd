@@ -27,6 +27,10 @@ func update_physics_frame(delta: float):
 			hook.dir = hook.dir.bounce(normal).normalized()
 			hook.bounces += 1
 			remaining -= distance_to_hit
+			
+			# Play bounce sound
+			var sfx_index = clamp(hook.bounces - 1, 0, AudioManager.bouncing_sfx_array.size() - 1)
+			AudioManager.play_bounce_sfx(sfx_index)
 
 			# Slight offset to avoid re-colliding instantly
 			hook.global_position += hook.dir * 0.1

@@ -4,7 +4,7 @@ class_name LevelHUD
 
 const GAP_SEC: float = 1.5
 
-@export var base_multiplier_font_size: int = 12
+@export var base_multiplier_font_size: int = 24
 
 @onready var score = $Score
 @onready var current_multiplier = $CurrentMultiplier

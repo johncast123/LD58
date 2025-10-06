@@ -39,3 +39,7 @@ func play_sfx(effect_name: String):
 	if sfx: 
 		sfx_player.stream = sfx
 		sfx_player.play()
+
+func play_bounce_sfx(index: int):
+	sfx_player.stream = bouncing_sfx_array[index]
+	sfx_player.play()
