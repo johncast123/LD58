@@ -1,0 +1,164 @@
+[gd_scene load_steps=14 format=3 uid="uid://d2qil4oibi2ok"]
+
+[ext_resource type="Texture2D" uid="uid://chokpdlx6r7xd" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/BG Image.png" id="1_13h78"]
+[ext_resource type="Texture2D" uid="uid://b2x00ykhxuxhl" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Sky.png" id="2_gy3b4"]
+[ext_resource type="Texture2D" uid="uid://cqarqjy3i3cpm" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Water.png" id="3_xkfd6"]
+[ext_resource type="Texture2D" uid="uid://badc7pagjmyrw" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Big Clouds.png" id="4_dvtso"]
+[ext_resource type="Texture2D" uid="uid://cp7pdawyx4vd7" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 1.png" id="5_gw6v1"]
+[ext_resource type="Texture2D" uid="uid://dyh305swl1ahc" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 2.png" id="6_wyhyv"]
+[ext_resource type="Texture2D" uid="uid://cgub7vc0w8vor" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 3.png" id="7_8xju0"]
+[ext_resource type="Texture2D" uid="uid://cjsggt2xtuck0" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 01.png" id="8_8dlkk"]
+[ext_resource type="Texture2D" uid="uid://bt7d40uu3yjln" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 02.png" id="9_o5tde"]
+[ext_resource type="Texture2D" uid="uid://dlfcf06xop0pc" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 03.png" id="10_75u0l"]
+
+[sub_resource type="Animation" id="Animation_wxllh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/BigClouds/BigClouds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(659, 158)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background/BigClouds/BigClouds2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(213, 158)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background/BigClouds/BigClouds3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(765, 158)]
+}
+
+[sub_resource type="Animation" id="Animation_csrb3"]
+resource_name = "default"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/BigClouds/BigClouds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(659, 158), Vector2(209, 158), Vector2(-237, 158)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background/BigClouds/BigClouds2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5, 5.01, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(213, 158), Vector2(-237, 158), Vector2(1104, 158), Vector2(658, 158)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background/BigClouds/BigClouds3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1107, 158), Vector2(657, 158), Vector2(211, 158)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_avhca"]
+_data = {
+&"RESET": SubResource("Animation_wxllh"),
+&"default": SubResource("Animation_csrb3")
+}
+
+[node name="Background" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(264, 186.5)
+scale = Vector2(1.4375, 1)
+texture = ExtResource("1_13h78")
+
+[node name="Background2" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(264, 15.5)
+scale = Vector2(17.25, 6.71875)
+texture = ExtResource("2_gy3b4")
+
+[node name="Background3" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(264, 344)
+scale = Vector2(17.25, 6.71875)
+texture = ExtResource("3_xkfd6")
+
+[node name="BigClouds" type="Node2D" parent="."]
+
+[node name="BigClouds" type="Sprite2D" parent="BigClouds"]
+position = Vector2(608.09, 158)
+texture = ExtResource("4_dvtso")
+
+[node name="BigClouds2" type="Sprite2D" parent="BigClouds"]
+position = Vector2(162.09, 158)
+texture = ExtResource("4_dvtso")
+
+[node name="BigClouds3" type="Sprite2D" parent="BigClouds"]
+position = Vector2(1056.09, 158)
+texture = ExtResource("4_dvtso")
+
+[node name="SmallCloud1" type="Sprite2D" parent="."]
+position = Vector2(100, 59)
+texture = ExtResource("5_gw6v1")
+
+[node name="SmallCloud2" type="Sprite2D" parent="."]
+position = Vector2(340, 77)
+texture = ExtResource("6_wyhyv")
+
+[node name="SmallCloud3" type="Sprite2D" parent="."]
+position = Vector2(498, 21)
+texture = ExtResource("7_8xju0")
+
+[node name="WaterReflectBig01" type="Sprite2D" parent="."]
+position = Vector2(230, 222)
+texture = ExtResource("8_8dlkk")
+
+[node name="WaterReflectBig02" type="Sprite2D" parent="."]
+position = Vector2(443, 219)
+texture = ExtResource("9_o5tde")
+
+[node name="WaterReflectMedium03" type="Sprite2D" parent="."]
+position = Vector2(23, 224)
+texture = ExtResource("10_75u0l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_avhca")
+}
+autoplay = "default"
+speed_scale = 0.25

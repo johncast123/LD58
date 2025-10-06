@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bloorqt752mpr"]
+[gd_scene load_steps=27 format=4 uid="uid://bloorqt752mpr"]
 
 [ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_j0lxs"]
 [ext_resource type="TileSet" uid="uid://cprmnu1l4rubt" path="res://world/exterior_tilemap.tres" id="1_off8g"]
@@ -6,10 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/level_HUD.tscn" id="2_vo3rj"]
 [ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="4_b6a1b"]
 [ext_resource type="PackedScene" uid="uid://choiwpst5i61a" path="res://world/foreground_obects/flag.tscn" id="4_o8f5p"]
+[ext_resource type="PackedScene" uid="uid://d2qil4oibi2ok" path="res://world/exterior_background.tscn" id="4_qcryt"]
 [ext_resource type="PackedScene" uid="uid://bqwm378dcgail" path="res://world/foreground_obects/flag_mast.tscn" id="5_al1q8"]
+[ext_resource type="PackedScene" uid="uid://sgikk85jnuf6" path="res://world/background_objects/standing_tree_background.tscn" id="5_cxoyp"]
 [ext_resource type="PackedScene" uid="uid://cxd8utj06nd2h" path="res://world/gem_manager.tscn" id="5_o8f5p"]
 [ext_resource type="PackedScene" uid="uid://nvj0bko6hg7h" path="res://world/foreground_obects/palm_tree.tscn" id="6_1tj8g"]
 [ext_resource type="PackedScene" uid="uid://bt2wiosukdqan" path="res://world/countdown_timer.tscn" id="6_al1q8"]
+[ext_resource type="PackedScene" uid="uid://8le7gesu6afb" path="res://world/palm_beach_filter.tscn" id="6_do4gr"]
 [ext_resource type="Texture2D" uid="uid://bhx53r62le711" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="7_28tik"]
 [ext_resource type="PackedScene" uid="uid://bpbsxdf2ydkt7" path="res://world/foreground_obects/box.tscn" id="7_kgo1c"]
 [ext_resource type="PackedScene" uid="uid://ch08dn88t20xl" path="res://world/foreground_obects/barrel.tscn" id="8_khkkq"]
@@ -48,7 +51,19 @@ score_threshold = 5000
 [node name="LevelHUD" parent="." instance=ExtResource("2_vo3rj")]
 visible = false
 
-[node name="Background" type="TileMapLayer" parent="."]
+[node name="Background" parent="." instance=ExtResource("4_qcryt")]
+position = Vector2(2, 17)
+
+[node name="AnimatedSprite2D" parent="Background" instance=ExtResource("5_cxoyp")]
+position = Vector2(173, 209)
+
+[node name="AnimatedSprite2D2" parent="Background" instance=ExtResource("5_cxoyp")]
+position = Vector2(195, 219)
+
+[node name="AnimatedSprite2D3" parent="Background" instance=ExtResource("5_cxoyp")]
+position = Vector2(169, 231)
+
+[node name="ColorRect" parent="." instance=ExtResource("6_do4gr")]
 
 [node name="MainLevel" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAEAAQACAAEAAAAAAAIAAQACAAEAAAAAAAMAAQACAAEAAAABAAgAAQABAAAAAAAFAAgAAQABAAAAAAAGAAgAAQABAAAAAAAJAAAAAQABAAIAAAAJAAgAAQABAAAAAAAKAAAAAQABAAIAAAAKAAgAAQABAAAAAAALAAgAAQABAAAAAAAMAAgAAQABAAAAAAANAAgAAQABAAAAAAAOAAgAAQABAAAAAAAPAAIAAQAAAAEAAAAPAAMAAQAAAAEAAAAPAAQAAQAAAAEAAAAPAAYAAQAAAAEAAAAPAAcAAQAAAAEAAAAPAAgAAQAHAAEAAAAPAAUAAQAAAAEAAAAAAAUAAQACAAEAAAAAAAYAAQACAAEAAAAAAAcAAQACAAEAAAAAAAgAAQAGAAEAAAAAAAAAAQAGAAAAAAABAAAAAQABAAIAAAACAAAAAQABAAIAAAADAAAAAQABAAIAAAAEAAAAAQABAAIAAAAFAAAAAQABAAIAAAAGAAAAAQABAAIAAAAHAAAAAQAHAAAAAAAIAAAAAQAGAAAAAAALAAAAAQABAAIAAAAMAAAAAQABAAIAAAANAAAAAQABAAIAAAAOAAAAAQABAAIAAAAPAAEAAQAAAAEAAAAPAAAAAQAHAAAAAAAAAAQAAQACAAEAAAACAAgAAQABAAAAAAADAAgAAQABAAAAAAAEAAgAAQABAAAAAAAHAAEAAQAAAAEAAAAIAAEAAQACAAEAAAAIAAIAAQACAAEAAAAIAAMAAQACAAEAAAAHAAIAAQAAAAEAAAAHAAMAAQAAAAEAAAAHAAQAAQAAAAEAAAAIAAQAAQACAAEAAAAHAAUAAQAAAAIAAAAIAAUAAQACAAIAAAALAAMAAQACAAQAAAAKAAMAAQAAAAQAAAAMAAYAAQAAAAQAAAANAAYAAQACAAQAAAAFAAIAAQAEAAAAAAAFAAMAAQAEAAIAAAAHAAgAAQACAAAAAAAIAAgAAQAAAAAAAAACAAIAAQAEAAAAAAACAAMAAQAEAAIAAAA=")

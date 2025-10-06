@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bmt2cbsa2a46"]
+[gd_scene load_steps=24 format=4 uid="uid://bmt2cbsa2a46"]
 
 [ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_8j5sd"]
 [ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/level_HUD.tscn" id="1_c7ncy"]
@@ -8,7 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://cxd8utj06nd2h" path="res://world/gem_manager.tscn" id="3_0syn7"]
 [ext_resource type="PackedScene" uid="uid://nvj0bko6hg7h" path="res://world/foreground_obects/palm_tree.tscn" id="3_cihxq"]
 [ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="4_0syn7"]
+[ext_resource type="PackedScene" uid="uid://d2qil4oibi2ok" path="res://world/exterior_background.tscn" id="4_nsjw3"]
+[ext_resource type="PackedScene" uid="uid://cj1t3x1tqwjv7" path="res://world/background_objects/left_tree_background.tscn" id="5_86qng"]
 [ext_resource type="PackedScene" uid="uid://ch08dn88t20xl" path="res://world/foreground_obects/barrel.tscn" id="5_b5mtn"]
+[ext_resource type="PackedScene" uid="uid://8le7gesu6afb" path="res://world/palm_beach_filter.tscn" id="5_scw8k"]
+[ext_resource type="PackedScene" uid="uid://sgikk85jnuf6" path="res://world/background_objects/standing_tree_background.tscn" id="6_26cfc"]
 [ext_resource type="PackedScene" uid="uid://bpbsxdf2ydkt7" path="res://world/foreground_obects/box.tscn" id="6_aqbh6"]
 [ext_resource type="PackedScene" uid="uid://bt2wiosukdqan" path="res://world/countdown_timer.tscn" id="8_ahn4k"]
 [ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="10_ogn1y"]
@@ -44,7 +48,22 @@ score_threshold = 1000
 [node name="LevelHUD" parent="." instance=ExtResource("1_c7ncy")]
 visible = false
 
-[node name="Background" type="TileMapLayer" parent="."]
+[node name="Background" parent="." instance=ExtResource("4_nsjw3")]
+position = Vector2(12, 20)
+
+[node name="left_tree_background" parent="Background" instance=ExtResource("5_86qng")]
+position = Vector2(40, 184)
+
+[node name="left_tree_background2" parent="Background" instance=ExtResource("5_86qng")]
+position = Vector2(119, 95)
+
+[node name="AnimatedSprite2D" parent="Background" instance=ExtResource("6_26cfc")]
+position = Vector2(178, 208)
+
+[node name="AnimatedSprite2D2" parent="Background" instance=ExtResource("6_26cfc")]
+position = Vector2(202, 219)
+
+[node name="ColorRect" parent="." instance=ExtResource("5_scw8k")]
 
 [node name="MainLevel" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAEAAQACAAEAAAAAAAIAAQACAAEAAAAAAAMAAQACAAEAAAABAAgAAQABAAAAAAACAAgAAQABAAAAAAAFAAgAAQABAAAAAAAGAAgAAQABAAAAAAAJAAAAAQABAAIAAAAJAAgAAQABAAAAAAAKAAAAAQABAAIAAAAKAAgAAQABAAAAAAALAAgAAQABAAAAAAAMAAgAAQABAAAAAAANAAgAAQABAAAAAAAOAAgAAQABAAAAAAAPAAIAAQAAAAEAAAAPAAMAAQAAAAEAAAAPAAQAAQAAAAEAAAAPAAYAAQAAAAEAAAAPAAcAAQAAAAEAAAAPAAgAAQAHAAEAAAAPAAUAAQAAAAEAAAAAAAUAAQACAAEAAAAAAAYAAQACAAEAAAAAAAcAAQACAAEAAAAAAAgAAQAGAAEAAAACAAEAAQAAAAIAAAADAAEAAQABAAIAAAAEAAEAAQABAAIAAAAFAAEAAQABAAIAAAAGAAEAAQABAAIAAAAHAAEAAQABAAIAAAAIAAEAAQACAAIAAAAAAAAAAQAGAAAAAAABAAAAAQABAAIAAAACAAAAAQAHAAAAAAADAAAAAQABAAEAAAAEAAAAAQABAAEAAAAFAAAAAQABAAEAAAAGAAAAAQABAAEAAAAHAAAAAQABAAEAAAAIAAAAAQAGAAAAAAALAAEAAQAAAAIAAAALAAAAAQAHAAAAAAAMAAAAAQABAAEAAAANAAAAAQABAAEAAAAOAAAAAQABAAEAAAAMAAEAAQABAAIAAAANAAEAAQABAAIAAAAOAAEAAQABAAIAAAAPAAEAAQAHAAAAAAAPAAAAAQABAAEAAAABAAQAAQAEAAEAAGAAAAQAAQAKAAEAAGACAAQAAQAEAAEAAGADAAQAAQAEAAIAAGAEAAcAAQACAAAAAAAHAAMAAQACAAQAAAAGAAMAAQAAAAQAAAADAAcAAQAAAAAAAAADAAgAAQAHAAEAAAAEAAgAAQAGAAEAAAAHAAgAAQACAAAAAAAIAAgAAQAAAAAAAAA=")

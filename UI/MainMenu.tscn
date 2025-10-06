@@ -1,18 +1,9 @@
-[gd_scene load_steps=29 format=4 uid="uid://c7d5nbiejd3dg"]
+[gd_scene load_steps=17 format=4 uid="uid://c7d5nbiejd3dg"]
 
-[ext_resource type="Texture2D" uid="uid://chokpdlx6r7xd" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/BG Image.png" id="1_8aown"]
 [ext_resource type="Script" uid="uid://ceudphodbmfsl" path="res://UI/main_menu.gd" id="1_qrfef"]
 [ext_resource type="TileSet" uid="uid://cprmnu1l4rubt" path="res://world/exterior_tilemap.tres" id="1_uahxu"]
 [ext_resource type="PackedScene" uid="uid://da2coqoappdoh" path="res://world/level_1.tscn" id="2_csrb3"]
-[ext_resource type="Texture2D" uid="uid://b2x00ykhxuxhl" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Sky.png" id="2_t6syg"]
-[ext_resource type="Texture2D" uid="uid://cqarqjy3i3cpm" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Water.png" id="3_t6syg"]
-[ext_resource type="Texture2D" uid="uid://badc7pagjmyrw" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Big Clouds.png" id="4_6vw7e"]
-[ext_resource type="Texture2D" uid="uid://cp7pdawyx4vd7" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 1.png" id="5_qrfef"]
-[ext_resource type="Texture2D" uid="uid://dyh305swl1ahc" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 2.png" id="6_csrb3"]
-[ext_resource type="Texture2D" uid="uid://cgub7vc0w8vor" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 3.png" id="7_wxllh"]
-[ext_resource type="Texture2D" uid="uid://cjsggt2xtuck0" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 01.png" id="8_avhca"]
-[ext_resource type="Texture2D" uid="uid://bt7d40uu3yjln" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 02.png" id="9_x8sin"]
-[ext_resource type="Texture2D" uid="uid://dlfcf06xop0pc" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 03.png" id="10_fxi16"]
+[ext_resource type="PackedScene" uid="uid://d2qil4oibi2ok" path="res://world/exterior_background.tscn" id="3_avhca"]
 [ext_resource type="Texture2D" uid="uid://d0y86pq4yw7vm" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 01.png" id="14_84toi"]
 [ext_resource type="Texture2D" uid="uid://c6a5smir67sjn" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 02.png" id="15_g341i"]
 [ext_resource type="Texture2D" uid="uid://bqbmojs7most3" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 03.png" id="16_qbgtf"]
@@ -24,92 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://82jyjfis34r3" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 09.png" id="22_4fgjf"]
 [ext_resource type="Texture2D" uid="uid://dun0mw36hn217" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 10.png" id="23_ljgp6"]
 [ext_resource type="Texture2D" uid="uid://d1eanbot0pht" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Open 01.png" id="24_ai44j"]
-
-[sub_resource type="Animation" id="Animation_wxllh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BigClouds/BigClouds:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(659, 158)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BigClouds/BigClouds2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(213, 158)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("BigClouds/BigClouds3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(765, 158)]
-}
-
-[sub_resource type="Animation" id="Animation_csrb3"]
-resource_name = "default"
-length = 10.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BigClouds/BigClouds:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5, 10),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(659, 158), Vector2(209, 158), Vector2(-237, 158)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BigClouds/BigClouds2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 5, 5.01, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(213, 158), Vector2(-237, 158), Vector2(1104, 158), Vector2(658, 158)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("BigClouds/BigClouds3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 5, 10),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1107, 158), Vector2(657, 158), Vector2(211, 158)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_avhca"]
-_data = {
-&"RESET": SubResource("Animation_wxllh"),
-&"default": SubResource("Animation_csrb3")
-}
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n3vlb"]
 animations = [{
@@ -226,72 +131,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Start Game"
 
-[node name="Background" type="Sprite2D" parent="."]
-texture_repeat = 2
-position = Vector2(264, 186.5)
-scale = Vector2(1.4375, 1)
-texture = ExtResource("1_8aown")
-
-[node name="Background2" type="Sprite2D" parent="."]
-texture_repeat = 2
-position = Vector2(264, 15.5)
-scale = Vector2(17.25, 6.71875)
-texture = ExtResource("2_t6syg")
-
-[node name="Background3" type="Sprite2D" parent="."]
-texture_repeat = 2
-position = Vector2(264, 344)
-scale = Vector2(17.25, 6.71875)
-texture = ExtResource("3_t6syg")
-
-[node name="BigClouds" type="Node2D" parent="."]
-
-[node name="BigClouds" type="Sprite2D" parent="BigClouds"]
-position = Vector2(659, 158)
-texture = ExtResource("4_6vw7e")
-
-[node name="BigClouds2" type="Sprite2D" parent="BigClouds"]
-position = Vector2(213, 158)
-texture = ExtResource("4_6vw7e")
-
-[node name="BigClouds3" type="Sprite2D" parent="BigClouds"]
-position = Vector2(765, 158)
-texture = ExtResource("4_6vw7e")
-
-[node name="SmallCloud1" type="Sprite2D" parent="."]
-position = Vector2(100, 59)
-texture = ExtResource("5_qrfef")
-
-[node name="SmallCloud2" type="Sprite2D" parent="."]
-position = Vector2(340, 77)
-texture = ExtResource("6_csrb3")
-
-[node name="SmallCloud3" type="Sprite2D" parent="."]
-position = Vector2(498, 21)
-texture = ExtResource("7_wxllh")
-
-[node name="WaterReflectBig01" type="Sprite2D" parent="."]
-position = Vector2(230, 222)
-texture = ExtResource("8_avhca")
-
-[node name="WaterReflectBig02" type="Sprite2D" parent="."]
-position = Vector2(443, 219)
-texture = ExtResource("9_x8sin")
-
-[node name="WaterReflectMedium03" type="Sprite2D" parent="."]
-position = Vector2(23, 224)
-texture = ExtResource("10_fxi16")
+[node name="Background" parent="." instance=ExtResource("3_avhca")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAkAAQAAAAEAAAABAAkAAQABAAEAAAACAAkAAQABAAEAAAADAAkAAQABAAEAAAAEAAkAAQABAAEAAAAFAAkAAQABAAEAAAAGAAkAAQABAAEAAAAHAAkAAQABAAEAAAAIAAkAAQABAAEAAAAJAAkAAQABAAEAAAAKAAkAAQABAAEAAAALAAkAAQABAAEAAAAMAAkAAQABAAEAAAANAAkAAQABAAEAAAAOAAkAAQABAAEAAAAPAAkAAQACAAEAAAAAAAgAAQAAAAAAAAABAAgAAQABAAAAAAACAAgAAQABAAAAAAADAAgAAQABAAAAAAAEAAgAAQABAAAAAAAFAAgAAQABAAAAAAAGAAgAAQABAAAAAAAHAAgAAQABAAAAAAAIAAgAAQABAAAAAAAJAAgAAQABAAAAAAAKAAgAAQABAAAAAAALAAgAAQABAAAAAAAMAAgAAQABAAAAAAANAAgAAQABAAAAAAAOAAgAAQABAAAAAAAPAAgAAQACAAAAAAA=")
 tile_set = ExtResource("1_uahxu")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_avhca")
-}
-autoplay = "default"
-speed_scale = 0.25
 
 [node name="Chest" type="AnimatedSprite2D" parent="."]
 position = Vector2(394, 240)
