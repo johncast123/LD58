@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_j0lxs"]
 [ext_resource type="TileSet" uid="uid://cprmnu1l4rubt" path="res://world/exterior_tilemap.tres" id="1_off8g"]
-[ext_resource type="PackedScene" uid="uid://b3lfmmj2vby0t" path="res://UI/end_screen.tscn" id="2_qcryt"]
+[ext_resource type="PackedScene" path="res://UI/end_screen.tscn" id="2_qcryt"]
 [ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/level_HUD.tscn" id="2_vo3rj"]
 [ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="4_b6a1b"]
 [ext_resource type="PackedScene" uid="uid://choiwpst5i61a" path="res://world/foreground_obects/flag.tscn" id="4_o8f5p"]
@@ -46,7 +46,7 @@ sources/1 = SubResource("TileSetAtlasSource_kgo1c")
 script = ExtResource("1_j0lxs")
 level_name = "Level 6"
 next_level = ExtResource("2_qcryt")
-score_threshold = 6000
+score_threshold = 50000
 
 [node name="LevelHUD" parent="." instance=ExtResource("2_vo3rj")]
 visible = false
