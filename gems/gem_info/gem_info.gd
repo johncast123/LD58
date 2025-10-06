@@ -7,6 +7,7 @@ class_name GemInfo
 @export var point: int = 10
 @export var extra_function_index: int = -1
 @export var sprite_off_set: Vector2 = Vector2.ZERO
+@export_enum("pickup_gem", "pickup_coin", "pickup_item", "explosion") var sfx_name: String
 
 var extra_function_list: Array[Callable] = [
 	increase_base_multiplier,

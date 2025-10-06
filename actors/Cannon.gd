@@ -96,6 +96,8 @@ func _fire_hook() -> void:
 	hook.connect("hook_queue_freed", _on_hook_queue_freed.bind(hook, line))
 	var dir = Vector2.RIGHT.rotated(global_rotation)  # +X is forward
 	hook.begin(muzzle.global_position, dir)
+	
+	AudioManager.play_sfx("fire")
 
 func _if_can_fire() -> bool:
 	return active_hooks.size() < max_hook_count

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dmq45q58utnm2" path="res://asset/chain_bit.png" id="1_0xqsb"]
 
 [node name="HookLine" type="Line2D"]
+show_behind_parent = true
 texture_repeat = 2
 width = 7.0
 texture = ExtResource("1_0xqsb")

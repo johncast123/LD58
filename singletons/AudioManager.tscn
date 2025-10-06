@@ -8,3 +8,4 @@ script = ExtResource("1_nvjd6")
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 3

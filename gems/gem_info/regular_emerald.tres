@@ -8,3 +8,6 @@ script = ExtResource("1_p1gy4")
 gem_name = "Emerald"
 sprite_frame = ExtResource("2_p1gy4")
 point = 30
+extra_function_index = -1
+sprite_off_set = Vector2(0, 0)
+sfx_name = "pickup_gem"

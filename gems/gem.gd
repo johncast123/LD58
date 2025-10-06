@@ -11,12 +11,14 @@ signal collected(gem: Gem)
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
 var point: int = 0
+var sfx_name: String
 
 func _ready():
 	point = gem_info.point
 	animated_sprite_2d.sprite_frames = gem_info.sprite_frame
 	animated_sprite_2d.offset = gem_info.sprite_off_set
 	animated_sprite_2d.play("idle")
+	sfx_name = gem_info.sfx_name
 	
 	$MoveManager.enabled = is_moving
 
@@ -28,6 +30,7 @@ func _enable_self():
 
 func set_collected():
 	collected.emit(self)
+	play_sfx()
 	#play_collected_effect()
 
 func play_collected_effect():
@@ -39,3 +42,6 @@ func play_collected_effect():
 	
 func set_snatched():
 	play_collected_effect()
+
+func play_sfx():
+	AudioManager.play_sfx(sfx_name)

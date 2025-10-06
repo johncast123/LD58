@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c5avxrb5wnqor"]
 
 [ext_resource type="Script" uid="uid://ou42wonxwca6" path="res://actors/Cannon.gd" id="1_dgm0w"]
-[ext_resource type="Texture2D" uid="uid://dnm2nltxbp62p" path="res://icon.svg" id="2_3pe62"]
 [ext_resource type="PackedScene" uid="uid://dqgketbcml54p" path="res://actors/Hook.tscn" id="2_cvoka"]
+[ext_resource type="Texture2D" uid="uid://4f82iocw37m1" path="res://asset/Cannon.png" id="3_vkd7r"]
 [ext_resource type="Texture2D" uid="uid://r7dmndf0ew63" path="res://asset/dotted.png" id="4_kg75n"]
 [ext_resource type="PackedScene" uid="uid://cbk3yy5hc43j5" path="res://UI/scope_timer_indicator.tscn" id="5_vkd7r"]
 [ext_resource type="PackedScene" uid="uid://dvsc53hx4svp5" path="res://UI/multihook_timer_indicator.tscn" id="6_8vco2"]
@@ -12,8 +12,9 @@ script = ExtResource("1_dgm0w")
 hook_scene = ExtResource("2_cvoka")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_3pe62")
+rotation = 3.14159
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_vkd7r")
 
 [node name="Muzzle" type="Marker2D" parent="."]
 

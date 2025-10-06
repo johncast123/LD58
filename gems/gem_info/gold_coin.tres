@@ -9,3 +9,5 @@ gem_name = "Gold Coin"
 sprite_frame = ExtResource("2_4cu61")
 point = 20
 extra_function_index = -1
+sprite_off_set = Vector2(0, 0)
+sfx_name = "pickup_coin"

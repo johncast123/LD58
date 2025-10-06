@@ -9,4 +9,6 @@ gem_name = "Multi Hook"
 sprite_frame = ExtResource("2_005do")
 point = 0
 extra_function_index = 2
+sprite_off_set = Vector2(0, 0)
+sfx_name = "pickup_item"
 metadata/_custom_type_script = "uid://b7kem3jx1r5na"

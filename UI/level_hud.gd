@@ -87,10 +87,12 @@ func update_total_score(delta: int):
 	internal_score_delta = delta
 	
 func _on_restart_pressed():
+	AudioManager.play_sfx("ui_click")
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 func _on_next_pressed():
+	AudioManager.play_sfx("ui_click")
 	get_tree().paused = false
 	
 	disable_all_buttons()
@@ -98,12 +100,15 @@ func _on_next_pressed():
 	var a = get_tree().create_tween().set_parallel()
 	a.tween_property(self, "internal_score_delta", 0, GAP_SEC)
 	a.tween_property(self, "internal_total_score", Global.total_score, GAP_SEC)
+	var b = get_tree().create_tween().set_loops(10)
+	b.tween_callback(play_tally_sfx).set_delay(0.15)
 	await a.finished
 	$VBoxContainer/TotalScoreContainer/Delta.hide()
 	await get_tree().create_timer(1).timeout
 	Global.go_to_next_level()
 	
 func _on_menu_pressed():
+	AudioManager.play_sfx("ui_click")
 	get_tree().paused = false
 	pass # Replace with function body.
 
@@ -116,5 +121,9 @@ func enable_all_buttons():
 		child.disabled = false
 
 func _on_continue_pressed():
+	AudioManager.play_sfx("ui_click")
 	get_tree().paused = false
 	hide_buttons()
+
+func play_tally_sfx():
+	AudioManager.play_sfx("score_tally")

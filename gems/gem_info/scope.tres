@@ -9,4 +9,6 @@ gem_name = "Scope"
 sprite_frame = ExtResource("2_g0qfq")
 point = 0
 extra_function_index = 3
+sprite_off_set = Vector2(0, 0)
+sfx_name = "pickup_item"
 metadata/_custom_type_script = "uid://b7kem3jx1r5na"
