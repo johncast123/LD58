@@ -152,6 +152,7 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_owy45")
+level_name = "Level 4"
 next_level = ExtResource("2_i5dfj")
 score_threshold = 1500
 

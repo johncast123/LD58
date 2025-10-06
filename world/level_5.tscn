@@ -37,6 +37,7 @@ sources/1 = SubResource("TileSetAtlasSource_cihxq")
 
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_8j5sd")
+level_name = "Level 5"
 next_level = ExtResource("2_aqbh6")
 score_threshold = 1000
 
