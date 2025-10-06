@@ -110,7 +110,7 @@ func _on_next_pressed():
 func _on_menu_pressed():
 	AudioManager.play_sfx("ui_click")
 	get_tree().paused = false
-	get_tree().change_scene_to_packed(preload("res://UI/MainMenu.tscn"))
+	#get_tree().change_scene_to_packed(preload("res://UI/MainMenu.tscn"))
 	pass # Replace with function body.
 
 func disable_all_buttons():
