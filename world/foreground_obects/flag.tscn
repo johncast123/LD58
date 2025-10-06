@@ -52,6 +52,7 @@ size = Vector2(4, 94)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gb5et")
+autoplay = "default"
 frame_progress = 0.347921
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]

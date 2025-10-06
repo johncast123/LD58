@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://deoulo70dsbml"
+path="res://.godot/imported/title_screen_Blackmoor Tides.mp3-a183f5f73d98e3e9ad11ca557a99d77f.mp3str"
+
+[deps]
+
+source_file="res://music/title_screen_Blackmoor Tides.mp3"
+dest_files=["res://.godot/imported/title_screen_Blackmoor Tides.mp3-a183f5f73d98e3e9ad11ca557a99d77f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

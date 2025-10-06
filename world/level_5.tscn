@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bmt2cbsa2a46"]
+[gd_scene load_steps=20 format=4 uid="uid://bmt2cbsa2a46"]
 
 [ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_8j5sd"]
 [ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/level_HUD.tscn" id="1_c7ncy"]
@@ -12,6 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://bpbsxdf2ydkt7" path="res://world/foreground_obects/box.tscn" id="6_aqbh6"]
 [ext_resource type="PackedScene" uid="uid://bt2wiosukdqan" path="res://world/countdown_timer.tscn" id="8_ahn4k"]
 [ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="10_ogn1y"]
+[ext_resource type="Resource" uid="uid://bimu7ghsfa88p" path="res://gems/gem_info/multi_hook.tres" id="11_ulm6u"]
+[ext_resource type="Resource" uid="uid://dvawghkvy4xuh" path="res://gems/gem_info/regular_emerald.tres" id="12_3vvon"]
+[ext_resource type="Resource" uid="uid://lolpuixwjb8u" path="res://gems/gem_info/gold_coin.tres" id="12_doo0y"]
+[ext_resource type="Resource" uid="uid://tdn31p45ulk7" path="res://gems/gem_info/regular_diamond.tres" id="14_dcc1p"]
+[ext_resource type="Resource" uid="uid://bjxfrsxpn3sa0" path="res://gems/gem_info/regular_ruby.tres" id="14_s0h0u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cihxq"]
 texture = ExtResource("2_yg4t6")
@@ -33,7 +38,6 @@ sources/1 = SubResource("TileSetAtlasSource_cihxq")
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_8j5sd")
 next_level = ExtResource("2_aqbh6")
-total_time_sec = 999
 
 [node name="LevelHUD" parent="." instance=ExtResource("1_c7ncy")]
 visible = false
@@ -71,7 +75,130 @@ tile_set = SubResource("TileSet_jpnu6")
 
 [node name="GemManager" parent="." instance=ExtResource("3_0syn7")]
 
-[node name="Gem" parent="GemManager" instance=ExtResource("10_ogn1y")]
+[node name="Multihook1" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(320, 48)
+gem_info = ExtResource("11_ulm6u")
+
+[node name="Silver1" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(160, 168)
+is_moving = true
+
+[node name="MoveManager" parent="GemManager/Silver1" index="3"]
+move_range_px = 100
+direction = Vector2(0, -1)
+move_speed = 70.0
+
+[node name="Silver2" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(144, 168)
+is_moving = true
+
+[node name="MoveManager" parent="GemManager/Silver2" index="3"]
+move_range_px = 100
+direction = Vector2(0, -1)
+move_speed = 70.0
+
+[node name="Silver3" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(176, 168)
+is_moving = true
+
+[node name="MoveManager" parent="GemManager/Silver3" index="3"]
+move_range_px = 100
+direction = Vector2(0, -1)
+move_speed = 70.0
+
+[node name="Silver4" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(176, 152)
+is_moving = true
+
+[node name="MoveManager" parent="GemManager/Silver4" index="3"]
+move_range_px = 100
+direction = Vector2(0, -1)
+move_speed = 70.0
+
+[node name="Silver5" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(160, 152)
+is_moving = true
+
+[node name="MoveManager" parent="GemManager/Silver5" index="3"]
+move_range_px = 100
+direction = Vector2(0, -1)
+move_speed = 70.0
+
+[node name="Silver6" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(144, 152)
+is_moving = true
+
+[node name="MoveManager" parent="GemManager/Silver6" index="3"]
+move_range_px = 100
+direction = Vector2(0, -1)
+move_speed = 70.0
+
+[node name="Silver7" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(144, 184)
+is_moving = true
+
+[node name="MoveManager" parent="GemManager/Silver7" index="3"]
+move_range_px = 100
+direction = Vector2(0, -1)
+move_speed = 70.0
+
+[node name="Silver8" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(160, 184)
+is_moving = true
+
+[node name="MoveManager" parent="GemManager/Silver8" index="3"]
+move_range_px = 100
+direction = Vector2(0, -1)
+move_speed = 70.0
+
+[node name="Silver9" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(176, 184)
+is_moving = true
+
+[node name="MoveManager" parent="GemManager/Silver9" index="3"]
+move_range_px = 100
+direction = Vector2(0, -1)
+move_speed = 70.0
+
+[node name="Gold1" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(208, 80)
+gem_info = ExtResource("12_doo0y")
+
+[node name="Gold2" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(240, 80)
+gem_info = ExtResource("12_doo0y")
+
+[node name="Gold3" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(40, 240)
+gem_info = ExtResource("12_doo0y")
+
+[node name="Gold4" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(88, 240)
+gem_info = ExtResource("12_doo0y")
+
+[node name="Gold5" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(432, 208)
+gem_info = ExtResource("12_doo0y")
+
+[node name="Emerald1" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(48, 48)
+gem_info = ExtResource("12_3vvon")
+
+[node name="Emerald2" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(368, 176)
+gem_info = ExtResource("12_3vvon")
+
+[node name="Ruby1" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(432, 80)
+gem_info = ExtResource("14_s0h0u")
+
+[node name="Ruby2" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(304, 144)
+gem_info = ExtResource("14_s0h0u")
+
+[node name="Diamond1" parent="GemManager" instance=ExtResource("10_ogn1y")]
+position = Vector2(64, 216)
+gem_info = ExtResource("14_dcc1p")
 
 [node name="Cannon" parent="." instance=ExtResource("4_0syn7")]
 position = Vector2(256, 264)
@@ -80,3 +207,13 @@ position = Vector2(256, 264)
 
 [connection signal="score_calculated" from="GemManager" to="." method="_on_gem_manager_score_calculated"]
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]
+
+[editable path="GemManager/Silver1"]
+[editable path="GemManager/Silver2"]
+[editable path="GemManager/Silver3"]
+[editable path="GemManager/Silver4"]
+[editable path="GemManager/Silver5"]
+[editable path="GemManager/Silver6"]
+[editable path="GemManager/Silver7"]
+[editable path="GemManager/Silver8"]
+[editable path="GemManager/Silver9"]
