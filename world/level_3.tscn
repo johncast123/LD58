@@ -122,7 +122,8 @@ sources/0 = SubResource("TileSetAtlasSource_3uihl")
 script = ExtResource("1_lmbsv")
 level_name = "Level 3"
 next_level = ExtResource("2_de6op")
-score_threshold = 700
+total_time_sec = 30
+score_threshold = 1500
 
 [node name="LevelHUD" parent="." instance=ExtResource("1_v5igl")]
 
