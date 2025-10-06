@@ -159,7 +159,7 @@ animations = [{
 script = ExtResource("1_owy45")
 level_name = "Level 4"
 next_level = ExtResource("2_i5dfj")
-score_threshold = 1500
+score_threshold = 1900
 
 [node name="LevelHUD" parent="." instance=ExtResource("1_8wntc")]
 visible = false

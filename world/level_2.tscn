@@ -127,7 +127,7 @@ sources/1 = SubResource("TileSetAtlasSource_1t23h")
 script = ExtResource("1_lm1wg")
 level_name = "Level 2"
 next_level = ExtResource("2_r546c")
-score_threshold = 800
+score_threshold = 1200
 
 [node name="LevelHUD" parent="." instance=ExtResource("3_wpvgc")]
 
