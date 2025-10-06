@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ceudphodbmfsl" path="res://UI/main_menu.gd" id="1_qrfef"]
 [ext_resource type="TileSet" uid="uid://cprmnu1l4rubt" path="res://world/exterior_tilemap.tres" id="1_uahxu"]
-[ext_resource type="PackedScene" uid="uid://da2coqoappdoh" path="res://world/level_1.tscn" id="2_avhca"]
+[ext_resource type="PackedScene" uid="uid://da2coqoappdoh" path="res://world/level_1.tscn" id="2_x8sin"]
 [ext_resource type="PackedScene" uid="uid://d2qil4oibi2ok" path="res://world/exterior_background.tscn" id="3_avhca"]
 [ext_resource type="Texture2D" uid="uid://d0y86pq4yw7vm" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 01.png" id="14_84toi"]
 [ext_resource type="Texture2D" uid="uid://c6a5smir67sjn" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 02.png" id="15_g341i"]
@@ -90,7 +90,7 @@ animations = [{
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_qrfef")
-first_level = ExtResource("2_avhca")
+first_level = ExtResource("2_x8sin")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
