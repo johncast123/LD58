@@ -43,8 +43,9 @@ func initialize_scope_timer(time_sec: int):
 	add_child(scope_timer)
 	
 func _on_update_bounce_count(new_count: int):
-	bounce_count = new_count
-	update_current_multiplier()
+	if new_count > bounce_count:
+		bounce_count = new_count
+		update_current_multiplier()
 
 func update_total_score(delta: int):
 	total_score += delta
