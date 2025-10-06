@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://f1hja0tppynh"]
+[gd_scene load_steps=19 format=4 uid="uid://f1hja0tppynh"]
 
 [ext_resource type="TileSet" uid="uid://dw66ve3yqcms5" path="res://world/pirate_ship_interior_tileset.tres" id="1_gkqmi"]
 [ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_lmbsv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b508jx3dpytx8" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="4_eef73"]
 [ext_resource type="PackedScene" uid="uid://cxd8utj06nd2h" path="res://world/gem_manager.tscn" id="4_m8xer"]
 [ext_resource type="PackedScene" uid="uid://dsamr2xxuqs5y" path="res://world/pirate_ship_filter.tscn" id="5_3uihl"]
+[ext_resource type="PackedScene" uid="uid://cvc5i2620paop" path="res://world/background_objects/candle.tscn" id="5_kf121"]
 [ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="5_m8xer"]
 [ext_resource type="Resource" uid="uid://bpq85jnyrhdc2" path="res://gems/gem_info/scope.tres" id="6_ju8ad"]
 [ext_resource type="Resource" uid="uid://bgj8b8kv2jglw" path="res://gems/gem_info/multiplier_star.tres" id="6_qu6iq"]
@@ -132,6 +133,12 @@ tile_map_data = PackedByteArray("AAABAAMAAAABAAcAAAABAAUAAAABAAkAAAADAAcAAAABAAk
 tile_set = SubResource("TileSet_kf121")
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="Candle" parent="Node2D" instance=ExtResource("5_kf121")]
+position = Vector2(128, 144)
+
+[node name="Candle2" parent="Node2D" instance=ExtResource("5_kf121")]
+position = Vector2(384, 144)
 
 [node name="PirateShipFilter" parent="." instance=ExtResource("5_3uihl")]
 
