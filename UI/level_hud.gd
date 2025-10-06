@@ -4,7 +4,7 @@ class_name LevelHUD
 
 const GAP_SEC: float = 1.5
 
-@export var base_multiplier_font_size: int = 24
+@export var base_multiplier_font_size: int = 18
 
 @onready var score = $Score
 @onready var current_multiplier = $CurrentMultiplier
@@ -34,7 +34,7 @@ func update_score(new_score: int, threshold: int):
 
 func update_multiplier(new_multiplier: int):
 	multiplier_number.text = "x" + str(new_multiplier)
-	multiplier_number.add_theme_font_size_override("font_size", sqrt(new_multiplier) * base_multiplier_font_size)
+	multiplier_number.add_theme_font_size_override("font_size", log(new_multiplier)/log(2) * base_multiplier_font_size)
 
 func update_timeleft(new_time_sec: int):
 	time_left.text = "Time Left: %d" % new_time_sec
