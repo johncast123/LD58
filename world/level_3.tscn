@@ -124,7 +124,7 @@ script = ExtResource("1_lmbsv")
 level_name = "Level 3"
 next_level = ExtResource("2_de6op")
 total_time_sec = 25
-score_threshold = 9000
+score_threshold = 10000
 
 [node name="LevelHUD" parent="." instance=ExtResource("1_v5igl")]
 
