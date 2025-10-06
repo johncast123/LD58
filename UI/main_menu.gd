@@ -9,4 +9,6 @@ func _ready():
 func _on_start_pressed():
 	if first_level:
 		AudioManager.play_sfx("ui_click")
+		$VisualGuide.show()
+		await $VisualGuide.window_closed
 		Global.go_to_next_level()

@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0uenqkq5dgnh"]
+[gd_scene load_steps=11 format=3 uid="uid://d0uenqkq5dgnh"]
 
+[ext_resource type="Script" uid="uid://oqpep35mejxn" path="res://UI/visual_guide.gd" id="1_231om"]
 [ext_resource type="Texture2D" uid="uid://b6x2ij36q3j2n" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Silver Coin/01.png" id="1_ojdog"]
 [ext_resource type="Texture2D" uid="uid://cuu6ifhytitmw" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="2_vli7o"]
 [ext_resource type="Texture2D" uid="uid://ba4toss6exusi" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Green Diamond/01.png" id="3_l7lnp"]
@@ -10,16 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://cql8kv01n1s7j" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Blue Potion/03.png" id="8_pasb5"]
 [ext_resource type="Texture2D" uid="uid://bhmsprcn75bud" path="res://asset/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/01.png" id="9_231om"]
 
-[node name="VisualGuide" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VisualGuide" type="CanvasLayer"]
+script = ExtResource("1_231om")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -28,7 +23,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.294118)
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -198,3 +192,5 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 text = "Got it"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

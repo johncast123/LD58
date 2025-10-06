@@ -1,12 +1,13 @@
-[gd_scene load_steps=17 format=4 uid="uid://c7d5nbiejd3dg"]
+[gd_scene load_steps=18 format=4 uid="uid://c7d5nbiejd3dg"]
 
 [ext_resource type="Script" uid="uid://ceudphodbmfsl" path="res://UI/main_menu.gd" id="1_qrfef"]
 [ext_resource type="TileSet" uid="uid://cprmnu1l4rubt" path="res://world/exterior_tilemap.tres" id="1_uahxu"]
-[ext_resource type="PackedScene" uid="uid://da2coqoappdoh" path="res://world/level_1.tscn" id="2_csrb3"]
+[ext_resource type="PackedScene" uid="uid://da2coqoappdoh" path="res://world/level_1.tscn" id="2_avhca"]
 [ext_resource type="PackedScene" uid="uid://d2qil4oibi2ok" path="res://world/exterior_background.tscn" id="3_avhca"]
 [ext_resource type="Texture2D" uid="uid://d0y86pq4yw7vm" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 01.png" id="14_84toi"]
 [ext_resource type="Texture2D" uid="uid://c6a5smir67sjn" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 02.png" id="15_g341i"]
 [ext_resource type="Texture2D" uid="uid://bqbmojs7most3" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 03.png" id="16_qbgtf"]
+[ext_resource type="PackedScene" uid="uid://d0uenqkq5dgnh" path="res://UI/visual_guide.tscn" id="16_x8sin"]
 [ext_resource type="Texture2D" uid="uid://cely5c6qneevd" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 04.png" id="17_dl0fi"]
 [ext_resource type="Texture2D" uid="uid://bcfxn6x70tbb0" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 05.png" id="18_f2k8e"]
 [ext_resource type="Texture2D" uid="uid://cy2d4mei63ley" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Objects/Chest/Chest Close 06.png" id="19_o0stp"]
@@ -89,7 +90,7 @@ animations = [{
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_qrfef")
-first_level = ExtResource("2_csrb3")
+first_level = ExtResource("2_avhca")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -130,6 +131,9 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Start Game"
+
+[node name="VisualGuide" parent="." instance=ExtResource("16_x8sin")]
+visible = false
 
 [node name="Background" parent="." instance=ExtResource("3_avhca")]
 
