@@ -62,6 +62,7 @@ func reset_max_hook_count():
 func increase_max_hook_count(delta: int = 1, time_sec: int = 10):
 	max_hook_count += delta
 	powerup_timer.start(time_sec)
+	EventBus.emit_signal("spawn_multihook_indicator")
 
 func _on_powerup_timer_timeout():
 	reset_max_hook_count()

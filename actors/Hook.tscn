@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dqgketbcml54p"]
 
 [ext_resource type="Script" uid="uid://dy0p6kdxeuukl" path="res://actors/Hook.gd" id="1_xe85h"]
-[ext_resource type="Texture2D" uid="uid://dnm2nltxbp62p" path="res://icon.svg" id="2_dt5l3"]
+[ext_resource type="Texture2D" uid="uid://c6vy7uxbxviqr" path="res://asset/anchor.png" id="2_lpax8"]
 [ext_resource type="Script" uid="uid://k6smtif2wsi3" path="res://actors/states/state_machine.gd" id="3_dt5l3"]
 [ext_resource type="Script" uid="uid://bl82wllcn6gr1" path="res://actors/states/extending.gd" id="4_kma30"]
 [ext_resource type="Script" uid="uid://cdhbu3q0axa1g" path="res://actors/states/retracting.gd" id="5_lpax8"]
@@ -17,8 +17,7 @@ retract_speed = 1000.0
 shape = SubResource("CircleShape2D_u788y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.0773438, 0.0773438)
-texture = ExtResource("2_dt5l3")
+texture = ExtResource("2_lpax8")
 
 [node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("states")]
 script = ExtResource("3_dt5l3")

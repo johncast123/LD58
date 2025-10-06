@@ -18,6 +18,7 @@ var time_left_sec: int = total_time_sec
 var level_score: int = 0
 
 func _ready() -> void:
+	AudioManager.play_bgm(level_name)
 	Global.set_next_level(next_level)
 	EventBus.remove_all_buffs.emit()
 	

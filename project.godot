@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Mutiny!"
-run/main_scene="uid://dslo264mpyvmn"
+run/main_scene="uid://c7d5nbiejd3dg"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://singletons/global.gd"
 EventBus="*res://singletons/event_bus.gd"
+AudioManager="*res://singletons/AudioManager.tscn"
 
 [display]
 

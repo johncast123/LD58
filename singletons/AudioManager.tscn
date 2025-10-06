@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjd6clg4wyxtg"]
+
+[ext_resource type="Script" uid="uid://b00hlb7kwt57x" path="res://singletons/audio_manager.gd" id="1_nvjd6"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_nvjd6")
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]

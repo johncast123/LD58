@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://bjlmbepbpr4a5"]
+[gd_scene load_steps=2 format=3 uid="uid://bjlmbepbpr4a5"]
+
+[ext_resource type="Texture2D" uid="uid://dmq45q58utnm2" path="res://asset/chain_bit.png" id="1_0xqsb"]
 
 [node name="HookLine" type="Line2D"]
-width = 2.0
+texture_repeat = 2
+width = 7.0
+texture = ExtResource("1_0xqsb")
+texture_mode = 1

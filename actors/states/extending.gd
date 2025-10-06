@@ -38,6 +38,8 @@ func update_physics_frame(delta: float):
 	
 	hook.update_line()
 	
+	hook.get_node("Sprite2D").rotation = hook.dir.angle() + Vector2.UP.angle()
+	
 	# Reached max length?
 	if hook.traveled >= hook.max_length or hook.bounces >= hook.max_bounces:
 		hook.state_machine.change_state("retracting")
