@@ -73,8 +73,10 @@ func _on_countdown_timer_timeout():
 		if check_if_score_met(level_score, score_threshold):
 			level_hud.set_and_show_buttons("win")
 			level_hud.update_total_score(level_score)
+			AudioManager.play_bgm("Victory")
 		else:
 			level_hud.set_and_show_buttons("lose")
+			AudioManager.play_bgm("Fail")
 		#get_tree().paused = true
 
 func check_if_score_met(player_score: int, score_threshold: int):

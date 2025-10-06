@@ -4,7 +4,15 @@ extends Node
 @onready var sfx_player = $SFXPlayer
 
 const BGM: Dictionary = {
-	
+	"Level 1": preload("res://music/level1_courseselect.wav"),
+	"Level 2": preload("res://music/level2_loop.wav"),
+	"Level 3": preload("res://music/level3_course_2_loop.wav"),
+	"Level 4": preload("res://music/level4_course_3_loop.wav"),
+	"Level 5": preload("res://music/level5_course_4_loop.wav"),
+	"Level 6": preload("res://music/level6_course_5_loop.wav"),
+	"Title": preload("res://music/Blackmoor Tides.mp3"),
+	"Victory": preload("res://music/victory.wav"),
+	"Fail": preload("res://music/course_fail.wav")
 }
 
 const SFX: Dictionary = {
