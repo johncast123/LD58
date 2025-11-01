@@ -20,12 +20,17 @@ config/icon="uid://c6vy7uxbxviqr"
 Global="*res://singletons/global.gd"
 EventBus="*res://singletons/event_bus.gd"
 AudioManager="*res://singletons/AudioManager.tscn"
+Talo="*res://addons/talo/talo_manager.gd"
 
 [display]
 
 window/size/viewport_width=512
 window/size/viewport_height=288
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/talo/plugin.cfg")
 
 [global_group]
 
