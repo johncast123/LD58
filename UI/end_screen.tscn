@@ -89,6 +89,7 @@ animations = [{
 [node name="EndScreen" type="Node2D"]
 script = ExtResource("1_3dcam")
 start_level_path = "uid://da2coqoappdoh"
+leaderboard_path = "uid://c0ixydir5telo"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -140,6 +141,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Play Again"
 
+[node name="Leaderboard" type="Button" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Leaderboard"
+
 [node name="Background" parent="." instance=ExtResource("4_dxenq")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -161,3 +167,4 @@ autoplay = "open"
 frame_progress = 0.184005
 
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/Leaderboard" to="." method="_on_leaderboard_pressed"]

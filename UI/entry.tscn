@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://djycphx2qojxp"]
+
+[ext_resource type="Theme" uid="uid://ce2uyi827vc5x" path="res://addons/talo/samples/authentication/assets/theme.tres" id="1_mpyeo"]
+[ext_resource type="Script" uid="uid://c72ppt5dawi36" path="res://addons/talo/samples/leaderboards/scripts/leaderboard_entry.gd" id="2_vex6y"]
+
+[node name="Entry" type="Label"]
+custom_minimum_size = Vector2(2.08165e-12, 32)
+theme = ExtResource("1_mpyeo")
+theme_override_font_sizes/font_size = 20
+text = "{pos}. {username} scored: {score} points"
+horizontal_alignment = 1
+script = ExtResource("2_vex6y")
