@@ -2,6 +2,7 @@ extends Node2D
 
 var entry_scene = preload("res://UI/entry.tscn")
 
+@export var enabled: bool = false
 @export var leaderboard_internal_name: String = ""
 @export var include_archived: bool
 
@@ -17,6 +18,12 @@ func _ready() -> void:
 	leaderboard_name.text = leaderboard_name.text.replace("{leaderboard}", leaderboard_internal_name)
 	await _load_entries()
 	_set_entry_count()
+	
+	if !enabled:
+		toggle_submit_button(false)
+		submit.text = "disabled"
+		username.editable = false
+		username.placeholder_text = "new entries currently not permitted"
 
 func _set_entry_count():
 	if entries_container.get_child_count() == 0:
