@@ -3,6 +3,8 @@ extends Node2D
 
 const HOOKLINE = preload("res://actors/hook_line.tscn")
 
+signal hook_retracted
+
 @export var rotate_speed_deg: float = 360.0     # used only for smooth aiming
 @export var min_angle_deg: float = -160.0       # up-left limit (global degrees)
 @export var max_angle_deg: float = -20.0        # up-right limit (global degrees)
@@ -120,6 +122,8 @@ func _on_hook_queue_freed(hook: Hook, line: Line2D):
 	# only reset multiplayer if all current hook count == 0
 	if active_hooks.is_empty():
 		Global.reset_bounce_count()
+		
+	emit_signal("hook_retracted")
 
 func get_hook_preview(start_pos: Vector2, direction: Vector2, max_length: float, max_bounces: int) -> PackedVector2Array:
 	var points: Array[Vector2]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=4 uid="uid://dslo264mpyvmn"]
 
-[ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_hh730"]
+[ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/level.gd" id="1_hh730"]
 [ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/level_HUD.tscn" id="2_hlc4e"]
 [ext_resource type="PackedScene" uid="uid://c5avxrb5wnqor" path="res://actors/Cannon.tscn" id="2_rqm65"]
 [ext_resource type="PackedScene" uid="uid://cvroqysgpvf6u" path="res://gems/Gem.tscn" id="3_cojv5"]

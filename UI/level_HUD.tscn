@@ -53,6 +53,11 @@ layout_mode = 2
 text = "Time Left: X"
 horizontal_alignment = 2
 
+[node name="HookLeft" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Hook Left: X"
+horizontal_alignment = 2
+
 [node name="Pause" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2

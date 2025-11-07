@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=4 uid="uid://da2coqoappdoh"]
 
-[ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_5y0yy"]
+[ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/level.gd" id="1_5y0yy"]
 [ext_resource type="PackedScene" uid="uid://cm7k1xy2dt7an" path="res://world/background_objects/window.tscn" id="1_6f1wx"]
 [ext_resource type="TileSet" uid="uid://dw66ve3yqcms5" path="res://world/pirate_ship_interior_tileset.tres" id="1_lis17"]
 [ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/level_HUD.tscn" id="1_uhyhg"]
@@ -126,11 +126,11 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_5y0yy")
 
-[node name="Node2D2" type="Node2D"]
+[node name="Level1" type="Node2D"]
 script = ExtResource("1_5y0yy")
 level_name = "Level 1"
 next_level = ExtResource("2_iedf8")
-score_threshold = 800
+score_threshold = 200
 
 [node name="LevelHUD" parent="." instance=ExtResource("1_uhyhg")]
 

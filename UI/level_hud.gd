@@ -10,6 +10,7 @@ const GAP_SEC: float = 1.5
 @onready var current_multiplier = $CurrentMultiplier
 @onready var multiplier_number = $CurrentMultiplier/MultiplierNumber
 @onready var time_left = $HBoxContainer/TimeLeft
+@onready var hook_left = $HBoxContainer/HookLeft
 @onready var level_end_message = $LevelEndMessage
 @onready var buttons_container = $VBoxContainer/ButtonsContainer
 @onready var total_score_container = $VBoxContainer/TotalScoreContainer
@@ -23,11 +24,21 @@ var internal_total_score: int = 0:
 		internal_total_score = value
 		$VBoxContainer/TotalScoreContainer/TotalScore.text = "%06d" % value
 
-func initialize():
+func initialize(level_type: String = "hook_count"):
 	self.show()
 	hide_level_end_message()
 	initialize_buttons()
 	total_score_container.hide()
+	display_level_type(level_type)
+
+func display_level_type(level_type: String):
+	match level_type:
+		"time":
+			time_left.show()
+			hook_left.hide()
+		"hook_count":
+			time_left.hide()
+			hook_left.show()
 
 func update_score(new_score: int, threshold: int):
 	score.text = "Score: %d/%d" % [new_score, threshold]
@@ -38,6 +49,9 @@ func update_multiplier(new_multiplier: int):
 
 func update_timeleft(new_time_sec: int):
 	time_left.text = "Time Left: %d" % new_time_sec
+
+func update_hookleft(new_hook_left: int):
+	hook_left.text = "Hook Left: %d" % new_hook_left
 
 func set_and_show_level_end_message(message: String):
 	level_end_message.text = message

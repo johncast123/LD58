@@ -1,7 +1,7 @@
 [gd_scene load_steps=51 format=4 uid="uid://b5bhj2u10pqsv"]
 
 [ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/level_HUD.tscn" id="1_8wntc"]
-[ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_owy45"]
+[ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/level.gd" id="1_owy45"]
 [ext_resource type="TileSet" uid="uid://cprmnu1l4rubt" path="res://world/exterior_tilemap.tres" id="1_td8px"]
 [ext_resource type="Texture2D" uid="uid://bhx53r62le711" path="res://asset/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="2_0q0gw"]
 [ext_resource type="PackedScene" uid="uid://bmt2cbsa2a46" path="res://world/level_5.tscn" id="2_i5dfj"]

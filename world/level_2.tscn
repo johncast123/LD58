@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=4 uid="uid://crxg6pgki3jcv"]
 
 [ext_resource type="TileSet" uid="uid://dw66ve3yqcms5" path="res://world/pirate_ship_interior_tileset.tres" id="1_h27rw"]
-[ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/Main.gd" id="1_lm1wg"]
+[ext_resource type="Script" uid="uid://be6ekcmtyfcrx" path="res://world/level.gd" id="1_lm1wg"]
 [ext_resource type="PackedScene" uid="uid://f1hja0tppynh" path="res://world/level_3.tscn" id="2_r546c"]
 [ext_resource type="PackedScene" uid="uid://b3w5r4vookj4s" path="res://UI/level_HUD.tscn" id="3_wpvgc"]
 [ext_resource type="Texture2D" uid="uid://b508jx3dpytx8" path="res://asset/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="4_51wcm"]
