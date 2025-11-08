@@ -14,6 +14,7 @@ signal hook_retracted
 
 var active_hooks: Array[Hook] = []
 var active_indicators: Array[Node] = []
+var hook_params: Dictionary = {}
 
 @onready var muzzle: Node2D = $Muzzle
 @onready var scope_timer_indicator = $ScopeTimerIndicator
@@ -99,10 +100,23 @@ func _fire_hook() -> void:
 	hook.connect("update_line_points", update_line_points.bind(line))
 	hook.connect("hook_queue_freed", _on_hook_queue_freed.bind(hook, line))
 	var dir = Vector2.RIGHT.rotated(global_rotation)  # +X is forward
-	hook.begin(muzzle.global_position, dir)
+	# set hook to position but not launch yet
+	hook.global_position = muzzle.global_position
+	add_hook_dir(hook.name, [muzzle.global_position, dir])
 	
+	# only actually launch hooks if max count reached
+	if active_hooks.size() >= max_hook_count:
+		launch_hooks(active_hooks, hook_params)
 	AudioManager.play_sfx("fire")
 
+func add_hook_dir(hook_name: String, params: Array):
+	hook_params[hook_name] = params
+
+func launch_hooks(hook_array: Array[Hook], hook_params: Dictionary):
+	for hook in hook_array:
+		var param: Array = hook_params.get(hook.name, [])
+		hook.begin(param[0], param[1])
+		
 func _main_hook_exists():
 	for hook in active_hooks:
 		if hook.is_main:
@@ -110,13 +124,7 @@ func _main_hook_exists():
 	return false
 
 func _if_can_fire() -> bool:
-	# case 1: no active hook
-	if !_main_hook_exists() and active_hooks.is_empty():
-		return true
-	# case 2: there is a main hook and current hook count < max hook count
-	if _main_hook_exists() and active_hooks.size() < max_hook_count:
-		return true
-	return false
+	return active_hooks.size() < max_hook_count
 
 # Helper: like lerp_angle but with a max step (deg)
 func move_toward_angle(from: float, to: float, delta_step: float) -> float:
