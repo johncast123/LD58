@@ -27,8 +27,8 @@ func increase_base_multiplier(amount: int = 1):
 func remove_all_buffs():
 	EventBus.emit_signal("remove_all_buffs")
 
-func increase_max_hook_count(amount: int = 2, time_sec: int = 10):
+func increase_max_hook_count(amount: int = 1, time_sec: int = -1):
 	Global.increase_max_hook_count(amount, time_sec)
 
-func enable_scope(time_sec: int = 10):
+func enable_scope(time_sec: int = -1):
 	Global.enable_scope(time_sec)

@@ -8,6 +8,7 @@ signal hook_queue_freed
 
 enum State { IDLE, EXTENDING, RETRACTING }
 
+@export var is_main: bool = true
 @export var extend_speed: float = 500.0
 @export var retract_speed: float = 650.0
 @export var max_length: float = 500.0

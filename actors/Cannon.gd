@@ -91,7 +91,9 @@ func _fire_hook() -> void:
 	add_child(line)
 	
 	# instantiate hook
-	var hook = hook_scene.instantiate()
+	var hook = hook_scene.instantiate() as Hook
+	if _main_hook_exists(): #only the first active hook is main
+		hook.is_main = false
 	active_hooks.append(hook)
 	get_tree().current_scene.add_child(hook)
 	hook.connect("update_line_points", update_line_points.bind(line))
@@ -101,8 +103,20 @@ func _fire_hook() -> void:
 	
 	AudioManager.play_sfx("fire")
 
+func _main_hook_exists():
+	for hook in active_hooks:
+		if hook.is_main:
+			return true
+	return false
+
 func _if_can_fire() -> bool:
-	return active_hooks.size() < max_hook_count
+	# case 1: no active hook
+	if !_main_hook_exists() and active_hooks.is_empty():
+		return true
+	# case 2: there is a main hook and current hook count < max hook count
+	if _main_hook_exists() and active_hooks.size() < max_hook_count:
+		return true
+	return false
 
 # Helper: like lerp_angle but with a max step (deg)
 func move_toward_angle(from: float, to: float, delta_step: float) -> float:
@@ -122,8 +136,9 @@ func _on_hook_queue_freed(hook: Hook, line: Line2D):
 	# only reset multiplayer if all current hook count == 0
 	if active_hooks.is_empty():
 		Global.reset_bounce_count()
-		
-	emit_signal("hook_retracted")
+	
+	if hook.is_main: # only fire signal if it's a main hook
+		emit_signal("hook_retracted")
 
 func get_hook_preview(start_pos: Vector2, direction: Vector2, max_length: float, max_bounces: int) -> PackedVector2Array:
 	var points: Array[Vector2]

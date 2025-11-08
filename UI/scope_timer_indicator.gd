@@ -12,7 +12,7 @@ func init(time_sec: int = 10):
 	total_time_sec = time_sec
 	texture_progress_bar.max_value = total_time_sec
 	texture_progress_bar.value = texture_progress_bar.max_value
-	timer.start()
+	#timer.start()
 
 func _on_timer_timeout():
 	total_time_sec -= 1

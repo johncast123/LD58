@@ -60,17 +60,19 @@ func reset_bounce_count():
 func reset_max_hook_count():
 	max_hook_count = 1
 
-func increase_max_hook_count(delta: int = 1, time_sec: int = 10):
+func increase_max_hook_count(delta: int = 1, time_sec: int = -1):
 	max_hook_count += delta
-	powerup_timer.start(time_sec)
+	if time_sec > 0:
+		powerup_timer.start(time_sec)
 	EventBus.emit_signal("spawn_multihook_indicator")
 
 func _on_powerup_timer_timeout():
 	reset_max_hook_count()
 
-func enable_scope(time_sec: int = 5):
+func enable_scope(time_sec: int = -1):
 	scope_enabled = true
-	scope_timer.start(time_sec)
+	if time_sec > 0:
+		scope_timer.start(time_sec)
 	EventBus.emit_signal("spawn_scope_indicator")
 
 func _on_scope_timer_timeout():
