@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="GemInfo" load_steps=3 format=3 uid="uid://dc7n5gmbtbqsk"]
+
+[ext_resource type="Script" uid="uid://b7kem3jx1r5na" path="res://gems/gem_info/gem_info.gd" id="1_lk5eo"]
+[ext_resource type="SpriteFrames" uid="uid://hhda8sm7vwiq" path="res://gems/pierce_powerup.tres" id="2_lk5eo"]
+
+[resource]
+script = ExtResource("1_lk5eo")
+gem_name = "Scope"
+sprite_frame = ExtResource("2_lk5eo")
+point = 0
+extra_function_index = 4
+sprite_off_set = Vector2(0, 0)
+sfx_name = "pickup_item"
+metadata/_custom_type_script = "uid://b7kem3jx1r5na"

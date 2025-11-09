@@ -13,7 +13,8 @@ var extra_function_list: Array[Callable] = [
 	increase_base_multiplier,
 	remove_all_buffs,
 	increase_max_hook_count,
-	enable_scope
+	enable_scope,
+	toggle_pierce
 ]
 
 func execute_extra_function(index: int):
@@ -32,3 +33,8 @@ func increase_max_hook_count(amount: int = 1, time_sec: int = -1):
 
 func enable_scope(time_sec: int = -1):
 	Global.enable_scope(time_sec)
+
+func toggle_pierce(enabled: bool = true):
+	Global.pierce_enabled = enabled
+		
+	

@@ -44,6 +44,7 @@ func update_physics_frame(delta: float):
 	
 	hook.get_node("Sprite2D").rotation = hook.dir.angle() + Vector2.UP.angle()
 	
+	hook.update_carried_gems_pos(hook.global_position)
 	# Reached max length?
 	if hook.traveled >= hook.max_length or hook.bounces >= hook.max_bounces:
 		hook.state_machine.change_state("retracting")

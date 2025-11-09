@@ -17,6 +17,8 @@ var powerup_timer: Timer = Timer.new()
 var scope_enabled: bool = false
 var scope_timer: Timer = Timer.new()
 
+var pierce_enabled: bool = false
+
 var next_level: PackedScene
 
 func _ready():
@@ -90,4 +92,5 @@ func _on_all_buff_removed():
 	base_multiplier = 1
 	current_multiplier = 1
 	scope_enabled = false
+	pierce_enabled = false
 	reset_max_hook_count()

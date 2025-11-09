@@ -95,6 +95,7 @@ func _fire_hook() -> void:
 	var hook = hook_scene.instantiate() as Hook
 	if _main_hook_exists(): #only the first active hook is main
 		hook.is_main = false
+	hook.can_pierce = Global.pierce_enabled
 	active_hooks.append(hook)
 	get_tree().current_scene.add_child(hook)
 	hook.connect("update_line_points", update_line_points.bind(line))
